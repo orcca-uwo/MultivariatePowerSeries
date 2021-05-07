@@ -9,15 +9,27 @@ Through lazy evaluation techniques and a careful implementation, this package ac
 with software counterparts. These power series and UPoPS are employed in optimized implementations of *Weierstrass Preparation Theorem* 
 and factorization of UPoPS via *Hensel’s lemma*. 
 
-This figure shows all functionalities in Maple:
+This figure shows all methods in Maple:
 <p align="center"> 
 <img  width="800" src="https://github.com/orcca-uwo/MultivariatePowerSeries/blob/master/figures/MPS.png" alt="MPS package">
 </p>
 
+## Installation Guide
+This package is shipped with **Maple 2021** and can be reached by `with(MultivariatePowerSeries)` command in Maple. 
+However, for those using older versions of Maple, there is another way to install this manually as follows:
+1. Clone or Download this repository 
+2. Go to the repository folder (e.g. `cd ./MultivariatePowerSeries`)
+3. Run `make` in your terminal (e.g. `make`)
+4. Add `libname :=  "/package/address", libname:` to `~/.mapleinit`
+
+A successful installation creates a new file `MultivariatePowerSeries.mla` at the same directory. 
+Note that `/package/address` is the complete path to where `MultivariatePowerSeries.mla` stores.
+To test or remove this package, run `make test` or `make clean`. 
+
 ## Package Structure
-Our power series and UPoPS types are implemented as Maple classes and named, respectively,
-  - PowerSeriesObject
-  - UnivariatePolynomialOverPowerSeriesObject
+Both power series and UPoPS types are implemented as Maple classes and named, respectively,
+  - PowerSeriesObject ([./PowerSeries/src](https://github.com/orcca-uwo/MultivariatePowerSeries/tree/master/PowerSeries/src))
+  - UnivariatePolynomialOverPowerSeriesObject ([./UPoPS/src](https://github.com/orcca-uwo/MultivariatePowerSeries/tree/master/UPoPS/src))
   
 The **MultivariatePowerSeries** package contains these two classes along with 
 procedures to construct and manipulate objects of those classes. 
@@ -58,30 +70,31 @@ end module;
 ## Documentation 
 A complete documentation is available on [**Maple Online Help**](https://www.maplesoft.com/support/help) and [here](https://github.com/orcca-uwo/MultivariatePowerSeries/tree/master/doc).
 
-## Examples
-To create PowerSeries objects from a polynomial or an anonymous function:
+## Examples 
+The Maple worksheet [MPS-demo.mw](https://github.com/orcca-uwo/MultivariatePowerSeries/tree/master/demo) is a demo of this package presenting examples such as,
+- creating PowerSeries objects from a polynomial or an anonymous function:
 <p align="center"> 
 <img width="800" src="https://github.com/orcca-uwo/MultivariatePowerSeries/blob/master/figures/PS.png" alt="Example 1">
 </p>
 
-To decompose a UPoPS object using *WeierstrassPreparation*:
+- decomposing a UPoPS object using *Weierstrass Preparation Theorem*:
 <p align="center"> 
 <img width="800" src="https://github.com/orcca-uwo/MultivariatePowerSeries/blob/master/figures/WPT.png" alt="Example 2">
 </p>
 
-To factor a UPoPS object using *HenselFactorize*:
+- factoring a UPoPS object:
 <p align="center"> 
 <img width="800" src="https://github.com/orcca-uwo/MultivariatePowerSeries/blob/master/figures/HF.png" alt="Example 3">
 </p>
 
 ## Credit 
-This package has been designed and developed by M. Asadi under the supervision of M. Moreno Maza and E. Postma 
+This package is designed and developed by M. Asadi under the supervision of M. Moreno Maza and E. Postma 
 follows the lazy evaluation scheme of multivariate power series in the [BPAS](https://github.com/orcca-uwo/BPAS) library 
 written in C language and implemented by A. Brandt, M. Kazemi, and M. Moreno Maza. 
 
 To cite this work, please use
 
-```Latex
+```
 @inproceedings{asadi2020MC,
   author = {Asadi, Mohammadali and 
       Brandt, Alexander and 
