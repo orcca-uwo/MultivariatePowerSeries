@@ -23,7 +23,7 @@ However, for those using older versions of Maple, there is another way to instal
 4. Add `libname :=  "/package/address", libname:` to `~/.mapleinit`
 
 A successful installation creates a new file `MultivariatePowerSeries.mla` at the same directory. 
-Note that `/package/address` is the complete path to where `MultivariatePowerSeries.mla` stores.
+Note that `/package/address` is the complete path to where `MultivariatePowerSeries.mla` is located.
 To test or remove this package, run `make test` or `make clean`. 
 
 ## Package Structure
