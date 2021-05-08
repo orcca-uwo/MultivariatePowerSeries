@@ -18,8 +18,8 @@ This figure shows all methods in Maple:
 This package is shipped with **Maple 2021** and can be reached by `with(MultivariatePowerSeries)` command in Maple. 
 However, for those using older versions of Maple, there is another way to install this manually as follows:
 1. Clone or Download this repository 
-2. Go to the repository folder (e.g. `cd ./MultivariatePowerSeries`)
-3. Run `make` in your terminal (e.g. `make`)
+2. Go to the repository folder (i.e. `cd ./MultivariatePowerSeries`)
+3. Run `make` in your terminal
 4. Add `libname :=  "/package/address", libname:` to `~/.mapleinit`
 
 A successful installation creates a new file `MultivariatePowerSeries.mla` at the same directory. 
