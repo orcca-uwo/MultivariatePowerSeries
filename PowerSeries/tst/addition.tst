@@ -18,16 +18,16 @@ Try[testnoerror]("test 7", PSO:-Truncate(psQ), 'assign'='q');
 
 # Test Add
 Try[testnoerror]("test 8", PSO:-BinaryAdd(psZero, psZero), 'assign'='psAdd');
-Try("test 9", PSO:-ApproximatelyZero(psAdd), true);
+Try("test 9", PSO:-ApproximatelyZero(psAdd, 'force'), true);
 
 Try[testnoerror]("test 10", PSO:-BinaryAdd(psOne, psZero), 'assign'='psAdd');
-Try("test 11", PSO:-ApproximatelyZero(psAdd), false);
+Try("test 11", PSO:-ApproximatelyZero(psAdd, 'force'), false);
 Try("test 12", PSO:-HomogeneousPart(psAdd, 0), 1);
 Try("test 13", PSO:-HomogeneousPart(psAdd, 1), 0);
 Try("test 14", PSO:-HomogeneousPart(psAdd, 10), 0);
 
 Try[testnoerror]("test 15", PSO:-BinaryAdd(psZero, psOne), 'assign'='psAdd');
-Try("test 16", PSO:-ApproximatelyZero(psAdd), false);
+Try("test 16", PSO:-ApproximatelyZero(psAdd, 'force'), false);
 Try("test 17", PSO:-HomogeneousPart(psAdd, 0), 1);
 Try("test 18", PSO:-HomogeneousPart(psAdd, 1), 0);
 Try("test 19", PSO:-HomogeneousPart(psAdd, 10), 0);
@@ -46,7 +46,7 @@ Try("test 28", evalb(ppq = expand(pp + q)), true);
 
 # Test Algebraic
 Try[testnoerror]("test 29", PSO:-BinaryAdd(PSO:-Constant(RootOf(z^2 + 1)), PSO:-Constant(RootOf(z^2 + 1))), 'assign'='psAddAlg');
-Try("test 30", PSO:-ApproximatelyZero(psAddAlg), false);
+Try("test 30", PSO:-ApproximatelyZero(psAddAlg, 'force'), false);
 Try("test 31", PSO:-HomogeneousPart(psAddAlg, 0), 2*RootOf(z^2+1) );
 Try("test 32", PSO:-HomogeneousPart(psAddAlg, 1), 0);
 
@@ -79,7 +79,7 @@ Try("test 50", evalb(neg = 0), true);
 
 # Test Algebraic
 Try[testnoerror]("test 51", PSO:-BinaryAdd(PSO:-Constant(RootOf(z^2 + 1)), PSO:-Negate(PSO:-Constant(RootOf(z^2 + 1)))), 'assign'='psAddAlg');
-Try("test 52", PSO:-ApproximatelyZero(psAddAlg), true);
+Try("test 52", PSO:-ApproximatelyZero(psAddAlg, 'force'), true);
 Try("test 53", PSO:-HomogeneousPart(psAddAlg, 0), 0);
 Try("test 54", PSO:-HomogeneousPart(psAddAlg, 1), 0);
 
@@ -96,16 +96,16 @@ Try[testnoerror]("test 61", Truncate(psQ), 'assign'='q');
 
 # Test Add
 Try[testnoerror]("test 62",  Add(psZero, psZero), 'assign'='psAdd');
-Try("test 63",  ApproximatelyZero(psAdd), true);
+Try("test 63",  ApproximatelyZero(psAdd, 'force'), true);
 
 Try[testnoerror]("test 64",  Add(psOne, psZero), 'assign'='psAdd');
-Try("test 65",  ApproximatelyZero(psAdd), false);
+Try("test 65",  ApproximatelyZero(psAdd, 'force'), false);
 Try("test 66",  HomogeneousPart(psAdd, 0), 1);
 Try("test 67",  HomogeneousPart(psAdd, 1), 0);
 Try("test 68",  HomogeneousPart(psAdd, 10), 0);
 
 Try[testnoerror]("test 69",  Add(psZero, psOne), 'assign'='psAdd');
-Try("test 70",  ApproximatelyZero(psAdd), false);
+Try("test 70",  ApproximatelyZero(psAdd, 'force'), false);
 Try("test 71",  HomogeneousPart(psAdd, 0), 1);
 Try("test 72",  HomogeneousPart(psAdd, 1), 0);
 Try("test 73",  HomogeneousPart(psAdd, 10), 0);
@@ -124,7 +124,7 @@ Try("test 82", evalb(ppq = expand(pp + q)), true);
 
 # Test Algebraic
 Try[testnoerror]("test 83",  Add(PowerSeries(RootOf(z^2 + 1)), PowerSeries(RootOf(z^2 + 1))), 'assign'='psAddAlg');
-Try("test 84",  ApproximatelyZero(psAddAlg), false);
+Try("test 84",  ApproximatelyZero(psAddAlg, 'force'), false);
 Try("test 85",  HomogeneousPart(psAddAlg, 0), 2*RootOf(z^2+1) );
 Try("test 86",  HomogeneousPart(psAddAlg, 1), 0);
 
@@ -157,7 +157,7 @@ Try("test 104", evalb(neg = 0), true);
 
 # Test Algebraic
 Try[testnoerror]("test 105",  Add(PowerSeries(RootOf(z^2 + 1)),  Negate(PowerSeries(RootOf(z^2 + 1)))), 'assign'='psAddAlg');
-Try("test 106",  ApproximatelyZero(psAddAlg), true);
+Try("test 106",  ApproximatelyZero(psAddAlg, 'force'), true);
 Try("test 107",  HomogeneousPart(psAddAlg, 0), 0);
 Try("test 108",  HomogeneousPart(psAddAlg, 1), 0);
 

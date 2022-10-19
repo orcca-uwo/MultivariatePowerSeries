@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
-##PROCEDURE(help,nospec,label="MultivariatePowerSeries/IsUnit",versionnew="{XENOMORPH}") MultivariatePowerSeries[IsUnit]
-##TITLE(halfline="Determine if a power series of univariate polynomial over power series is a a unit")
+##PROCEDURE(help,nospec,label="MultivariatePowerSeries/IsUnit",versionnew="{XENOMORPH}",versionupdated="{ZONKEY}") MultivariatePowerSeries[IsUnit]
+##TITLE(halfline="determine if a power series or univariate polynomial over power series is a unit")
 ##    MultivariatePowerSeries[IsUnit]
 ##ALIAS IsUnit, MultivariatePowerSeries:-IsUnit, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca
@@ -19,6 +19,7 @@
 ##- The command ~IsUnit(u)~ returns `true` if the univariate polynomial over power series 'u' is invertible, and `false` otherwise.
 ##  A univariate polynomial over power series is invertible if the constant coefficient with respect to its main variable (which
 ##  is a power series) is invertible. To actually compute the inverse, you need to convert 'u' to a "PowerSeries" first.
+##INCLUDE compatibility_warning.mi
 ##
 ##INCLUDE assignment_warning.mi
 ##

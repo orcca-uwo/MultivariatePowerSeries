@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet>
+<Version major="2023" minor="0" mpldoc="1600261,Negate.md"/>
+<Label-Scheme value="1"/>
+<View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false"><Hide name="Table Borders"/><Hide name="Group Range"/></View-Properties>
+<MapleNet-Properties elisiondigitsbefore="100" labelling="true" indentamount="4" elisiontermsthreshold="10000" ansi="false" errorbreak="1" useclientjvm="true" echo="1" imaginaryunit="I" labelwidth="20" plotdriver="openviz" elisiondigitsafter="100" plotoutput="terminal" rtablesize="10" elisiontermsbefore="100" elisiondigitsthreshold="10000" typesetting="standard" plotdevice="inline" verboseproc="1" showassumed="1" errorcursor="false" longdelim="true" plotoptions="" quiet="false" elisiontermsafter="100" screenwidth="79" preplot="" prettyprint="3" displayprecision="-1" warnlevel="3" screenheight="25" latexwidth="6.0" postplot="" prompt="&gt; " ShowLabels="true" scientificx="true"/>
+<Styles><Font name="Ordered List 1" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Text" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 2" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 3" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 4" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 5" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Author" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Title" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Caption Reference" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input Placeholder" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[200,0,200]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="true"/>
+<Font name="Maple Plot" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Code" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[255,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Line Printed Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Diagnostic" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[40,120,40]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Inert Output" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[144,144,144]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Normal" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Hyperlink" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[18,93,153]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Maple Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Dash Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Math" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[120,0,14]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Input" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkError" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[171,41,204]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Header and Footer" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Error" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[171,41,204]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Title" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Bullet Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 4" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Equation Label" background="[255,255,255]" bold="true" executable="false" family="Monospaced" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 3" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="14" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 2" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="16" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkWarning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Dictionary Hyperlink" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[147,0,15]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Caption Text" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="List Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Help Maple Name" background="[255,255,255]" bold="false" executable="false" family="DejaVu Serif" foreground="[120,0,120]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Help Normal" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Halfline" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Calling Sequence" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Help Fixed" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Layout name="Ordered List 1" alignment="left" bullet="numeric" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 2" alignment="left" bullet="alphabetic" firstindent="0" leftmargin="36" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 3" alignment="left" bullet="roman" firstindent="0" leftmargin="72" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 4" alignment="left" bullet="ALPHABETIC" firstindent="0" leftmargin="108" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 5" alignment="left" bullet="ROMAN" firstindent="0" leftmargin="144" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Author" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Warning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Annotation Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Plot" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Line Printed Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Text Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="newline" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Diagnostic" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Normal" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Output" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.3" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Dash Item" alignment="left" bullet="dash" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkError" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Error" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 1" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="4" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Bullet Item" alignment="left" bullet="dot" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 4" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 3" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkWarning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 2" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="16" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="List Item" alignment="left" bullet="indent" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Pencil-style name="Pencil 5" pen-color="[255,0,0]" pen-height="5.0" pen-width="5.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 4" pen-color="[0,0,255]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 3" pen-color="[0,0,0]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 2" pen-color="[0,0,255]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 1" pen-color="[0,0,0]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Highlighter-style name="Highlighter 2" pen-color="[255,204,0]" pen-height="14.0" pen-width="14.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 1" pen-color="[255,153,255]" pen-height="12.0" pen-width="8.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 4" pen-color="[0,255,255]" pen-height="32.0" pen-width="32.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
+</Styles>
+<Metadata-table>
+    <Metadata-category name="&lt;default&gt;">
+    </Metadata-category>
+    <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
+        <Metadata-attribute name="Active" value="false"/>
+        <Metadata-attribute name="Topic" value="MultivariatePowerSeries[Negate]"/>
+        <Metadata-attribute name="Alias" value="MultivariatePowerSeries[Negate],Negate,MultivariatePowerSeries:-Negate,MultivariatePowerSeries"/>
+        <Metadata-attribute name="Keyword" value="Multivariate,Power,Negate,MultivariatePowerSeries[Negate],Series,negate a power series or a Puiseux series or a univariate polynomial over power series"/>
+    </Metadata-tag>
+</Metadata-table>
+<Text-field layout="Heading 1" style="Text"><Font style="Title">MultivariatePowerSeries[Negate]</Font> - <Font style="Halfline">negate a power series or a Puiseux series or a univariate polynomial over power series</Font></Text-field>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="usage">Calling Sequence</Text-field></Title>
+<Text-field style="Calling Sequence" layout="Normal">-<Font style="Help Maple Name">p</Font></Text-field>
+<Text-field style="Calling Sequence" layout="Normal">Negate(<Font style="Help Maple Name">p</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">-<Font style="Help Maple Name">u</Font></Text-field>
+<Text-field style="Calling Sequence" layout="Normal">Negate(<Font style="Help Maple Name">u</Font>)</Text-field>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2">Parameters</Text-field></Title><Table width="100%" exterior="none"><Table-Column separator="false" weight="37"/><Table-Column separator="false" weight="25"/><Table-Column separator="false" weight="688"/><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">p</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">power series generated by this package</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">u</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">univariate polynomial over power series generated by this package</Text-field></Table-Cell></Table-Row></Table>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="info">Description</Text-field></Title>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The commands <Font style="Help Maple Name">-p</Font> and <Font style="Help Maple Name">Negate(p)</Font> return the additive inverse of the power series <Font style="Help Maple Name">p</Font>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The commands <Font style="Help Maple Name">-u</Font> and <Font style="Help Maple Name">Negate(u)</Font> return the additive inverse of the univariate polynomial over power series <Font style="Help Maple Name">u</Font>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">When using the <Font style="Help Maple Name">MultivariatePowerSeries</Font> package, do not assign anything to the variables occurring in the power series and univariate polynomials over power series. If you do, you may see invalid results.</Text-field>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="examples">Examples</Text-field></Title>
+<Group drawlabel="true" labelreference="L11">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">with(MultivariatePowerSeries):</Text-field>
+</Input>
+</Group>
+<Text-field style="Text" layout="Normal">We create a power series and form its additive inverse in two ways.</Text-field>
+<Group drawlabel="true" labelreference="L12">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">a := GeometricSeries([x, y, z]);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImFGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYuLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUkmbWZyYWNHNiRGJS9GJ0YpNiQtRkE2I1EiMUYoLUYjNilGSy1GNDYjUSgmbWludXM7RigtRi42I1EieEYoRlAtRi42I1EieUYoRlAtRi42I1EiekYoLUZBNiNRJH46fkYoRkstRjQ2I1EnJnBsdXM7RihGU0ZpbkZWRmluRllGaW4tRkE2I1EpJmhlbGxpcDtGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiYUc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNi4tSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtSSZtZnJhY0c2JEYoL0YqRis2JC1GNTYjUSIxRiQtRjA2KUY/LUkjbW9HNiRGKC9GKkYrNiNRKCZtaW51cztGJC1JI21pRzYkRigvRipGKzYjUSJ4RiRGRC1GSzYjUSJ5RiRGRC1GSzYjUSJ6RiQtRjU2I1Ekfjp+RiRGPy1GRTYjUScmcGx1cztGJEZKRllGUEZZRlNGWS1GNTYjUSkmaGVsbGlwO0YkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L13">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">b := -a;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImJGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYoLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUYjNiQtRjQ2I1EqJnVtaW51czA7RigtSSZtZnJhY0c2JEYlL0YnRik2JC1GQTYjUSIxRigtRiM2KUZQLUY0NiNRKCZtaW51cztGKC1GLjYjUSJ4RihGVS1GLjYjUSJ5RihGVS1GLjYjUSJ6RigtRkE2I1Ekfjp+RigtRkE2I1ErJnVtaW51czA7MUYoLUY0NiNRJyZwbHVzO0YoLUZBNiNRKSZoZWxsaXA7RigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==">PkkiYkc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNigtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtRjA2JC1JI21vRzYkRigvRipGKzYjUSomdW1pbnVzMDtGJC1JJm1mcmFjRzYkRigvRipGKzYkLUY1NiNRIjFGJC1GMDYpRkctRj02I1EoJm1pbnVzO0YkLUkjbWlHNiRGKC9GKkYrNiNRInhGJEZMLUZQNiNRInlGJEZMLUZQNiNRInpGJC1GNTYjUSR+On5GJC1GNTYjUSsmdW1pbnVzMDsxRiQtRj02I1EnJnBsdXM7RiQtRjU2I1EpJmhlbGxpcDtGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L14">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">c := Negate(a);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImNGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYuLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUYjNiQtRjQ2I1EqJnVtaW51czA7RigtSSZtZnJhY0c2JEYlL0YnRik2JC1GQTYjUSIxRigtRiM2KUZQLUY0NiNRKCZtaW51cztGKC1GLjYjUSJ4RihGVS1GLjYjUSJ5RihGVS1GLjYjUSJ6RigtRkE2I1Ekfjp+RigtRkE2I1ErJnVtaW51czA7MUYoRlVGWEZVRmVuRlVGaG4tRjQ2I1EnJnBsdXM7RigtRkE2I1EpJmhlbGxpcDtGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiY0c2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNi4tSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtRjA2JC1JI21vRzYkRigvRipGKzYjUSomdW1pbnVzMDtGJC1JJm1mcmFjRzYkRigvRipGKzYkLUY1NiNRIjFGJC1GMDYpRkctRj02I1EoJm1pbnVzO0YkLUkjbWlHNiRGKC9GKkYrNiNRInhGJEZMLUZQNiNRInlGJEZMLUZQNiNRInpGJC1GNTYjUSR+On5GJC1GNTYjUSsmdW1pbnVzMDsxRiRGTEZPRkxGVUZMRlgtRj02I1EnJnBsdXM7RiQtRjU2I1EpJmhlbGxpcDtGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">We verify that the results are the same up to homogeneous degree 10.</Text-field>
+<Group drawlabel="true" labelreference="L15">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">ApproximatelyEqual(b, c, 10);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EldHJ1ZUYo">SSV0cnVlR0kqcHJvdGVjdGVkR0Yj</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">We create a univariate polynomial over power series and form its additive inverse.</Text-field>
+<Group drawlabel="true" labelreference="L16">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">f := UnivariatePolynomialOverPowerSeries(z^3 - z^2*x - 2*x*y, z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImZGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYwLUkjbW5HNiRGJS9GJ0YpNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYoLUY6NiMtRiM2Iy1GIzYkLUY0NiNRKiZ1bWludXMwO0YoLUYjNictRkE2I1EiMkYoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ4RihGVC1GLjYjUSJ5RigtRkE2I1EnJnBsdXM7RigtRjo2Iy1GIzYjLUZBNiNRIjBGKEZULUYuNiNRInpGKEZnbi1GOjYjLUYjNiMtRiM2JEZMRldGVC1JJW1zdXBHNiRGJS9GJ0YpNiRGYW9GUUZnbi1GOjYjLUYjNiMtRkE2I1EiMUYoRlQtRltwNiRGYW8tRkE2I1EiM0YoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7Rig=">PkkiZkc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNjAtSSNtbkc2JEYoL0YqRis2I1FIVW5pdmFyaWF0ZVBvbHlub21pYWxPdmVyUG93ZXJTZXJpZXM6fn5+RiQtRiY2Iy1GMDYjLUYwNiQtSSNtb0c2JEYoL0YqRis2I1EqJnVtaW51czA7RiQtRjA2Jy1GNTYjUSIyRiQtRkE2I1ExJkludmlzaWJsZVRpbWVzO0YkLUkjbWlHNiRGKC9GKkYrNiNRInhGJEZLLUZPNiNRInlGJC1GNTYjUScmcGx1cztGJC1GJjYjLUYwNiMtRjU2I1EiMEYkRkstRk82I1EiekYkRlctRiY2Iy1GMDYjLUYwNiRGQEZORkstSSVtc3VwRzYkRigvRipGKzYkRltvRkhGVy1GJjYjLUYwNiMtRjU2I1EiMUYkRkstRmVvNiRGW28tRjU2I1EiM0YkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L17">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">g := -f;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImdGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYwLUkjbW5HNiRGJS9GJ0YpNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYoLUY6NiMtRiM2JS1GQTYjUSIwRigtRjQ2I1EnJnBsdXM7RigtRkE2I1EpJmhlbGxpcDtGKC1GQUZOLUY6NiMtRiM2I0ZKLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ6RihGU0ZGRlgtSSVtc3VwRzYkRiUvRidGKTYkRmVuLUZBNiNRIjJGKEZTLUY6NiMtRiM2Iy1GQTYjUSsmdW1pbnVzMDsxRihGWC1GaW42JEZlbi1GQTYjUSIzRigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==">PkkiZ0c2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNjAtSSNtbkc2JEYoL0YqRis2I1FIVW5pdmFyaWF0ZVBvbHlub21pYWxPdmVyUG93ZXJTZXJpZXM6fn5+RiQtRiY2Iy1GMDYlLUY1NiNRIjBGJC1JI21vRzYkRigvRipGKzYjUScmcGx1cztGJC1GNTYjUSkmaGVsbGlwO0YkLUY1RkUtRiY2Iy1GMDYjRj4tRkI2I1ExJkludmlzaWJsZVRpbWVzO0YkLUkjbWlHNiRGKC9GKkYrNiNRInpGJEZKRjpGTy1JJW1zdXBHNiRGKC9GKkYrNiRGUi1GNTYjUSIyRiRGSi1GJjYjLUYwNiMtRjU2I1ErJnVtaW51czA7MUYkRk8tRlk2JEZSLUY1NiNRIjNGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">The additive inverse of <Equation executable="false" style="2D Math" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiZ0Yo">NiNJImdHNiI=</Equation> should be equal to <Equation executable="false" style="2D Math" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiZkYo">NiNJImZHNiI=</Equation>.</Text-field>
+<Group drawlabel="true" labelreference="L18">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">ApproximatelyEqual(f, Negate(g), 10);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EldHJ1ZUYo">SSV0cnVlR0kqcHJvdGVjdGVkR0Yj</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Now we define a Puiseux series <Font style="Help Maple Name">s</Font> and compute its additive inverse.</Text-field>
+<Group drawlabel="true" labelreference="L19">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">s := PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)]);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRInNGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYoLUkjbW5HNiRGJS9GJ0YpNiNRMlB1aXNldXhTZXJpZXN+b2Z+RigtSSZtZnJhY0c2JEYlL0YnRik2JC1GIzYlLUYjNiUtRi42I1EieEYoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1JJm1zcXJ0RzYkRiUvRidGKTYjLUYuNiNRInlGKC1GNDYjUScmcGx1cztGKC1GRzYkRk9GWi1GIzYnLUZBNiNRIjFGKEZnbkZNRmduRmpuLUZBNiNRJH46fkYoLUZBNiNRIjBGKEZnbi1GQTYjUSkmaGVsbGlwO0YoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7Rig=">Pkkic0c2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNigtSSNtbkc2JEYoL0YqRis2I1EyUHVpc2V1eFNlcmllc35vZn5GJC1JJm1mcmFjRzYkRigvRipGKzYkLUYwNiUtRjA2JS1JI21pRzYkRigvRipGKzYjUSJ4RiQtSSNtb0c2JEYoL0YqRis2I1ExJkludmlzaWJsZVRpbWVzO0YkLUkmbXNxcnRHNiRGKC9GKkYrNiMtRkQ2I1EieUYkLUZKNiNRJyZwbHVzO0YkLUY7NiRGQ0ZULUYwNictRjU2I1EiMUYkRldGQUZXRlotRjU2I1Ekfjp+RiQtRjU2I1EiMEYkRlctRjU2I1EpJmhlbGxpcDtGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L20">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">ns := Negate(s);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRI25zRigtSSNtb0c2JEYlL0YnRik2I1EpJkFzc2lnbjtGKC1JKG1mZW5jZWRHNiRGJS9GJ0YpNiUtRiM2KC1JI21uRzYkRiUvRidGKTYjUTJQdWlzZXV4U2VyaWVzfm9mfkYoLUYjNiQtRjQ2I1EqJnVtaW51czA7RigtSSZtZnJhY0c2JEYlL0YnRik2JC1GIzYlLUYjNiUtRi42I1EieEYoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1JJm1zcXJ0RzYkRiUvRidGKTYjLUYuNiNRInlGKC1GNDYjUScmcGx1cztGKC1GTDYkRlRGaW4tRiM2Jy1GQTYjUSIxRihGXG9GUkZcb0Zfby1GQTYjUSR+On5GKC1GQTYjUSIwRihGXG8tRkE2I1EpJmhlbGxpcDtGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkjbnNHNiItSShtZmVuY2VkRzYkSSpwcm90ZWN0ZWRHRigvSSttb2R1bGVuYW1lR0YkSSxUeXBlc2V0dGluZ0c2JEYoSShfc3lzbGliR0YkNiUtSSVtcm93RzYkRigvRipGKzYoLUkjbW5HNiRGKC9GKkYrNiNRMlB1aXNldXhTZXJpZXN+b2Z+RiQtRjA2JC1JI21vRzYkRigvRipGKzYjUSomdW1pbnVzMDtGJC1JJm1mcmFjRzYkRigvRipGKzYkLUYwNiUtRjA2JS1JI21pRzYkRigvRipGKzYjUSJ4RiQtRj02I1ExJkludmlzaWJsZVRpbWVzO0YkLUkmbXNxcnRHNiRGKC9GKkYrNiMtRkw2I1EieUYkLUY9NiNRJyZwbHVzO0YkLUZDNiRGS0ZZLUYwNictRjU2I1EiMUYkRmZuRklGZm5GaW4tRjU2I1Ekfjp+RiQtRjU2I1EiMEYkRmZuLUY1NiNRKSZoZWxsaXA7RiQvSSVvcGVuR0YkUScmbHNxYjtGJC9JJmNsb3NlR0YkUScmcnNxYjtGJA==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L21">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(s+ns, 20);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkjbW5HNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiMEYo">IiIh</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Finally, we create a univariate polynomial over power series from a list of Puiseux series.</Text-field>
+<Group drawlabel="true" labelreference="L22">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">h := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImhGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzY0LUkjbW5HNiRGJS9GJ0YpNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYoLUY6NiMtRiM2Iy1GQTYjUSIxRigtRkE2I1EnJnBsdXM7RigtRjo2Iy1GIzYjLUZBNiNRIjBGKC1GNDYjUTEmSW52aXNpYmxlVGltZXM7RigtRi42I1EiekYoRk0tRjo2Iy1GIzYjLUklbXN1cEc2JEYlL0YnRik2JC1GLjYjUSJ4RigtSSZtZnJhY0c2JEYlL0YnRik2JUZKLUZBNiNRIjNGKC9JKWJldmVsbGVkR0YoUSV0cnVlRihGVy1GXG82JEZaLUZBNiNRIjJGKEZNLUY6NiMtRiM2Iy1JJm1zcXJ0RzYkRiUvRidGKTYjLUYuNiNRInlGKEZXLUZcbzYkRlpGaG9GTS1GOjYjLUYjNiVGVC1GNEZOLUZBNiNRKSZoZWxsaXA7RihGVy1GXG82JEZaLUZBNiNRIjRGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiaEc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNjQtSSNtbkc2JEYoL0YqRis2I1FIVW5pdmFyaWF0ZVBvbHlub21pYWxPdmVyUG93ZXJTZXJpZXM6fn5+RiQtRiY2Iy1GMDYjLUY1NiNRIjFGJC1GNTYjUScmcGx1cztGJC1GJjYjLUYwNiMtRjU2I1EiMEYkLUkjbW9HNiRGKC9GKkYrNiNRMSZJbnZpc2libGVUaW1lcztGJC1JI21pRzYkRigvRipGKzYjUSJ6RiRGQS1GJjYjLUYwNiMtSSVtc3VwRzYkRigvRipGKzYkLUZSNiNRInhGJC1JJm1mcmFjRzYkRigvRipGKzYlRj4tRjU2I1EiM0YkL0kpYmV2ZWxsZWRHRiRRJXRydWVGJEZLLUZmbjYkRlEtRjU2I1EiMkYkRkEtRiY2Iy1GMDYjLUkmbXNxcnRHNiRGKC9GKkYrNiMtRlI2I1EieUYkRkstRmZuNiRGUUZib0ZBLUYmNiMtRjA2JUZILUZMRkItRjU2I1EpJmhlbGxpcDtGJEZLLUZmbjYkRlEtRjU2I1EiNEYkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">We compute <Font style="Help Maple Name">-h</Font>.</Text-field>
+<Group drawlabel="true" labelreference="L23">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">nh := Negate(h);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRI25oRigtSSNtb0c2JEYlL0YnRik2I1EpJkFzc2lnbjtGKC1JKG1mZW5jZWRHNiRGJS9GJ0YpNiUtRiM2NC1JI21uRzYkRiUvRidGKTYjUUhVbml2YXJpYXRlUG9seW5vbWlhbE92ZXJQb3dlclNlcmllczp+fn5GKC1GOjYjLUYjNiMtRkE2I1ErJnVtaW51czA7MUYoLUZBNiNRJyZwbHVzO0YoLUY6NiMtRiM2Iy1GQTYjUSIwRigtRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoLUYuNiNRInpGKEZNLUY6NiMtRiM2Iy1GIzYkLUY0NiNRKiZ1bWludXMwO0YoLUklbXN1cEc2JEYlL0YnRik2JC1GLjYjUSJ4RigtSSZtZnJhY0c2JEYlL0YnRik2JS1GQTYjUSIxRigtRkE2I1EiM0YoL0kpYmV2ZWxsZWRHRihRJXRydWVGKEZXLUZhbzYkRlotRkE2I1EiMkYoRk0tRjo2Iy1GIzYjLUYjNiRGXW8tSSZtc3FydEc2JEYlL0YnRik2Iy1GLjYjUSJ5RihGVy1GYW82JEZaRmBwRk0tRjo2Iy1GIzYlRlQtRjRGTi1GQTYjUSkmaGVsbGlwO0YoRlctRmFvNiRGWi1GQTYjUSI0RigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==">PkkjbmhHNiItSShtZmVuY2VkRzYkSSpwcm90ZWN0ZWRHRigvSSttb2R1bGVuYW1lR0YkSSxUeXBlc2V0dGluZ0c2JEYoSShfc3lzbGliR0YkNiUtSSVtcm93RzYkRigvRipGKzY0LUkjbW5HNiRGKC9GKkYrNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYkLUYmNiMtRjA2Iy1GNTYjUSsmdW1pbnVzMDsxRiQtRjU2I1EnJnBsdXM7RiQtRiY2Iy1GMDYjLUY1NiNRIjBGJC1JI21vRzYkRigvRipGKzYjUTEmSW52aXNpYmxlVGltZXM7RiQtSSNtaUc2JEYoL0YqRis2I1EiekYkRkEtRiY2Iy1GMDYjLUYwNiQtRkw2I1EqJnVtaW51czA7RiQtSSVtc3VwRzYkRigvRipGKzYkLUZSNiNRInhGJC1JJm1mcmFjRzYkRigvRipGKzYlLUY1NiNRIjFGJC1GNTYjUSIzRiQvSSliZXZlbGxlZEdGJFEldHJ1ZUYkRkstRltvNiRGUS1GNTYjUSIyRiRGQS1GJjYjLUYwNiMtRjA2JEZnbi1JJm1zcXJ0RzYkRigvRipGKzYjLUZSNiNRInlGJEZLLUZbbzYkRlFGam9GQS1GJjYjLUYwNiVGSC1GTEZCLUY1NiNRKSZoZWxsaXA7RiRGSy1GW282JEZRLUY1NiNRIjRGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L24">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(h+nh, 20);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkjbW5HNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiMEYo">IiIh</Equation></Text-field>
+</Output>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="seealso">See Also</Text-field></Title><Text-field style="Text" layout="Normal"><Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[ApproximatelyEqual]"><Font style="Hyperlink">ApproximatelyEqual</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[GeometricSeries]"><Font style="Hyperlink">GeometricSeries</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[Multiply]"><Font style="Hyperlink">Multiply</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[PowerSeries]"><Font style="Hyperlink">PowerSeries</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="MultivariatePowerSeries[PuiseuxSeries]"><Font style="Hyperlink">PuiseuxSeries</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[Subtract]"><Font style="Hyperlink">Subtract</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]"><Font style="Hyperlink">UnivariatePolynomialOverPowerSeries</Font></Hyperlink></Text-field>
+</Section>
+<Section collapsed="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="compatibility">Compatibility</Text-field></Title>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The <Font style="Help Maple Name">MultivariatePowerSeries[Negate]</Font> command was introduced in Maple 2021.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">For more information on Maple 2021 changes, see <Hyperlink linktarget="Help:updates,v2021"><Font style="Hyperlink">Updates in Maple 2021</Font></Hyperlink>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The <Font style="Help Maple Name">MultivariatePowerSeries[Negate]</Font> command was updated in Maple 2023.</Text-field></Section>
+</Worksheet>

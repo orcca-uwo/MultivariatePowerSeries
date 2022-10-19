@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/SumOfAllMonomials",versionnew="{XENOMORPH}") MultivariatePowerSeries[SumOfAllMonomials]
-##TITLE(halfline="Get the power series representing the sum of all monomials over a set of variables")
+##TITLE(halfline="get the power series representing the sum of all monomials over a set of variables")
 ##    MultivariatePowerSeries[SumOfAllMonomials]
 ##ALIAS SumOfAllMonomials, MultivariatePowerSeries:-SumOfAllMonomials, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca

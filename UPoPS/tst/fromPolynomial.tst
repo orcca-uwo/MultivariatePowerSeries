@@ -8,10 +8,10 @@ kernelopts(opaquemodules=true):
 
 # Test (From/To)Polynomial
 Try("test 1", UPoPSObject:-Degree(UPoPSObject:-FromPolynomial(0, 'x')), 0);
-Try("test 2", UPoPSObject:-ApproximatelyEqual(UPoPSObject:-Zero(), UPoPSObject:-FromPolynomial(0, 'x')), true);
+Try("test 2", UPoPSObject:-ApproximatelyEqual(UPoPSObject:-Zero(), UPoPSObject:-FromPolynomial(0, 'x'), ':-force'), true);
 
 Try("test 3", UPoPSObject:-Degree(UPoPSObject:-FromPolynomial(1, 'x')), 0);
-Try("test 4", UPoPSObject:-ApproximatelyEqual(UPoPSObject:-One(), UPoPSObject:-FromPolynomial(1, 'x')), true);
+Try("test 4", UPoPSObject:-ApproximatelyEqual(UPoPSObject:-One(), UPoPSObject:-FromPolynomial(1, 'x'), ':-force'), true);
 
 Try[testnoerror]("test 5", UPoPSObject:-FromPolynomial(13*x^10*z + 2*x*y + 2*x + 1, 'x'), 'assign'='upP');
 Try[testnoerror]("test 6", UPoPSObject:-Truncate(upP), 'assign'='p');
@@ -33,10 +33,10 @@ Try("test 16", evalb(expand(q) = 2*x*y + 13*z + 1), true);
 ####################################################################
 
 Try("test 17", Degree(UnivariatePolynomialOverPowerSeries(0, 'x')), 0);
-Try("test 18", ApproximatelyEqual(UnivariatePolynomialOverPowerSeries(0), UnivariatePolynomialOverPowerSeries(0, 'x')), true);
+Try("test 18", ApproximatelyEqual(UnivariatePolynomialOverPowerSeries(0), UnivariatePolynomialOverPowerSeries(0, 'x'), ':-force'), true);
 
 Try("test 19", Degree(UnivariatePolynomialOverPowerSeries(1, 'x')), 0);
-Try("test 20", ApproximatelyEqual(UnivariatePolynomialOverPowerSeries(1), UnivariatePolynomialOverPowerSeries(1, 'x')), true);
+Try("test 20", ApproximatelyEqual(UnivariatePolynomialOverPowerSeries(1), UnivariatePolynomialOverPowerSeries(1, 'x'), ':-force'), true);
 
 Try[testnoerror]("test 21", UnivariatePolynomialOverPowerSeries(13*x^10*z + 2*x*y + 2*x + 1, 'x'), 'assign'='upP');
 Try[testnoerror]("test 22", Truncate(upP), 'assign'='p');

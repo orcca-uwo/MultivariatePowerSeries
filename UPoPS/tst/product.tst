@@ -48,8 +48,8 @@ Try[testnoerror]("test 25", Truncate(upProd, 10), 'assign'='prod');
 Try("test 26", evalb(prod = p), true);
 
 Try[testnoerror]("test 27", MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeries, 'assign'='UPoPS');
-Try("test 28", ApproximatelyEqual(Multiply(UPoPS(1), UPoPS(2), UPoPS(3), UPoPS(4), UPoPS(x, x), UPoPS(y, x)), UPoPS(24*x*y, x), 20), true);
-Try("test 29", ApproximatelyEqual(Multiply(UPoPS(1), UPoPS(1)), UPoPS(1), 1), true);
-Try("test 30", ApproximatelyEqual(Multiply(UPoPS(1), UPoPS(2)), UPoPS(2), 1), true);
+Try("test 28", ApproximatelyEqual(Multiply(UPoPS(1), UPoPS(2), UPoPS(3), UPoPS(4), UPoPS(x, x), UPoPS(y, x)), UPoPS(24*x*y, x), 20, ':-force'), true);
+Try("test 29", ApproximatelyEqual(Multiply(UPoPS(1), UPoPS(1)), UPoPS(1), 1, ':-force'), true);
+Try("test 30", ApproximatelyEqual(Multiply(UPoPS(1), UPoPS(2)), UPoPS(2), 1, ':-force'), true);
 
 #end test

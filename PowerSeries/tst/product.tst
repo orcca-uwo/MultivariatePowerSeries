@@ -17,11 +17,11 @@ Try[testnoerror]("test 6", PSO:-Truncate(psQ), 'assign'='q');
 
 # Test Product
 Try[testnoerror]("test 7", PSO:-BinaryMultiply(psOne, psZero), 'assign'='psProd');
-Try("test 8", PSO:-ApproximatelyZero(psProd), true);
+Try("test 8", PSO:-ApproximatelyZero(psProd, 'force'), true);
 Try("test 9", PSO:-HomogeneousPart(psProd, 1), 0);
 
 Try[testnoerror]("test 10", PSO:-BinaryMultiply(psZero, psP), 'assign'='psProd');
-Try("test 11", PSO:-ApproximatelyZero(psProd), true);
+Try("test 11", PSO:-ApproximatelyZero(psProd, 'force'), true);
 Try("test 12", PSO:-HomogeneousPart(psProd, 1), 0);
 
 Try[testnoerror]("test 13", PSO:-BinaryMultiply(psQ, psP), 'assign'='psProd');
@@ -43,7 +43,7 @@ Try[testnoerror]("test 23", PSO:-Truncate(psAlg2), 'assign'='alg2');
 Try("test 24", evalb( alg2 = RootOf(_Z^2 + 1)*sqrt(2)*x^2 + sqrt(3)*x + x*y + RootOf(_Z^2 + 1) ), true);
 
 Try[testnoerror]("test 25", PSO:-BinaryMultiply(psAlg1, psAlg2), 'assign'='psProd');
-Try("test 26", PSO:-ApproximatelyZero(psProd), false);
+Try("test 26", PSO:-ApproximatelyZero(psProd, 'force'), false);
 Try("test 27", PSO:-HomogeneousPart(psProd, 0), -1);
 Try("test 28", PSO:-HomogeneousPart(psProd, 1), RootOf(_Z^2+1)*RootOf(_Z^2-3,index = 1)*x-x*RootOf(_Z^2+1));
 Try("test 29", PSO:-HomogeneousPart(psProd, 2), -x^2*RootOf(_Z^2-2,index = 1)-x^2*RootOf(_Z^2-3,index = 1)+RootOf(_Z^2+1)*x*y);
@@ -63,11 +63,11 @@ Try[testnoerror]("test 4.41", Truncate(psQ), 'assign'='q');
 
 # Test Product
 Try[testnoerror]("test 11.0", Multiply(psOne, psZero), 'assign'='psProd');
-Try("test 11.1", ApproximatelyZero(psProd), true);
+Try("test 11.1", ApproximatelyZero(psProd, 'force'), true);
 Try("test 11.2", HomogeneousPart(psProd, 1), 0);
 
 Try[testnoerror]("test 11.3", Multiply(psZero, psP), 'assign'='psProd');
-Try("test 11.4", ApproximatelyZero(psProd), true);
+Try("test 11.4", ApproximatelyZero(psProd, 'force'), true);
 Try("test 11.5", HomogeneousPart(psProd, 1), 0);
 
 Try[testnoerror]("test 11.6", Multiply(psQ, psP), 'assign'='psProd');
@@ -89,7 +89,7 @@ Try[testnoerror]("test 11.15", Truncate(psAlg2), 'assign'='alg2');
 Try("test 11.16", evalb( alg2 = RootOf(_Z^2 + 1)*sqrt(2)*x^2 + sqrt(3)*x + x*y + RootOf(_Z^2 + 1) ), true);
 
 Try[testnoerror]("test 11.17", BinaryMultiply(psAlg1, psAlg2), 'assign'='psProd');
-Try("test 11.18", ApproximatelyZero(psProd), false);
+Try("test 11.18", ApproximatelyZero(psProd, 'force'), false);
 Try("test 11.20", HomogeneousPart(psProd, 0), -1);
 Try("test 11.21", HomogeneousPart(psProd, 1), RootOf(_Z^2+1)*RootOf(_Z^2-3,index = 1)*x-x*RootOf(_Z^2+1));
 Try("test 11.22", HomogeneousPart(psProd, 2), -x^2*RootOf(_Z^2-2,index = 1)-x^2*RootOf(_Z^2-3,index = 1)+RootOf(_Z^2+1)*x*y);

@@ -8,6 +8,11 @@
 export 
     EvaluateAtOrigin ::static := proc(up :: UnivariatePolynomialOverPowerSeriesObject, $)
         # _Z shouldn't be documented 
+        if up:-IsPuSOUPoP(up)=true then
+            error "invalid input for the EvaluateAtOrigin function %1 must "
+                "have power series coefficients.", up;
+        end if;
+
         local x := ifelse(up:-vname <> undefined, up:-vname, '_Z');
         local i;
         return add(seq(PowerSeriesObject:-HomogeneousPart(up:-upoly[i], 0)*x^i, i = 0 .. DEGREE(up)));
@@ -69,9 +74,14 @@ export
                                       {returnleadingcoefficient :: {truefalse, identical(automatic)}
                                        := ':-automatic'},
                                       $)
+        if _up:-IsPuSOUPoP(_up)=true then
+            error "invalid input for the HenselFactorize function %1 must "
+                "have power series coefficients.", _up;
+        end if;
+
         local up, extra_factors;
         up, extra_factors := make_monic(_up, _options['returnleadingcoefficient']);
-
+        
         if DEGREE(up) = 0 then
             return extra_factors;
         end if;

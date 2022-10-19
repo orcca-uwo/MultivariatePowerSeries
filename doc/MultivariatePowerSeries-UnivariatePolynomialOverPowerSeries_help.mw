@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet>
+<Version major="2023" minor="0" mpldoc="1600261,UnivariatePolynomialOverPowerSeries.md"/>
+<Label-Scheme value="1"/>
+<View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false"><Hide name="Table Borders"/><Hide name="Group Range"/></View-Properties>
+<MapleNet-Properties elisiondigitsbefore="100" labelling="true" indentamount="4" elisiontermsthreshold="10000" ansi="false" errorbreak="1" useclientjvm="true" echo="1" imaginaryunit="I" labelwidth="20" plotdriver="openviz" elisiondigitsafter="100" plotoutput="terminal" rtablesize="10" elisiontermsbefore="100" elisiondigitsthreshold="10000" typesetting="standard" plotdevice="inline" verboseproc="1" showassumed="1" errorcursor="false" longdelim="true" plotoptions="" quiet="false" elisiontermsafter="100" screenwidth="79" preplot="" prettyprint="3" displayprecision="-1" warnlevel="3" screenheight="25" latexwidth="6.0" postplot="" prompt="&gt; " ShowLabels="true" scientificx="true"/>
+<Styles><Font name="Ordered List 1" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Text" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 2" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 3" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 4" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 5" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Author" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Title" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Caption Reference" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input Placeholder" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[200,0,200]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="true"/>
+<Font name="Maple Plot" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Code" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[255,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Line Printed Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Diagnostic" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[40,120,40]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Inert Output" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[144,144,144]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Normal" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Hyperlink" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[18,93,153]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Maple Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Dash Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Math" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[120,0,14]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Input" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkError" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[171,41,204]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Header and Footer" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Error" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[171,41,204]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Title" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Bullet Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 4" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Equation Label" background="[255,255,255]" bold="true" executable="false" family="Monospaced" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 3" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="14" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 2" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="16" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkWarning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Dictionary Hyperlink" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[147,0,15]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Caption Text" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="List Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Help Maple Name" background="[255,255,255]" bold="false" executable="false" family="DejaVu Serif" foreground="[120,0,120]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Help Normal" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Halfline" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Calling Sequence" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Help Fixed" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Layout name="Ordered List 1" alignment="left" bullet="numeric" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 2" alignment="left" bullet="alphabetic" firstindent="0" leftmargin="36" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 3" alignment="left" bullet="roman" firstindent="0" leftmargin="72" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 4" alignment="left" bullet="ALPHABETIC" firstindent="0" leftmargin="108" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 5" alignment="left" bullet="ROMAN" firstindent="0" leftmargin="144" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Author" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Warning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Annotation Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Plot" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Line Printed Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Text Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="newline" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Diagnostic" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Normal" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Output" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.3" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Dash Item" alignment="left" bullet="dash" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkError" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Error" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 1" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="4" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Bullet Item" alignment="left" bullet="dot" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 4" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 3" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkWarning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 2" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="16" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="List Item" alignment="left" bullet="indent" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Pencil-style name="Pencil 5" pen-color="[255,0,0]" pen-height="5.0" pen-width="5.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 4" pen-color="[0,0,255]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 3" pen-color="[0,0,0]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 2" pen-color="[0,0,255]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 1" pen-color="[0,0,0]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Highlighter-style name="Highlighter 2" pen-color="[255,204,0]" pen-height="14.0" pen-width="14.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 1" pen-color="[255,153,255]" pen-height="12.0" pen-width="8.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 4" pen-color="[0,255,255]" pen-height="32.0" pen-width="32.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
+</Styles>
+<Metadata-table>
+    <Metadata-category name="&lt;default&gt;">
+    </Metadata-category>
+    <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
+        <Metadata-attribute name="Active" value="false"/>
+        <Metadata-attribute name="Topic" value="MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]"/>
+        <Metadata-attribute name="Alias" value="MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries],UnivariatePolynomialOverPowerSeries,MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeries,MultivariatePowerSeries"/>
+        <Metadata-attribute name="Keyword" value="create a univariate polynomial over power series or Puiseux series,Power,Univariate,MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries],Multivariate,Over,Series,Polynomial"/>
+    </Metadata-tag>
+</Metadata-table>
+<Text-field layout="Heading 1" style="Text"><Font style="Title">MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]</Font> - <Font style="Halfline">create a univariate polynomial over power series or Puiseux series</Font></Text-field>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="usage">Calling Sequence</Text-field></Title>
+<Text-field style="Calling Sequence" layout="Normal">UnivariatePolynomialOverPowerSeries(<Font style="Help Maple Name">lp</Font>, <Font style="Help Maple Name">v</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">UnivariatePolynomialOverPowerSeries(<Font style="Help Maple Name">p</Font>, <Font style="Help Maple Name">v</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">UnivariatePolynomialOverPowerSeries(<Font style="Help Maple Name">r</Font>, <Font style="Help Maple Name">v</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">UnivariatePolynomialOverPowerSeries(<Font style="Help Maple Name">ps</Font>, <Font style="Help Maple Name">v</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">UnivariatePolynomialOverPowerSeries(<Font style="Help Maple Name">u</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">UnivariatePolynomialOverPowerSeries(<Font style="Help Maple Name">u</Font>, <Font style="Help Maple Name">v</Font>)</Text-field>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2">Parameters</Text-field></Title><Table width="100%" exterior="none"><Table-Column separator="false" weight="45"/><Table-Column separator="false" weight="25"/><Table-Column separator="false" weight="680"/><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">lp</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">list, Array, or Vector of power series or Puiseux series generated by this package</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">v</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">variable </Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">p</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">polynomial</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">r</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">rational function where <Font style="Help Maple Name">v</Font> doesn't occur in the denominator</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">ps</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">power series generated by this package</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">u</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">univariate polynomial over power series generated by this package</Text-field></Table-Cell></Table-Row></Table>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="info">Description</Text-field></Title>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">UnivariatePolynomialOverPowerSeries(lp, v)</Font> creates a univariate polynomial over power series with main variable <Font style="Help Maple Name">v</Font> and with coefficients that are power series or Puiseux series from <Font style="Help Maple Name">lp</Font>. The degree of the resulting polynomial is equal to the length of <Font style="Help Maple Name">lp</Font> minus one. The coefficient of <Font style="Help Maple Name">v^(i-1)</Font> is the <Font style="Help Maple Name">i</Font>-th element of <Font style="Help Maple Name">lp</Font>. In particular, the first element of <Font style="Help Maple Name">lp</Font> is the constant coefficient. The main variable, <Font style="Help Maple Name">v</Font>, cannot occur in any of the power series in <Font style="Help Maple Name">lp</Font>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequences <Font style="Help Maple Name">UnivariatePolynomialOverPowerSeries(p, v)</Font> and <Font style="Help Maple Name">UnivariatePolynomialOverPowerSeries(r, v)</Font> create univariate polynomials with power series or Puiseux series coefficients. The former returns the same result as <Font style="Help Maple Name">UnivariatePolynomialOverPowerSeries(lp, v)</Font> where <Font style="Help Maple Name">lp := [seq(PowerSeries(coeff(p,v,i)),i=0..degree(p,v))]</Font> or <Font style="Help Maple Name">lp := [seq(PowerSeries(coeff(p,v,i)),i=0..degree(p,v))]</Font>. For the latter, <Font style="Help Maple Name">r</Font> is a rational function where <Font style="Help Maple Name">v</Font> only occurs in the numerator; that is, it is a polynomial in <Font style="Help Maple Name">v</Font>. Hence, the <Font style="Help Maple Name">i</Font>th coefficient of <Font style="Help Maple Name">r</Font> with respect to <Font style="Help Maple Name">v</Font> is well-defined, and indeed we can define the result very similarly: that calling sequence returns the same result as <Font style="Help Maple Name">UnivariatePolynomialOverPowerSeries(lp, v)</Font> where <Font style="Help Maple Name">lp := [seq(PowerSeries(coeff(r,v,i)),i=0..degree(r,v))]</Font> or <Font style="Help Maple Name">lp := [seq(PowerSeries(coeff(p,v,i)),i=0..degree(p,v))]</Font>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">UnivariatePolynomialOverPowerSeries(ps, v)</Font> creates a univariate polynomial over power series representing <Font style="Help Maple Name">ps</Font>, with <Font style="Help Maple Name">v</Font> as its main variable. This is only possible if <Font style="Help Maple Name">ps</Font> is known to be a polynomial function of <Font style="Help Maple Name">v</Font>, which is the case if it is independent of <Font style="Help Maple Name">v</Font> (in which case it is trivially polynomial) or if the analytic expression for <Font style="Help Maple Name">ps</Font> is known and it is polynomial in <Font style="Help Maple Name">v</Font>. If neither of the former two cases is true, then an error is raised.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">UnivariatePolynomialOverPowerSeries(u, v)</Font> copies <Font style="Help Maple Name">u</Font>. You may omit <Font style="Help Maple Name">v</Font> in this case, but if you specify it, it must be equal to the main variable of <Font style="Help Maple Name">u</Font>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">When using the <Font style="Help Maple Name">MultivariatePowerSeries</Font> package, do not assign anything to the variables occurring in the power series and univariate polynomials over power series. If you do, you may see invalid results.</Text-field>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="examples">Examples</Text-field></Title>
+<Group drawlabel="true" labelreference="L11">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">with(MultivariatePowerSeries):</Text-field>
+</Input>
+</Group>
+<Text-field style="Text" layout="Normal">Create a univariate polynomial over power series from a list of power series.</Text-field>
+<Group drawlabel="true" labelreference="L12">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">f := UnivariatePolynomialOverPowerSeries([PowerSeries(1), PowerSeries(0), PowerSeries(x), PowerSeries(y), 1/PowerSeries(1+x+y)], z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImZGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzY0LUkjbW5HNiRGJS9GJ0YpNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYoLUY6NiMtRiM2Iy1GQTYjUSIxRigtRkE2I1EnJnBsdXM7RigtRjo2Iy1GIzYjLUZBNiNRIjBGKC1GNDYjUTEmSW52aXNpYmxlVGltZXM7RigtRi42I1EiekYoRk0tRjo2Iy1GIzYjLUYuNiNRInhGKEZXLUklbXN1cEc2JEYlL0YnRik2JEZaLUZBNiNRIjJGKEZNLUY6NiMtRiM2Iy1GLjYjUSJ5RihGVy1GX282JEZaLUZBNiNRIjNGKEZNLUY6NiMtRiM2JUZKLUY0Rk4tRkE2I1EpJmhlbGxpcDtGKEZXLUZfbzYkRlotRkE2I1EiNEYoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7Rig=">PkkiZkc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNjQtSSNtbkc2JEYoL0YqRis2I1FIVW5pdmFyaWF0ZVBvbHlub21pYWxPdmVyUG93ZXJTZXJpZXM6fn5+RiQtRiY2Iy1GMDYjLUY1NiNRIjFGJC1GNTYjUScmcGx1cztGJC1GJjYjLUYwNiMtRjU2I1EiMEYkLUkjbW9HNiRGKC9GKkYrNiNRMSZJbnZpc2libGVUaW1lcztGJC1JI21pRzYkRigvRipGKzYjUSJ6RiRGQS1GJjYjLUYwNiMtRlI2I1EieEYkRkstSSVtc3VwRzYkRigvRipGKzYkRlEtRjU2I1EiMkYkRkEtRiY2Iy1GMDYjLUZSNiNRInlGJEZLLUZpbjYkRlEtRjU2I1EiM0YkRkEtRiY2Iy1GMDYlRj4tRkxGQi1GNTYjUSkmaGVsbGlwO0YkRkstRmluNiRGUS1GNTYjUSI0RiQvSSVvcGVuR0YkUScmbHNxYjtGJC9JJmNsb3NlR0YkUScmcnNxYjtGJA==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L13">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Degree(f);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkjbW5HNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiNEYo">IiIl</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L14">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">[seq(GetCoefficient(f,i),i=0..4)];</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYpLUYjNiUtSSVtcm93RzYkRiUvRidGKTYkLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzOn5+fkYoLUY1NiNRIjFGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0YoLUYjNiUtRjA2JEY0LUY1NiNRIjBGKEY9RkAtRiM2JS1GMDYkRjQtSSNtaUc2JEYlL0YnRik2I1EieEYoRj1GQC1GIzYlLUYwNiRGNC1GTzYjUSJ5RihGPUZALUYjNiUtRjA2KC1GNTYjUTBQb3dlclNlcmllc35vZn5GKC1JJm1mcmFjRzYkRiUvRidGKTYkRjotRjA2J0Y6LUkjbW9HNiRGJS9GJ0YpNiNRJyZwbHVzO0YoRk5GY29GWC1GNTYjUSR+On5GKEY6RmNvLUY1NiNRKSZoZWxsaXA7RihGPUZARj1GQA==">NyctSShtZmVuY2VkRzYkSSpwcm90ZWN0ZWRHRiYvSSttb2R1bGVuYW1lRzYiSSxUeXBlc2V0dGluZ0c2JEYmSShfc3lzbGliR0YpNiUtSSVtcm93RzYkRiYvRihGKjYkLUkjbW5HNiRGJi9GKEYqNiNRMFBvd2VyU2VyaWVzOn5+fkYpLUY0NiNRIjFGKS9JJW9wZW5HRilRJyZsc3FiO0YpL0kmY2xvc2VHRilRJyZyc3FiO0YpLUYkNiUtRi82JEYzLUY0NiNRIjBGKUY8Rj8tRiQ2JS1GLzYkRjMtSSNtaUc2JEYmL0YoRio2I1EieEYpRjxGPy1GJDYlLUYvNiRGMy1GTjYjUSJ5RilGPEY/LUYkNiUtRi82KC1GNDYjUTBQb3dlclNlcmllc35vZn5GKS1JJm1mcmFjRzYkRiYvRihGKjYkRjktRi82J0Y5LUkjbW9HNiRGJi9GKEYqNiNRJyZwbHVzO0YpRk1GYm9GVy1GNDYjUSR+On5GKUY5RmJvLUY0NiNRKSZoZWxsaXA7RilGPEY/</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">We compute its linear and quadratic truncation. These are defined in terms of the homogeneous degree of the coefficients, ignoring the degree in the main variable.</Text-field>
+<Group drawlabel="true" labelreference="L15">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(f, 1);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYpLUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1GIzYlLUkobWZlbmNlZEc2JEYlL0YnRik2Iy1GIzYnRi0tRjQ2I1EoJm1pbnVzO0YoLUkjbWlHNiRGJS9GJ0YpNiNRInhGKEZCLUZGNiNRInlGKC1GNDYjUTEmSW52aXNpYmxlVGltZXM7RigtSSVtc3VwRzYkRiUvRidGKTYkLUZGNiNRInpGKC1GLjYjUSI0RihGMy1GIzYlRktGTi1GUjYkRlYtRi42I1EiM0YoRjMtRiM2JUZFRk4tRlI2JEZWLUYuNiNRIjJGKA==">LCoiIiJGIyomLChGI0YjSSJ4RzYiISIiSSJ5R0YnRihGI0kiekdGJyIiJUYjKiZGKUYjRioiIiRGIyomRiZGI0YqIiIjRiM=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L16">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(f, 2);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYpLUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1GIzYlLUkobWZlbmNlZEc2JEYlL0YnRik2Iy1GIzYtLUklbXN1cEc2JEYlL0YnRik2JC1JI21pRzYkRiUvRidGKTYjUSJ4RigtRi42I1EiMkYoRjMtRiM2J0ZNLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKEZHRlItRkg2I1EieUYoRjMtRkM2JEZVRk0tRjQ2I1EoJm1pbnVzO0YoRkdGWkZVRjNGLUZSLUZDNiQtRkg2I1EiekYoLUYuNiNRIjRGKEYzLUYjNiVGVUZSLUZDNiRGaW4tRi42I1EiM0YoRjMtRiM2JUZHRlItRkM2JEZpbkZN">LCoiIiJGIyomLC4qJEkieEc2IiIiI0YjKiZGJ0YjSSJ5R0YoRiNGKSokRitGKUYjRichIiJGK0YtRiNGI0YjSSJ6R0YoIiIlRiMqJkYrRiNGLiIiJEYjKiZGJ0YjRi5GKUYj</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Create a univariate polynomial over power series from a polynomial and a rational function.</Text-field>
+<Group drawlabel="true" labelreference="L17">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">p := (z-1)*(z-2)*(z-3) + x * (z^2 + z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRInBGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUYjNiUtRiM2Jy1JKG1mZW5jZWRHNiRGJS9GJ0YpNiMtRiM2JS1GLjYjUSJ6RigtRjQ2I1EoJm1pbnVzO0YoLUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1GNDYjUTEmSW52aXNpYmxlVGltZXM7RigtRj42Iy1GIzYlRkRGRy1GSzYjUSIyRihGUC1GPjYjLUYjNiVGREZHLUZLNiNRIjNGKC1GNDYjUScmcGx1cztGKC1GIzYlLUYuNiNRInhGKEZQLUY+NiMtRiM2JS1JJW1zdXBHNiRGJS9GJ0YpNiRGREZXRltvRkQ=">PkkicEc2IiwmKigsJkkiekdGJCIiIiEiIkYpRiksJkYoRikhIiNGKUYpLCZGKEYpISIkRilGKUYpKiZJInhHRiRGKSwmKiRGKCIiI0YpRihGKUYpRik=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L18">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">UnivariatePolynomialOverPowerSeries(p,z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUklbXJvd0c2JEYlL0YnRik2MC1JI21uRzYkRiUvRidGKTYjUUhVbml2YXJpYXRlUG9seW5vbWlhbE92ZXJQb3dlclNlcmllczp+fn5GKC1GIzYjLUYuNiMtRjM2I1ErJnVtaW51czA7NkYoLUYzNiNRJyZwbHVzO0YoLUYjNiMtRi42JS1GMzYjUSMxMUYoLUkjbW9HNiRGJS9GJ0YpRkAtSSNtaUc2JEYlL0YnRik2I1EieEYoLUZKNiNRMSZJbnZpc2libGVUaW1lcztGKC1GTjYjUSJ6RihGPy1GIzYjLUYuNiVGPEZJRk1GUy1JJW1zdXBHNiRGJS9GJ0YpNiRGVi1GMzYjUSIyRihGPy1GIzYjLUYuNiMtRjM2I1EiMUYoRlMtRmhuNiRGVi1GMzYjUSIzRigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==">LUkobWZlbmNlZEc2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUklbXJvd0c2JEYlL0YnRik2MC1JI21uRzYkRiUvRidGKTYjUUhVbml2YXJpYXRlUG9seW5vbWlhbE92ZXJQb3dlclNlcmllczp+fn5GKC1GIzYjLUYuNiMtRjM2I1ErJnVtaW51czA7NkYoLUYzNiNRJyZwbHVzO0YoLUYjNiMtRi42JS1GMzYjUSMxMUYoLUkjbW9HNiRGJS9GJ0YpRkAtSSNtaUc2JEYlL0YnRik2I1EieEYoLUZKNiNRMSZJbnZpc2libGVUaW1lcztGKC1GTjYjUSJ6RihGPy1GIzYjLUYuNiVGPEZJRk1GUy1JJW1zdXBHNiRGJS9GJ0YpNiRGVi1GMzYjUSIyRihGPy1GIzYjLUYuNiMtRjM2I1EiMUYoRlMtRmhuNiRGVi1GMzYjUSIzRigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L19">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">r := p/(x + y - 1) + 1;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRInJGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUYjNiUtSSZtZnJhY0c2JEYlL0YnRik2JC1GIzYlLUYjNictSShtZmVuY2VkRzYkRiUvRidGKTYjLUYjNiUtRi42I1EiekYoLUY0NiNRKCZtaW51cztGKC1JI21uRzYkRiUvRidGKTYjUSIxRigtRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoLUZFNiMtRiM2JUZLRk4tRlI2I1EiMkYoRlctRkU2Iy1GIzYlRktGTi1GUjYjUSIzRigtRjQ2I1EnJnBsdXM7RigtRiM2JS1GLjYjUSJ4RihGVy1GRTYjLUYjNiUtSSVtc3VwRzYkRiUvRidGKTYkRktGaG5GYm9GSy1GIzYnRmdvRmJvLUYuNiNRInlGKEZORlFGYm9GUQ==">Pkkickc2IiwmKiYsJiooLCZJInpHRiQiIiIhIiJGK0YrLCZGKkYrISIjRitGKywmRipGKyEiJEYrRitGKyomSSJ4R0YkRissJiokRioiIiNGK0YqRitGK0YrRissKEYyRitJInlHRiRGK0YsRitGLEYrRitGKw==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L20">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">UnivariatePolynomialOverPowerSeries(r,z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUklbXJvd0c2JEYlL0YnRik2MC1JI21uRzYkRiUvRidGKTYjUUhVbml2YXJpYXRlUG9seW5vbWlhbE92ZXJQb3dlclNlcmllczp+fn5GKC1GIzYjLUYuNiUtRjM2I1EiN0YoLUkjbW9HNiRGJS9GJ0YpNiNRJyZwbHVzO0YoLUYzNiNRKSZoZWxsaXA7RigtRjNGQy1GIzYjLUYuNiUtRjM2I1EsJnVtaW51czA7MTFGKEY/RkUtRkA2I1ExJkludmlzaWJsZVRpbWVzO0YoLUkjbWlHNiRGJS9GJ0YpNiNRInpGKEZILUYjNiMtRi42JS1GMzYjUSI2RihGP0ZFRlAtSSVtc3VwRzYkRiUvRidGKTYkRlMtRjM2I1EiMkYoRkgtRiM2Iy1GLjYlLUYzNiNRKyZ1bWludXMwOzFGKEY/RkVGUC1GW282JEZTLUYzNiNRIjNGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">LUkobWZlbmNlZEc2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUklbXJvd0c2JEYlL0YnRik2MC1JI21uRzYkRiUvRidGKTYjUUhVbml2YXJpYXRlUG9seW5vbWlhbE92ZXJQb3dlclNlcmllczp+fn5GKC1GIzYjLUYuNiUtRjM2I1EiN0YoLUkjbW9HNiRGJS9GJ0YpNiNRJyZwbHVzO0YoLUYzNiNRKSZoZWxsaXA7RigtRjNGQy1GIzYjLUYuNiUtRjM2I1EsJnVtaW51czA7MTFGKEY/RkUtRkA2I1ExJkludmlzaWJsZVRpbWVzO0YoLUkjbWlHNiRGJS9GJ0YpNiNRInpGKEZILUYjNiMtRi42JS1GMzYjUSI2RihGP0ZFRlAtSSVtc3VwRzYkRiUvRidGKTYkRlMtRjM2I1EiMkYoRkgtRiM2Iy1GLjYlLUYzNiNRKyZ1bWludXMwOzFGKEY/RkVGUC1GW282JEZTLUYzNiNRIjNGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Notice that the following example returns a univariate polynomial with Puiseux series as coefficients.</Text-field>
+<Group drawlabel="true" labelreference="L21">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">p := (1+x^2*z+z^2)/(x^2+x);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRInBGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkmbWZyYWNHNiRGJS9GJ0YpNiQtRiM2Jy1GIzYlLUklbXN1cEc2JEYlL0YnRik2JC1GLjYjUSJ4RigtSSNtbkc2JEYlL0YnRik2I1EiMkYoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ6RigtRjQ2I1EnJnBsdXM7RigtRkM2JEZTRkpGVi1GSzYjUSIxRigtRiM2JUZCRlZGRw==">PkkicEc2IiomLCgqJkkieEdGJCIiI0kiekdGJCIiIkYrKiRGKkYpRitGK0YrRissJiokRihGKUYrRihGKyEiIg==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L22">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">h := UnivariatePolynomialOverPowerSeries(p,z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImhGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYsLUkjbW5HNiRGJS9GJ0YpNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYoLUY6NiMtRiM2JS1JJm1mcmFjRzYkRiUvRidGKTYkLUZBNiNRIjFGKC1GLjYjUSJ4RigtRjQ2I1EnJnBsdXM7RigtRkE2I1EpJmhlbGxpcDtGKC1GQUZWLUY6NiMtRiM2JS1GQTYjUSIwRihGVUZYLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ6RihGZW5GRkZdby1JJW1zdXBHNiRGJS9GJ0YpNiRGYG8tRkE2I1EiMkYoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7Rig=">PkkiaEc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNiwtSSNtbkc2JEYoL0YqRis2I1FIVW5pdmFyaWF0ZVBvbHlub21pYWxPdmVyUG93ZXJTZXJpZXM6fn5+RiQtRiY2Iy1GMDYlLUkmbWZyYWNHNiRGKC9GKkYrNiQtRjU2I1EiMUYkLUkjbWlHNiRGKC9GKkYrNiNRInhGJC1JI21vRzYkRigvRipGKzYjUScmcGx1cztGJC1GNTYjUSkmaGVsbGlwO0YkLUY1RlAtRiY2Iy1GMDYlLUY1NiNRIjBGJEZMRlItRk02I1ExJkludmlzaWJsZVRpbWVzO0YkLUZHNiNRInpGJEZVRjpGZ24tSSVtc3VwRzYkRigvRipGKzYkRmpuLUY1NiNRIjJGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L23">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">[seq(GetCoefficient(h,i),i=0..2)];</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYnLUYjNiUtSSVtcm93RzYkRiUvRidGKTYoLUkjbW5HNiRGJS9GJ0YpNiNRMlB1aXNldXhTZXJpZXN+b2Z+RigtSSZtZnJhY0c2JEYlL0YnRik2JC1GNTYjUSIxRigtRjA2JS1JI21pRzYkRiUvRidGKTYjUSJ4RigtSSNtb0c2JEYlL0YnRik2I1ExJkludmlzaWJsZVRpbWVzO0YoLUYjNiMtRjA2JUZELUZLNiNRJyZwbHVzO0YoRj8tRjU2I1Ekfjp+RigtRjs2JEY/RkRGVC1GNTYjUSkmaGVsbGlwO0YoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7RigtRiM2JS1GMDYoRjQtRjs2JEZERlJGVy1GNTYjUSIwRihGVEZmbkZpbkZcb0YtRmluRlxv">NyUtSShtZmVuY2VkRzYkSSpwcm90ZWN0ZWRHRiYvSSttb2R1bGVuYW1lRzYiSSxUeXBlc2V0dGluZ0c2JEYmSShfc3lzbGliR0YpNiUtSSVtcm93RzYkRiYvRihGKjYoLUkjbW5HNiRGJi9GKEYqNiNRMlB1aXNldXhTZXJpZXN+b2Z+RiktSSZtZnJhY0c2JEYmL0YoRio2JC1GNDYjUSIxRiktRi82JS1JI21pRzYkRiYvRihGKjYjUSJ4RiktSSNtb0c2JEYmL0YoRio2I1ExJkludmlzaWJsZVRpbWVzO0YpLUYkNiMtRi82JUZDLUZKNiNRJyZwbHVzO0YpRj4tRjQ2I1Ekfjp+RiktRjo2JEY+RkNGUy1GNDYjUSkmaGVsbGlwO0YpL0klb3BlbkdGKVEnJmxzcWI7RikvSSZjbG9zZUdGKVEnJnJzcWI7RiktRiQ2JS1GLzYoRjMtRjo2JEZDRlFGVi1GNDYjUSIwRilGU0ZlbkZobkZbb0Yj</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">This happens since the polynomial <Font style="Help Maple Name">x^2+x</Font> is not invertible as a power series, but it is as a Puiseux series. </Text-field>
+<Text-field style="Text" layout="Normal">The following attempt will not work, because Maple cannot determine that <Font style="Help Maple Name">d</Font> is polynomial in <Font style="Help Maple Name">z</Font> (though actually it is).</Text-field>
+<Group drawlabel="true" labelreference="L24">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">d := PowerSeries(d -&gt; ifelse(d = 0, 0, z * x^(d-1)/(d-1)!), variables = {x, z});</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImRGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYmLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzOn5+fkYoLUZBNiNRIjBGKC1GNDYjUScmcGx1cztGKC1GQTYjUSkmaGVsbGlwO0YoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7Rig=">PkkiZEc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNiYtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXM6fn5+RiQtRjU2I1EiMEYkLUkjbW9HNiRGKC9GKkYrNiNRJyZwbHVzO0YkLUY1NiNRKSZoZWxsaXA7RiQvSSVvcGVuR0YkUScmbHNxYjtGJC9JJmNsb3NlR0YkUScmcnNxYjtGJA==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L25">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">UnivariatePolynomialOverPowerSeries(d, z);</Text-field>
+</Input>
+<Output>
+<Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error%2C%20%28in%20MultivariatePowerSeries%3A-UnivariatePolynomialOverPowerSeries%29%20attempted%20to%20convert%20a%20power%20series%20involving%20z%20to%20a%20univariate%20polynomial%20over%20power%20series%20in%20z%2C%20but%20it%20is%20not%20known%20to%20be%20polynomial%20in%20z"><Font style="HyperlinkError">Error, (in MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeries) attempted to convert a power series involving z to a univariate polynomial over power series in z, but it is not known to be polynomial in z</Font></Hyperlink></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">We define <Font style="Help Maple Name">e</Font> in the same way as <Font style="Help Maple Name">d</Font> but specify the analytic expression. Then we can successfully convert it to a univariate polynomial over power series.</Text-field>
+<Group drawlabel="true" labelreference="L26">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">e := PowerSeries(d -&gt; ifelse(d = 0, 0, z * x^(d-1)/(d-1)!), analytic = z * exp(x));</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImVGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYoLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUYjNiUtRi42I1EiekYoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1JJW1zdXBHNiRGJS9GJ0YpNiQtRjQ2I1EvJkV4cG9uZW50aWFsRTtGKC1GLjYjUSJ4RigtRkE2I1Ekfjp+RigtRkE2I1EiMEYoLUY0NiNRJyZwbHVzO0YoLUZBNiNRKSZoZWxsaXA7RigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==">PkkiZUc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNigtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtRjA2JS1JI21pRzYkRigvRipGKzYjUSJ6RiQtSSNtb0c2JEYoL0YqRis2I1ExJkludmlzaWJsZVRpbWVzO0YkLUklbXN1cEc2JEYoL0YqRis2JC1GQzYjUS8mRXhwb25lbnRpYWxFO0YkLUY9NiNRInhGJC1GNTYjUSR+On5GJC1GNTYjUSIwRiQtRkM2I1EnJnBsdXM7RiQtRjU2I1EpJmhlbGxpcDtGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L27">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k := UnivariatePolynomialOverPowerSeries(e, z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImtGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYoLUkjbW5HNiRGJS9GJ0YpNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYoLUY6NiMtRiM2Iy1GQTYjUSIwRigtRkE2I1EnJnBsdXM7RigtRjo2Iy1GIzYlLUZBNiNRIjFGKC1GNEZOLUZBNiNRKSZoZWxsaXA7RigtRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoLUYuNiNRInpGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">Pkkia0c2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNigtSSNtbkc2JEYoL0YqRis2I1FIVW5pdmFyaWF0ZVBvbHlub21pYWxPdmVyUG93ZXJTZXJpZXM6fn5+RiQtRiY2Iy1GMDYjLUY1NiNRIjBGJC1GNTYjUScmcGx1cztGJC1GJjYjLUYwNiUtRjU2I1EiMUYkLUkjbW9HNiRGKC9GKkYrRkItRjU2I1EpJmhlbGxpcDtGJC1GTDYjUTEmSW52aXNpYmxlVGltZXM7RiQtSSNtaUc2JEYoL0YqRis2I1EiekYkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">To copy <Font style="Help Maple Name">k</Font>, we can specify the main variable explicitly or omit it. If we specify it explicitly, it has to be <Font style="Help Maple Name">z</Font>, otherwise we obtain an error:</Text-field>
+<Group drawlabel="true" labelreference="L28">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k1 := UnivariatePolynomialOverPowerSeries(k, x);</Text-field>
+</Input>
+<Output>
+<Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error%2C%20%28in%20MultivariatePowerSeries%3A-UnivariatePolynomialOverPowerSeries%29%20you%20specified%20x%20as%20the%20main%20variable%2C%20but%20the%20main%20variable%20of%20the%20first%20argument%20is%20z"><Font style="HyperlinkError">Error, (in MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeries) you specified x as the main variable, but the main variable of the first argument is z</Font></Hyperlink></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L29">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k1 := UnivariatePolynomialOverPowerSeries(k, z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRI2sxRigtSSNtb0c2JEYlL0YnRik2I1EpJkFzc2lnbjtGKC1JKG1mZW5jZWRHNiRGJS9GJ0YpNiUtRiM2KC1JI21uRzYkRiUvRidGKTYjUUhVbml2YXJpYXRlUG9seW5vbWlhbE92ZXJQb3dlclNlcmllczp+fn5GKC1GOjYjLUYjNiMtRkE2I1EiMEYoLUZBNiNRJyZwbHVzO0YoLUY6NiMtRiM2JS1GQTYjUSIxRigtRjRGTi1GQTYjUSkmaGVsbGlwO0YoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ6RigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==">PkkjazFHNiItSShtZmVuY2VkRzYkSSpwcm90ZWN0ZWRHRigvSSttb2R1bGVuYW1lR0YkSSxUeXBlc2V0dGluZ0c2JEYoSShfc3lzbGliR0YkNiUtSSVtcm93RzYkRigvRipGKzYoLUkjbW5HNiRGKC9GKkYrNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYkLUYmNiMtRjA2Iy1GNTYjUSIwRiQtRjU2I1EnJnBsdXM7RiQtRiY2Iy1GMDYlLUY1NiNRIjFGJC1JI21vRzYkRigvRipGK0ZCLUY1NiNRKSZoZWxsaXA7RiQtRkw2I1ExJkludmlzaWJsZVRpbWVzO0YkLUkjbWlHNiRGKC9GKkYrNiNRInpGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L30">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k2 := UnivariatePolynomialOverPowerSeries(k);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRI2syRigtSSNtb0c2JEYlL0YnRik2I1EpJkFzc2lnbjtGKC1JKG1mZW5jZWRHNiRGJS9GJ0YpNiUtRiM2KC1JI21uRzYkRiUvRidGKTYjUUhVbml2YXJpYXRlUG9seW5vbWlhbE92ZXJQb3dlclNlcmllczp+fn5GKC1GOjYjLUYjNiMtRkE2I1EiMEYoLUZBNiNRJyZwbHVzO0YoLUY6NiMtRiM2JS1GQTYjUSIxRigtRjRGTi1GQTYjUSkmaGVsbGlwO0YoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ6RigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==">PkkjazJHNiItSShtZmVuY2VkRzYkSSpwcm90ZWN0ZWRHRigvSSttb2R1bGVuYW1lR0YkSSxUeXBlc2V0dGluZ0c2JEYoSShfc3lzbGliR0YkNiUtSSVtcm93RzYkRigvRipGKzYoLUkjbW5HNiRGKC9GKkYrNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYkLUYmNiMtRjA2Iy1GNTYjUSIwRiQtRjU2I1EnJnBsdXM7RiQtRiY2Iy1GMDYlLUY1NiNRIjFGJC1JI21vRzYkRigvRipGK0ZCLUY1NiNRKSZoZWxsaXA7RiQtRkw2I1ExJkludmlzaWJsZVRpbWVzO0YkLUkjbWlHNiRGKC9GKkYrNiNRInpGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Create a univariate polynomial over power series from a list of Puiseux series.</Text-field>
+<Group drawlabel="true" labelreference="L33">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">g := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImdGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzY0LUkjbW5HNiRGJS9GJ0YpNiNRSFVuaXZhcmlhdGVQb2x5bm9taWFsT3ZlclBvd2VyU2VyaWVzOn5+fkYoLUY6NiMtRiM2Iy1GQTYjUSIxRigtRkE2I1EnJnBsdXM7RigtRjo2Iy1GIzYjLUZBNiNRIjBGKC1GNDYjUTEmSW52aXNpYmxlVGltZXM7RigtRi42I1EiekYoRk0tRjo2Iy1GIzYjLUklbXN1cEc2JEYlL0YnRik2JC1GLjYjUSJ4RigtSSZtZnJhY0c2JEYlL0YnRik2JUZKLUZBNiNRIjNGKC9JKWJldmVsbGVkR0YoUSV0cnVlRihGVy1GXG82JEZaLUZBNiNRIjJGKEZNLUY6NiMtRiM2Iy1JJm1zcXJ0RzYkRiUvRidGKTYjLUYuNiNRInlGKEZXLUZcbzYkRlpGaG9GTS1GOjYjLUYjNiVGVC1GNEZOLUZBNiNRKSZoZWxsaXA7RihGVy1GXG82JEZaLUZBNiNRIjRGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiZ0c2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNjQtSSNtbkc2JEYoL0YqRis2I1FIVW5pdmFyaWF0ZVBvbHlub21pYWxPdmVyUG93ZXJTZXJpZXM6fn5+RiQtRiY2Iy1GMDYjLUY1NiNRIjFGJC1GNTYjUScmcGx1cztGJC1GJjYjLUYwNiMtRjU2I1EiMEYkLUkjbW9HNiRGKC9GKkYrNiNRMSZJbnZpc2libGVUaW1lcztGJC1JI21pRzYkRigvRipGKzYjUSJ6RiRGQS1GJjYjLUYwNiMtSSVtc3VwRzYkRigvRipGKzYkLUZSNiNRInhGJC1JJm1mcmFjRzYkRigvRipGKzYlRj4tRjU2I1EiM0YkL0kpYmV2ZWxsZWRHRiRRJXRydWVGJEZLLUZmbjYkRlEtRjU2I1EiMkYkRkEtRiY2Iy1GMDYjLUkmbXNxcnRHNiRGKC9GKkYrNiMtRlI2I1EieUYkRkstRmZuNiRGUUZib0ZBLUYmNiMtRjA2JUZILUZMRkItRjU2I1EpJmhlbGxpcDtGJEZLLUZmbjYkRlEtRjU2I1EiNEYkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L34">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Degree(g);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkjbW5HNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiNEYo">IiIl</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L35">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">[seq(GetCoefficient(g,i),i=0..4)];</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYpLUYjNiUtSSVtcm93RzYkRiUvRidGKTYkLUkjbW5HNiRGJS9GJ0YpNiNRMlB1aXNldXhTZXJpZXM6fn5+RigtRjU2I1EiMUYoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7RigtRiM2JS1GMDYkRjQtRjU2I1EiMEYoRj1GQC1GIzYlLUYwNiYtRjU2I1EyUHVpc2V1eFNlcmllc35vZn5GKC1JJW1zdXBHNiRGJS9GJ0YpNiQtSSNtaUc2JEYlL0YnRik2I1EieEYoLUkmbWZyYWNHNiRGJS9GJ0YpNiVGOi1GNTYjUSIzRigvSSliZXZlbGxlZEdGKFEldHJ1ZUYoLUY1NiNRJH46fkYoRlFGPUZALUYjNiUtRjA2JkZOLUkmbXNxcnRHNiRGJS9GJ0YpNiMtRlc2I1EieUYoRmFvRmhvRj1GQC1GIzYlLUYwNihGTi1GZ242JC1GMDYlLUYwNiVGVi1JI21vRzYkRiUvRidGKTYjUTEmSW52aXNpYmxlVGltZXM7RihGaG8tRltxNiNRJyZwbHVzO0YoLUZnbjYkRlZGXXAtRjA2J0Y6RmBxRmhwRmBxRmNxRmFvRkdGYHEtRjU2I1EpJmhlbGxpcDtGKEY9RkBGPUZA">NyctSShtZmVuY2VkRzYkSSpwcm90ZWN0ZWRHRiYvSSttb2R1bGVuYW1lRzYiSSxUeXBlc2V0dGluZ0c2JEYmSShfc3lzbGliR0YpNiUtSSVtcm93RzYkRiYvRihGKjYkLUkjbW5HNiRGJi9GKEYqNiNRMlB1aXNldXhTZXJpZXM6fn5+RiktRjQ2I1EiMUYpL0klb3BlbkdGKVEnJmxzcWI7RikvSSZjbG9zZUdGKVEnJnJzcWI7RiktRiQ2JS1GLzYkRjMtRjQ2I1EiMEYpRjxGPy1GJDYlLUYvNiYtRjQ2I1EyUHVpc2V1eFNlcmllc35vZn5GKS1JJW1zdXBHNiRGJi9GKEYqNiQtSSNtaUc2JEYmL0YoRio2I1EieEYpLUkmbWZyYWNHNiRGJi9GKEYqNiVGOS1GNDYjUSIzRikvSSliZXZlbGxlZEdGKVEldHJ1ZUYpLUY0NiNRJH46fkYpRlBGPEY/LUYkNiUtRi82JkZNLUkmbXNxcnRHNiRGJi9GKEYqNiMtRlY2I1EieUYpRmBvRmdvRjxGPy1GJDYlLUYvNihGTS1GZm42JC1GLzYlLUYvNiVGVS1JI21vRzYkRiYvRihGKjYjUTEmSW52aXNpYmxlVGltZXM7RilGZ28tRmpwNiNRJyZwbHVzO0YpLUZmbjYkRlVGXHAtRi82J0Y5Rl9xRmdwRl9xRmJxRmBvRkZGX3EtRjQ2I1EpJmhlbGxpcDtGKUY8Rj8=</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">We compute its linear and quadratic truncation. These are defined in terms of the homogeneous degree of the coefficients, ignoring the degree in the main variable.</Text-field>
+<Group drawlabel="true" labelreference="L36">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(g, 1);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYpLUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1GIzYlLUkobWZlbmNlZEc2JEYlL0YnRik2Iy1GIzYlLUYjNiUtSSNtaUc2JEYlL0YnRik2I1EieEYoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1JJm1zcXJ0RzYkRiUvRidGKTYjLUZFNiNRInlGKEYzLUkmbWZyYWNHNiRGJS9GJ0YpNiRGREZSRkotSSVtc3VwRzYkRiUvRidGKTYkLUZFNiNRInpGKC1GLjYjUSI0RihGMy1GIzYlRk1GSi1GZW42JEZpbi1GLjYjUSIzRihGMy1GIzYlLUZlbjYkRkQtRlY2JUYtRmNvL0kpYmV2ZWxsZWRHRihRJXRydWVGKEZKLUZlbjYkRmluLUYuNiNRIjJGKA==">LCoiIiJGIyomLCYqJkkieEc2IkYjSSJ5R0YoI0YjIiIjRiMqJkYnRiNGKSEiIkYjRiNJInpHRigiIiVGIyomRilGKkYuIiIkRiMqJkYnI0YjRjFGLkYrRiM=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L37">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(g, 2);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYpLUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1GIzYlLUkobWZlbmNlZEc2JEYlL0YnRik2Iy1GIzYsLUY0NiNRKiZ1bWludXMwO0YoLUYjNiUtSSVtc3VwRzYkRiUvRidGKTYkLUkjbWlHNiRGJS9GJ0YpNiNRInhGKC1GLjYjUSIyRigtRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoLUZNNiNRInlGKC1GNDYjUSgmbWludXM7RigtSSZtZnJhY0c2JEYlL0YnRik2JC1GIzYlRlJGVUZHLUkmbXNxcnRHNiRGJS9GJ0YpNiNGWEZlbi1GaW42JEZHLUZINiRGWEZSRjMtRiM2JUZMRlVGX29GMy1GaW42JEZMRlhGVS1GSDYkLUZNNiNRInpGKC1GLjYjUSI0RihGMy1GIzYlRl9vRlUtRkg2JEZecC1GLjYjUSIzRihGMy1GIzYlLUZINiRGTC1GaW42JUYtRmhwL0kpYmV2ZWxsZWRHRihRJXRydWVGKEZVLUZINiRGXnBGUg==">LCoiIiJGIyomLCwqJkkieEc2IiIiI0kieUdGKEYjISIiKiZGJ0YpRiojRitGKSEiIyomRidGKUYqRi5GKyomRidGI0YqI0YjRilGIyomRidGI0YqRitGI0YjSSJ6R0YoIiIlRiMqJkYqRjFGMyIiJEYjKiZGJyNGI0Y2RjNGKUYj</Equation></Text-field>
+</Output>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="seealso">See Also</Text-field></Title><Text-field style="Text" layout="Normal"><Hyperlink hyperlink="true" linktarget="MultivariatePowerSeries[ApproximatelyEqual]"><Font style="Hyperlink">ApproximatelyEqual</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="MultivariatePowerSeries[Degree]"><Font style="Hyperlink">Degree</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="MultivariatePowerSeries[Inverse]"><Font style="Hyperlink">Inverse</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="MultivariatePowerSeries[PowerSeries]"><Font style="Hyperlink">PowerSeries</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="MultivariatePowerSeries[PuiseuxSeries]"><Font style="Hyperlink">PuiseuxSeries</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="MultivariatePowerSeries[Truncate]"><Font style="Hyperlink">Truncate</Font></Hyperlink></Text-field>
+</Section>
+<Section collapsed="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="compatibility">Compatibility</Text-field></Title>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The <Font style="Help Maple Name">MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]</Font> command was introduced in Maple 2021.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">For more information on Maple 2021 changes, see <Hyperlink linktarget="Help:updates,v2021"><Font style="Hyperlink">Updates in Maple 2021</Font></Hyperlink>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The <Font style="Help Maple Name">r</Font> parameter was introduced in Maple 2022.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">For more information on Maple 2022 changes, see <Hyperlink linktarget="Help:updates,v2022"><Font style="Hyperlink">Updates in Maple 2022</Font></Hyperlink>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The <Font style="Help Maple Name">MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]</Font> command was updated in Maple 2023.</Text-field></Section>
+</Worksheet>

@@ -11,7 +11,9 @@ local
                                     deg :: {nonnegint, -1},
                                     $)
         if self:-deg < deg then
-            self:-hpoly(deg+1) := 0; 
+            if upperbound(self:-hpoly) < deg then
+                self:-hpoly(deg+1) := 0;
+            end if;
             for local i from self:-deg + 1 to deg do
                 self:-hpoly[i] := self:-gen(self, i);
                 self:-deg := i; 
@@ -22,15 +24,25 @@ local
 
 # convert poly to hpoly::Array  
 local 
-    convert_hpoly_from_poly ::static := proc(p :: polynom, $)
+    convert_hpoly_from_poly ::static := proc(p :: polynom,
+                                             {output :: identical(table, Array) := Array},
+                                             $)
         local terms := p; # p is already expanded!
         local ld := degree(terms);
         terms := convert(terms, ':-list', ':-`+`');
         if not type(terms, ':-list'({polynom})) then
             error "unsupported term: %1", remove(type, terms, {polynom})[1];
+        elif terms = [0] then
+            terms := table();
+        else
+            terms := ListTools:-Classify(degree, terms);
         end if;
-        terms := ListTools:-Classify(degree, terms);
-        return Array(0 .. ld, map(eq -> lhs(eq) = add(rhs(eq)),  {indices(terms, 'pairs')}));
+        
+        if output = ':-table' then
+            return map(add, eval(terms, 1));
+        else
+            return Array(0 .. ld, map(eq -> lhs(eq) = add(rhs(eq)),  {indices(terms, 'pairs')}));
+        end if;
     end proc;
     
 # get d-th homogeneous part of polynomial p
@@ -90,7 +102,7 @@ local
     add_gen ::static := proc(self :: PowerSeriesObject,  
                             d :: nonnegint,
                             $) 
-        return HomogeneousPart(self:-ancestors:-A, d) + HomogeneousPart(self:-ancestors:-B, d);
+        return HOMOGENEOUS_PART(self:-ancestors:-A, d) + HOMOGENEOUS_PART(self:-ancestors:-B, d);
     end proc;
 
 # nary_add_gen
@@ -99,7 +111,7 @@ local
                                 d ::nonnegint, 
                                 $)
         local t;
-        return add(HomogeneousPart(t, d), t in self:-ancestors:-T);
+        return add(HOMOGENEOUS_PART(t, d), t in self:-ancestors:-T);
     end proc;
 
 # nary_add_with_coeffs_gen
@@ -108,7 +120,7 @@ local
                                             d ::nonnegint, 
                                             $)
         local p, dummy;
-        return add(AUTO_EXPAND(dummy, HomogeneousPart(p[1], d) * p[2]), p in self:-ancestors:-P);
+        return add(AUTO_EXPAND(dummy, HOMOGENEOUS_PART(p[1], d) * p[2]), p in self:-ancestors:-P);
     end proc;
 
 # nary_add_with_poly_coeffs_gen
@@ -117,7 +129,7 @@ local
                                                 d ::nonnegint, 
                                                 $)
     local pp;
-        return add(HomogeneousPart(pp, d), pp in self:-ancestors:-S);
+        return add(HOMOGENEOUS_PART(pp, d), pp in self:-ancestors:-S);
     end proc;
 
 # sub_gen
@@ -125,7 +137,7 @@ local
     sub_gen ::static := proc(self :: PowerSeriesObject, 
                             d :: nonnegint,
                             $)
-            return HomogeneousPart(self:-ancestors:-A, d) - HomogeneousPart(self:-ancestors:-B, d);
+            return HOMOGENEOUS_PART(self:-ancestors:-A, d) - HOMOGENEOUS_PART(self:-ancestors:-B, d);
     end proc;
 
 # neg_gen
@@ -133,7 +145,7 @@ local
     neg_gen ::static := proc(self :: PowerSeriesObject, 
                     d :: nonnegint,
                     $)
-        return - HomogeneousPart(self:-ancestors:-A, d);
+        return - HOMOGENEOUS_PART(self:-ancestors:-A, d);
     end proc;
 
 # mul_gen
@@ -142,7 +154,7 @@ local
                     d :: nonnegint,
                     $)
         local dummy, i;
-        return AUTO_EXPAND(dummy, add( ifelse( HomogeneousPart(self:-ancestors:-A, i) = 0, 0, HomogeneousPart(self:-ancestors:-A, i) * HomogeneousPart(self:-ancestors:-B, d-i)), i = 0 .. d));
+        return AUTO_EXPAND(dummy, add( ifelse( HOMOGENEOUS_PART(self:-ancestors:-A, i) = 0, 0, HOMOGENEOUS_PART(self:-ancestors:-A, i) * HOMOGENEOUS_PART(self:-ancestors:-B, d-i)), i = 0 .. d));
     end proc;
 
 # Note: using Iterator makes mul computation of unbalanced inputs very slow because of intesively usage of Maple expand    
@@ -157,9 +169,9 @@ local
 #         local result := Array(1..0);
 #         local homoparts := Array(1 .. n);
 #         for local degree_array in Iterator:-BoundedComposition([d $ n], d) do
-#             # ArrayTools:-Append(result, AUTO_EXPAND(dummy, mul(HomogeneousPart(self:-ancestors:-F[i], degree_array[i]), i = 1 .. n))); # speed-up ~1.4 instead of doing partial adds..
+#             # ArrayTools:-Append(result, AUTO_EXPAND(dummy, mul(HOMOGENEOUS_PART(self:-ancestors:-F[i], degree_array[i]), i = 1 .. n))); # speed-up ~1.4 instead of doing partial adds..
 #             for local j from 1 to n do 
-#                 homoparts[j] := HomogeneousPart(self:-ancestors:-F[j], degree_array[j]);
+#                 homoparts[j] := HOMOGENEOUS_PART(self:-ancestors:-F[j], degree_array[j]);
 #                 next degree_array if homoparts[j] = 0;
 #             end do;
 #             ArrayTools:-Append(result, AUTO_EXPAND(dummy, mul(homoparts)));
@@ -172,9 +184,81 @@ local
     beq_gen ::static := proc(self :: PowerSeriesObject,
                     d :: nonnegint,
                     $)
-        local s := HomogeneousPart(self:-ancestors:-A, d);
+        local s := HOMOGENEOUS_PART(self:-ancestors:-A, d);
         self:-ensure_degree(self, d-1);
         local i, dummy;
-        s -= add(AUTO_EXPAND(dummy, HomogeneousPart(self:-ancestors:-B, i) * self:-hpoly[d-i]), i = 1 .. d);
+        s -= add(AUTO_EXPAND(dummy, HOMOGENEOUS_PART(self:-ancestors:-B, i) * self:-hpoly[d-i]), i = 1 .. d);
         return AUTO_EXPAND(dummy, normal(s / self:-ancestors:-B:-hpoly[0]));
     end proc;
+
+# To convert a PuSO to a PSO    
+# ConvertToPSO_gen
+export ConvertToPSO_gen ::static := proc(_self :: PowerSeriesObject, 
+                                        d :: nonnegint, $) 
+    local x, result, terms, terms_as_products, terms_as_power_products,
+          total_degrees, new_entry, lower_bnd, degrees_as_list;
+    local ancestors := _self:-ancestors;
+    local A := ancestors:-A;
+
+    if ancestors:-is_error then
+        error "the Puiseux series used to create %1 is not"
+              " a power series", _self;
+    end if;
+
+    local bound := A:-AbsoluteDegreeBound(A, d);
+    local pso := A:-GetPowerSeries(A);
+    local anc_size := upperbound(ancestors:-cache_table);
+
+    if bound>anc_size then
+        ancestors:-cache_table(bound+1) := 0;  
+    end if;
+
+    lower_bnd := anc_size+1;
+
+    for local i from lower_bnd to bound do
+        result := pso:-HomogeneousPart(pso, i);
+        result := subs(A:-ChangeOfVariables(A), result);
+        
+        # Create a list of the monomials.
+        terms := convert(result, ':-list', ':-`+`');
+        
+        # "Multiply" by the monomial given by e
+        terms := map(':-`*`', terms, A:-GetMonomial(A));
+        
+        # Write each element in 'terms' as a list of the factors.
+        terms_as_products := map(convert, terms, ':-list', ':-`*`');
+        
+        # Write each factor in the sub-lists of 'terms_as_products' as a 
+        #list of the base and exponent.
+        terms_as_power_products := map2(map, convert, terms_as_products, ':-list', ':-`^`');
+        
+        # Keep in 'terms_as_power_products' only the sub-sub-lists that correspond to variables 
+        #(i.e. remove the coefficient terms).
+        terms_as_power_products := map2( select, type, terms_as_power_products, [':-name',':-rational'] );
+
+        degrees_as_list := map[3]( map[2], op, 2, terms_as_power_products );
+        # Determine the total absolute degrees of each monomial in 'terms'.
+        total_degrees := map( add, degrees_as_list);
+
+        if not type(degrees_as_list, ':-list'(':-list'(':-nonnegint'))) then
+            ancestors:-is_error := true;
+            _self:-hpoly := Array(0..0, [undefined]);
+            error "the Puiseux series used to create %1 is not"
+                  " a power series", _self;
+        end if;
+
+        new_entry := table(':-sparse');
+        for local j to numelems(terms) do
+          new_entry[total_degrees[j]] += terms[j];
+        end do;
+
+        ancestors:-cache_table[i] := eval(new_entry,1);
+    end do;
+
+    local output := 0;
+    for local i from 0 to bound do
+        output += ancestors:-cache_table[i][d];
+    end do;
+
+    return output;
+end proc;

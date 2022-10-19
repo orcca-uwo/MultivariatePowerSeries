@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet>
+<Version major="2023" minor="0" mpldoc="1600261,PowerSeries.md"/>
+<Label-Scheme value="1"/>
+<View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false"><Hide name="Table Borders"/><Hide name="Group Range"/></View-Properties>
+<MapleNet-Properties elisiondigitsbefore="100" labelling="true" indentamount="4" elisiontermsthreshold="10000" ansi="false" errorbreak="1" useclientjvm="true" echo="1" imaginaryunit="I" labelwidth="20" plotdriver="openviz" elisiondigitsafter="100" plotoutput="terminal" rtablesize="10" elisiontermsbefore="100" elisiondigitsthreshold="10000" typesetting="standard" plotdevice="inline" verboseproc="1" showassumed="1" errorcursor="false" longdelim="true" plotoptions="" quiet="false" elisiontermsafter="100" screenwidth="79" preplot="" prettyprint="3" displayprecision="-1" warnlevel="3" screenheight="25" latexwidth="6.0" postplot="" prompt="&gt; " ShowLabels="true" scientificx="true"/>
+<Styles><Font name="Ordered List 1" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Text" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 2" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 3" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 4" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 5" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Author" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Title" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Caption Reference" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input Placeholder" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[200,0,200]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="true"/>
+<Font name="Maple Plot" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Code" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[255,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Line Printed Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Diagnostic" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[40,120,40]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Inert Output" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[144,144,144]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Normal" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Hyperlink" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[18,93,153]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Maple Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Dash Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Math" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[120,0,14]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Input" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkError" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[171,41,204]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Header and Footer" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Error" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[171,41,204]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Title" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Bullet Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 4" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Equation Label" background="[255,255,255]" bold="true" executable="false" family="Monospaced" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 3" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="14" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 2" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="16" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkWarning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Dictionary Hyperlink" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[147,0,15]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Caption Text" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="List Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Help Maple Name" background="[255,255,255]" bold="false" executable="false" family="DejaVu Serif" foreground="[120,0,120]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Help Normal" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Halfline" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Calling Sequence" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Font name="Help Fixed" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false"/>
+<Layout name="Ordered List 1" alignment="left" bullet="numeric" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 2" alignment="left" bullet="alphabetic" firstindent="0" leftmargin="36" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 3" alignment="left" bullet="roman" firstindent="0" leftmargin="72" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 4" alignment="left" bullet="ALPHABETIC" firstindent="0" leftmargin="108" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 5" alignment="left" bullet="ROMAN" firstindent="0" leftmargin="144" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Author" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Warning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Annotation Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Plot" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Line Printed Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Text Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="newline" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Diagnostic" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Normal" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Output" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.3" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Dash Item" alignment="left" bullet="dash" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkError" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Error" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 1" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="4" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Bullet Item" alignment="left" bullet="dot" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 4" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 3" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkWarning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 2" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="16" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="List Item" alignment="left" bullet="indent" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Pencil-style name="Pencil 5" pen-color="[255,0,0]" pen-height="5.0" pen-width="5.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 4" pen-color="[0,0,255]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 3" pen-color="[0,0,0]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 2" pen-color="[0,0,255]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 1" pen-color="[0,0,0]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Highlighter-style name="Highlighter 2" pen-color="[255,204,0]" pen-height="14.0" pen-width="14.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 1" pen-color="[255,153,255]" pen-height="12.0" pen-width="8.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 4" pen-color="[0,255,255]" pen-height="32.0" pen-width="32.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
+</Styles>
+<Metadata-table>
+    <Metadata-category name="&lt;default&gt;">
+    </Metadata-category>
+    <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
+        <Metadata-attribute name="Active" value="false"/>
+        <Metadata-attribute name="Topic" value="MultivariatePowerSeries[PowerSeries]"/>
+        <Metadata-attribute name="Alias" value="MultivariatePowerSeries[PowerSeries],PowerSeries,MultivariatePowerSeries:-PowerSeries,MultivariatePowerSeries"/>
+        <Metadata-attribute name="Keyword" value="create a power series,Power,Multivariate,MultivariatePowerSeries[PowerSeries],Series"/>
+    </Metadata-tag>
+</Metadata-table>
+<Text-field layout="Heading 1" style="Text"><Font style="Title">MultivariatePowerSeries[PowerSeries]</Font> - <Font style="Halfline">create a power series</Font></Text-field>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="usage">Calling Sequence</Text-field></Title>
+<Text-field style="Calling Sequence" layout="Normal">PowerSeries(<Font style="Help Maple Name">p</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">PowerSeries(<Font style="Help Maple Name">r</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">PowerSeries(<Font style="Help Maple Name">e</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">PowerSeries(<Font style="Help Maple Name">f</Font>, <Font style="Help Maple Name">opts</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">PowerSeries(<Font style="Help Maple Name">u</Font>)</Text-field>
+<Text-field style="Calling Sequence" layout="Normal">PowerSeries(<Font style="Help Maple Name">ps</Font>)</Text-field>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2">Parameters</Text-field></Title><Table width="100%" exterior="none"><Table-Column separator="false" weight="61"/><Table-Column separator="false" weight="25"/><Table-Column separator="false" weight="664"/><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">p</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">polynomial</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">r</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">rational function</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">e</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">arbitrary expression</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">f</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">procedure</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">opts</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">(optional) equation(s) of the form <Font style="Help Maple Name">option</Font> = <Font style="Help Maple Name">value</Font> where <Font style="Help Maple Name">option</Font> is one of <Font style="Help Maple Name">analytic</Font>, <Font style="Help Maple Name">check</Font>, <Font style="Help Maple Name">variables</Font>, or <Font style="Help Maple Name">expand</Font>; at least one of <Font style="Help Maple Name">analytic</Font> and <Font style="Help Maple Name">variables</Font> must be specified</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">u</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">univariate polynomial over power series</Text-field></Table-Cell></Table-Row><Table-Row separator="false" align="baseline"><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">ps</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal"><Font style="Help Fixed">-</Font></Text-field></Table-Cell><Table-Cell><Text-field style="Text" layout="Normal">power series generated by this package</Text-field></Table-Cell></Table-Row></Table>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="info">Description</Text-field></Title>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">PowerSeries(p)</Font>, where <Font style="Help Maple Name">p</Font> is a polynomial, creates a power series representing this polynomial. Concretely, the homogeneous part of degree <Font style="Help Maple Name">i</Font> of this power series is equal to the sum of all terms of degree <Font style="Help Maple Name">i</Font> in <Font style="Help Maple Name">p</Font>.  In particular, the homogeneous part of degree <Font style="Help Maple Name">i</Font> of that power series is zero whenever <Font style="Help Maple Name">i</Font> is greater than the degree of <Font style="Help Maple Name">p</Font>. Note that the polynomial <Font style="Help Maple Name">p</Font> can be a complex constant; in that case, <Font style="Help Maple Name">p</Font> is regarded as a polynomial of degree zero.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">PowerSeries(r)</Font>, where <Font style="Help Maple Name">r</Font> is a rational function, computes power series for the numerator and denominator of <Font style="Help Maple Name">r</Font> as above, then computes the quotient of the two. This is possible only if the denominator is invertible, that is, it has a nonzero constant term.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">PowerSeries(e)</Font>, where <Font style="Help Maple Name">e</Font> is an expression that is not a rational function, uses the <Hyperlink hyperlink="true" linktarget="Help:series"><Font style="Hyperlink">series</Font></Hyperlink> command to attempt to express <Font style="Help Maple Name">e</Font> as a power series at the origin in each of the variables occurring in <Font style="Help Maple Name">e</Font>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">PowerSeries(f, opts)</Font>, where <Font style="Help Maple Name">f</Font> is a procedure, creates a power series whose homogeneous part of degree <Font style="Help Maple Name">i</Font> is equal to the value of the function call <Font style="Help Maple Name">f(i)</Font>. This assumes that the procedure <Font style="Help Maple Name">f</Font> takes a non-negative integer as input and returns a polynomial as output.</Text-field>
+<Text-field style="Text" layout="Dash Item" bullet="dash" leftmargin="24">If the optional argument <Font style="Help Maple Name">analytic=g</Font> is passed, where <Font style="Help Maple Name">g</Font> is an algebraic expression, then the power series is assumed to be equal to <Font style="Help Maple Name">g</Font> in a neighborhood of the origin. There is no verification of this assumption.</Text-field>
+<Text-field style="Text" layout="Dash Item" bullet="dash" leftmargin="24">If the optional argument <Font style="Help Maple Name">variables=s</Font> is passed, where <Font style="Help Maple Name">s</Font> is a set of variable names, then the power series is a power series in the given variables. If this option is omitted, then the <Font style="Help Maple Name">analytic</Font> option must be specified, and Maple determines the set of variables from that option. Either this option or the <Font style="Help Maple Name">analytic</Font> option must be specified.</Text-field>
+<Text-field style="Text" layout="Dash Item" bullet="dash" leftmargin="24">By default, every time <Font style="Help Maple Name">f</Font> is invoked, its result is verified to be a polynomial of the expected homogeneous degree in the given variables. If you know this is not necessary, you can include the optional argument <Font style="Help Maple Name">check=false</Font> to disable these checks for greater efficiency.</Text-field>
+<Text-field style="Text" layout="Dash Item" bullet="dash" leftmargin="24">By default, every time <Font style="Help Maple Name">f</Font> is invoked, its result is expanded. If you know that the value returned by <Font style="Help Maple Name">f</Font> will always be expanded, you can include the optional argument <Font style="Help Maple Name">expand=false</Font> to disable these calls for greater efficiency.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">PowerSeries(u)</Font>, where <Font style="Help Maple Name">u</Font> is a univariate polynomial over power series, returns <Font style="Help Maple Name">u</Font> as a power series. To be precise, if <Font style="Help Maple Name">v</Font> is the main variable of <Font style="Help Maple Name">u</Font> and its coefficients are power series with variables in the set of variables <Font style="Help Maple Name">x</Font>, let <Font style="Help Maple Name">y</Font> be the union of <Font style="Help Maple Name">x</Font> with <Font style="Help Maple Name">v</Font>. Then the power series returned by <Font style="Help Maple Name">PowerSeries(u)</Font> is the image of <Font style="Help Maple Name">u</Font> in the power series ring with variables in <Font style="Help Maple Name">y</Font>. This image is obtained by the natural homomorphism mapping the univariate polynomial ring <Font style="Help Maple Name">R[v]</Font> into the univariate power series ring <Font style="Help Maple Name">R[[v]]</Font>, where <Font style="Help Maple Name">R</Font> is the ring of power series in variables in <Font style="Help Maple Name">x</Font>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The calling sequence <Font style="Help Maple Name">PowerSeries(ps)</Font>, where <Font style="Help Maple Name">ps</Font> is a power series, returns a copy of <Font style="Help Maple Name">ps</Font>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The implementation of power series and univariate polynomials over power series relies on lazy evaluation (also known as calls-by-need). For details, see the <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries"><Font style="Hyperlink">MultivariatePowerSeries</Font></Hyperlink> help page.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">When using the <Font style="Help Maple Name">MultivariatePowerSeries</Font> package, do not assign anything to the variables occurring in the power series and univariate polynomials over power series. If you do, you may see invalid results.</Text-field>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60" isCollapsible="true" drawButton="true"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="examples">Examples</Text-field></Title>
+<Group drawlabel="true" labelreference="L11">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">with(MultivariatePowerSeries):</Text-field>
+</Input>
+</Group>
+<Text-field style="Text" layout="Normal">Create a power series from a polynomial, determine its inverse, and find its truncation to homogeneous degree 5.</Text-field>
+<Group drawlabel="true" labelreference="L12">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">a := PowerSeries(1 + x + x*y + x^2);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImFGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYqLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzOn5+fkYoLUZBNiNRIjFGKC1GNDYjUScmcGx1cztGKC1GLjYjUSJ4RihGSS1JJW1zdXBHNiRGJS9GJ0YpNiRGTC1GQTYjUSIyRihGSS1GIzYlRkwtRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoLUYuNiNRInlGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiYUc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNiotSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXM6fn5+RiQtRjU2I1EiMUYkLUkjbW9HNiRGKC9GKkYrNiNRJyZwbHVzO0YkLUkjbWlHNiRGKC9GKkYrNiNRInhGJEY9LUklbXN1cEc2JEYoL0YqRis2JEZDLUY1NiNRIjJGJEY9LUYwNiVGQy1GPjYjUTEmSW52aXNpYmxlVGltZXM7RiQtRkQ2I1EieUYkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L13">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">b := Inverse(a);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImJGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYoLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUkmbWZyYWNHNiRGJS9GJ0YpNiQtRkE2I1EiMUYoLUYjNiktSSVtc3VwRzYkRiUvRidGKTYkLUYuNiNRInhGKC1GQTYjUSIyRigtRjQ2I1EnJnBsdXM7RigtRiM2JUZVLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ5RihGZW5GVUZlbkZLLUZBNiNRJH46fkYoRktGZW4tRkE2I1EpJmhlbGxpcDtGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiYkc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNigtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtSSZtZnJhY0c2JEYoL0YqRis2JC1GNTYjUSIxRiQtRjA2KS1JJW1zdXBHNiRGKC9GKkYrNiQtSSNtaUc2JEYoL0YqRis2I1EieEYkLUY1NiNRIjJGJC1JI21vRzYkRigvRipGKzYjUScmcGx1cztGJC1GMDYlRkktRlM2I1ExJkludmlzaWJsZVRpbWVzO0YkLUZKNiNRInlGJEZSRklGUkY/LUY1NiNRJH46fkYkRj9GUi1GNTYjUSkmaGVsbGlwO0YkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L14">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(b, 5);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDY2LUkjbW9HNiRGJS9GJ0YpNiNRKiZ1bWludXMwO0YoLUYjNictSSNtbkc2JEYlL0YnRik2I1EiMkYoLUYuNiNRMSZJbnZpc2libGVUaW1lcztGKC1JJW1zdXBHNiRGJS9GJ0YpNiQtSSNtaUc2JEYlL0YnRik2I1EieEYoLUY2NiNRIjRGKEY7LUZENiNRInlGKC1GLjYjUSgmbWludXM7RigtRiM2Jy1GNjYjUSIzRihGOy1GPzYkRkNGVEY7LUY/NiRGTEY1Rk9GPkZPLUYjNiVGV0Y7RkwtRi42I1EnJnBsdXM7RigtRiM2JS1GPzYkRkNGNUY7RllGZ25GV0Znbi1GIzYnRjVGO0Zcb0Y7RkxGTy1GIzYlRkNGO0ZMRk9GQ0Znbi1GNjYjUSIxRig=">LDYqJkkieEc2IiIiJUkieUdGJSIiIiEiIyomRiQiIiRGJyIiIyEiJCokRiRGJiEiIiomRiRGK0YnRihGLyomRiRGLEYnRixGKCokRiRGK0YoKiZGJEYsRidGKEYsKiZGJEYoRidGKEYvRiRGL0YoRig=</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">We can also compute <Equation executable="false" style="2D Math" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiYkYo">NiNJImJHNiI=</Equation> by specifying the rational function that is the inverse of the polynomial used to define <Equation executable="false" style="2D Math" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiYUYo">NiNJImFHNiI=</Equation>.</Text-field>
+<Group drawlabel="true" labelreference="L16">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">b := PowerSeries(1/(1 + x + x*y + x^2));</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImJGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYoLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUkmbWZyYWNHNiRGJS9GJ0YpNiQtRkE2I1EiMUYoLUYjNiktSSVtc3VwRzYkRiUvRidGKTYkLUYuNiNRInhGKC1GQTYjUSIyRigtRjQ2I1EnJnBsdXM7RigtRiM2JUZVLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ5RihGZW5GVUZlbkZLLUZBNiNRJH46fkYoRktGZW4tRkE2I1EpJmhlbGxpcDtGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiYkc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNigtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtSSZtZnJhY0c2JEYoL0YqRis2JC1GNTYjUSIxRiQtRjA2KS1JJW1zdXBHNiRGKC9GKkYrNiQtSSNtaUc2JEYoL0YqRis2I1EieEYkLUY1NiNRIjJGJC1JI21vRzYkRigvRipGKzYjUScmcGx1cztGJC1GMDYlRkktRlM2I1ExJkludmlzaWJsZVRpbWVzO0YkLUZKNiNRInlGJEZSRklGUkY/LUY1NiNRJH46fkYkRj9GUi1GNTYjUSkmaGVsbGlwO0YkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L17">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(b, 5);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDY2LUkjbW9HNiRGJS9GJ0YpNiNRKiZ1bWludXMwO0YoLUYjNictSSNtbkc2JEYlL0YnRik2I1EiMkYoLUYuNiNRMSZJbnZpc2libGVUaW1lcztGKC1JJW1zdXBHNiRGJS9GJ0YpNiQtSSNtaUc2JEYlL0YnRik2I1EieEYoLUY2NiNRIjRGKEY7LUZENiNRInlGKC1GLjYjUSgmbWludXM7RigtRiM2Jy1GNjYjUSIzRihGOy1GPzYkRkNGVEY7LUY/NiRGTEY1Rk9GPkZPLUYjNiVGV0Y7RkwtRi42I1EnJnBsdXM7RigtRiM2JS1GPzYkRkNGNUY7RllGZ25GV0Znbi1GIzYnRjVGO0Zcb0Y7RkxGTy1GIzYlRkNGO0ZMRk9GQ0Znbi1GNjYjUSIxRig=">LDYqJkkieEc2IiIiJUkieUdGJSIiIiEiIyomRiQiIiRGJyIiIyEiJCokRiRGJiEiIiomRiRGK0YnRihGLyomRiRGLEYnRixGKCokRiRGK0YoKiZGJEYsRidGKEYsKiZGJEYoRidGKEYvRiRGL0YoRig=</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Create a power series for the expression <Equation executable="false" style="2D Math" display="LUklbXN1cEc2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYkLUkjbW9HNiRGJS9GJ0YpNiNRLyZFeHBvbmVudGlhbEU7RigtSSNtaUc2JEYlL0YnRik2I1EieEYo">NiMtSSRleHBHNiI2I0kieEdGJQ==</Equation>.</Text-field>
+<Group drawlabel="true" labelreference="L19">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">b := PowerSeries(exp(x));</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImJGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYyLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUklbXN1cEc2JEYlL0YnRik2JC1GNDYjUS8mRXhwb25lbnRpYWxFO0YoLUYuNiNRInhGKC1GQTYjUSR+On5GKC1GQTYjUSIxRigtRjQ2I1EnJnBsdXM7RihGTkZXLUkmbWZyYWNHNiRGJS9GJ0YpNiQtRkc2JEZOLUZBNiNRIjJGKEZbb0ZXLUZlbjYkLUZHNiRGTi1GQTYjUSIzRigtRkE2I1EiNkYoRlctRmVuNiQtRkc2JEZOLUZBNiNRIjRGKC1GQTYjUSMyNEYoRlctRmVuNiQtRkc2JEZOLUZBNiNRIjVGKC1GQTYjUSQxMjBGKEZXLUZBNiNRKSZoZWxsaXA7RigvSSVvcGVuR0YoUScmbHNxYjtGKC9JJmNsb3NlR0YoUScmcnNxYjtGKA==">PkkiYkc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNjItSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtSSVtc3VwRzYkRigvRipGKzYkLUkjbW9HNiRGKC9GKkYrNiNRLyZFeHBvbmVudGlhbEU7RiQtSSNtaUc2JEYoL0YqRis2I1EieEYkLUY1NiNRJH46fkYkLUY1NiNRIjFGJC1GQDYjUScmcGx1cztGJEZFRlEtSSZtZnJhY0c2JEYoL0YqRis2JC1GOzYkRkUtRjU2I1EiMkYkRmVuRlEtRlU2JC1GOzYkRkUtRjU2I1EiM0YkLUY1NiNRIjZGJEZRLUZVNiQtRjs2JEZFLUY1NiNRIjRGJC1GNTYjUSMyNEYkRlEtRlU2JC1GOzYkRkUtRjU2I1EiNUYkLUY1NiNRJDEyMEYkRlEtRjU2I1EpJmhlbGxpcDtGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L20">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(b, 5);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYtLUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1JI21pRzYkRiUvRidGKTYjUSJ4RihGMy1GIzYlLUkmbWZyYWNHNiRGJS9GJ0YpNiRGLS1GLjYjUSIyRigtRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoLUklbXN1cEc2JEYlL0YnRik2JEY5RkZGMy1GIzYlLUZCNiRGLS1GLjYjUSI2RihGSS1GTTYkRjktRi42I1EiM0YoRjMtRiM2JS1GQjYkRi0tRi42I1EjMjRGKEZJLUZNNiRGOS1GLjYjUSI0RihGMy1GIzYlLUZCNiRGLS1GLjYjUSQxMjBGKEZJLUZNNiRGOS1GLjYjUSI1Rig=">LC4iIiJGI0kieEc2IkYjKiRGJCIiIyNGI0YnKiRGJCIiJCNGIyIiJyokRiQiIiUjRiMiI0MqJEYkIiImI0YjIiQ/Ig==</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Create a power series for an elliptic integral of the third kind.</Text-field>
+<Group drawlabel="true" labelreference="L21">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">b := PowerSeries(EllipticPi(z, nu, k));</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImJGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYwLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUYjNiUtRi42JFErRWxsaXB0aWNQaUYoL0kqZm9udHN0eWxlR0YoUSdub3JtYWxGKC1GNDYjUTAmQXBwbHlGdW5jdGlvbjtGKC1GOjYlLUYuNiNRInpGKC1GLjYjUSUmbnU7RigtRi42I1Eia0YoLUZBNiNRJH46fkYoRlMtRjQ2I1EnJnBsdXM7RigtSSZtZnJhY0c2JEYlL0YnRik2JC1JJW1zdXBHNiRGJS9GJ0YpNiRGUy1GQTYjUSIzRigtRkE2I1EiNkYoRmluLUZdbzYkLUYjNiVGYW8tRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoRlZGZm9GaW4tRl1vNiQtRiM2JUZmb0ZgcC1GYm82JEZTLUZBNiNRIjVGKC1GQTYjUSM0MEYoRmluLUZdbzYkLUYjNiVGYW9GYHAtRmJvNiRGWS1GQTYjUSIyRihGaW9GaW4tRkE2I1EpJmhlbGxpcDtGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiYkc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNjAtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtRjA2JS1JI21pRzYkRigvRipGKzYkUStFbGxpcHRpY1BpRiQvSSpmb250c3R5bGVHRiRRJ25vcm1hbEYkLUkjbW9HNiRGKC9GKkYrNiNRMCZBcHBseUZ1bmN0aW9uO0YkLUYmNiUtRj02I1EiekYkLUY9NiNRJSZudTtGJC1GPTYjUSJrRiQtRjU2I1Ekfjp+RiRGTS1GRjYjUScmcGx1cztGJC1JJm1mcmFjRzYkRigvRipGKzYkLUklbXN1cEc2JEYoL0YqRis2JEZNLUY1NiNRIjNGJC1GNTYjUSI2RiRGWS1GZ242JC1GMDYlRltvLUZGNiNRMSZJbnZpc2libGVUaW1lcztGJEZQRmBvRlktRmduNiQtRjA2JUZgb0Zqby1GXG82JEZNLUY1NiNRIjVGJC1GNTYjUSM0MEYkRlktRmduNiQtRjA2JUZbb0Zqby1GXG82JEZTLUY1NiNRIjJGJEZjb0ZZLUY1NiNRKSZoZWxsaXA7RiQvSSVvcGVuR0YkUScmbHNxYjtGJC9JJmNsb3NlR0YkUScmcnNxYjtGJA==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L22">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(b, 5);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYrLUkjbWlHNiRGJS9GJ0YpNiNRInpGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1GIzYlLUkmbWZyYWNHNiRGJS9GJ0YpNiQtSSNtbkc2JEYlL0YnRik2I1EiMUYoLUZBNiNRIjZGKC1GNDYjUTEmSW52aXNpYmxlVGltZXM7RigtSSVtc3VwRzYkRiUvRidGKTYkRi0tRkE2I1EiM0YoRjMtRiM2JS1GPDYkRkBGUUZJLUYjNiVGTEZJLUYuNiNRJSZudTtGKEYzLUYjNiUtRjw2JEZRLUZBNiNRIzQwRihGSS1GTTYkRi0tRkE2I1EiNUYoRjMtRiM2JUY7RkktRiM2JUZMRkktRk02JC1GLjYjUSJrRigtRkE2I1EiMkYo">LCxJInpHNiIiIiIqJEYjIiIkI0YlIiInKiZGI0YnSSNudUdGJEYlI0YlRicqJEYjIiImI0YnIiNTKiZGI0YnSSJrR0YkIiIjRig=</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Create a power series from a procedure and find its truncation to homogeneous degree 3.</Text-field>
+<Group drawlabel="true" labelreference="L23">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">bproc := proc(d) local s; s := 2*x + y; return expand(s^d); end proc:</Text-field>
+</Input>
+</Group>
+<Group drawlabel="true" labelreference="L24">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">b := PowerSeries(bproc, variables = {x, y});</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImJGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYmLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzOn5+fkYoLUZBNiNRIjFGKC1GNDYjUScmcGx1cztGKC1GQTYjUSkmaGVsbGlwO0YoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7Rig=">PkkiYkc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNiYtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXM6fn5+RiQtRjU2I1EiMUYkLUkjbW9HNiRGKC9GKkYrNiNRJyZwbHVzO0YkLUY1NiNRKSZoZWxsaXA7RiQvSSVvcGVuR0YkUScmbHNxYjtGJC9JJmNsb3NlR0YkUScmcnNxYjtGJA==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L25">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(b, 3);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDY1LUYjNiUtSSNtbkc2JEYlL0YnRik2I1EiOEYoLUkjbW9HNiRGJS9GJ0YpNiNRMSZJbnZpc2libGVUaW1lcztGKC1JJW1zdXBHNiRGJS9GJ0YpNiQtSSNtaUc2JEYlL0YnRik2I1EieEYoLUYwNiNRIjNGKC1GNjYjUScmcGx1cztGKC1GIzYnLUYwNiNRIzEyRihGNS1GPDYkRkAtRjA2I1EiMkYoRjUtRkE2I1EieUYoRkktRiM2Jy1GMDYjUSI2RihGNUZARjUtRjw2JEZWRlNGSS1GPDYkRlZGRkZJLUYjNiUtRjA2I1EiNEYoRjVGUUZJLUYjNidGXm9GNUZARjVGVkZJRmhuRkktRiM2JUZTRjVGQEZJRlZGSS1GMDYjUSIxRig=">LDYqJEkieEc2IiIiJCIiKSomRiQiIiNJInlHRiUiIiIiIzcqJkYkRitGKkYpIiInKiRGKkYmRisqJEYkRikiIiUqJkYkRitGKkYrRjEqJEYqRilGK0YkRilGKkYrRitGKw==</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Create a power series from an anonymous function, specifying the analytic form of that power series. Find the truncations to homogeneous degrees 5 and 10.</Text-field>
+<Group drawlabel="true" labelreference="L26">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">c := PowerSeries(d -&gt; (x^d/d!), analytic=exp(x));</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImNGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYoLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUklbXN1cEc2JEYlL0YnRik2JC1GNDYjUS8mRXhwb25lbnRpYWxFO0YoLUYuNiNRInhGKC1GQTYjUSR+On5GKC1GQTYjUSIxRigtRjQ2I1EnJnBsdXM7RigtRkE2I1EpJmhlbGxpcDtGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiY0c2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNigtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtSSVtc3VwRzYkRigvRipGKzYkLUkjbW9HNiRGKC9GKkYrNiNRLyZFeHBvbmVudGlhbEU7RiQtSSNtaUc2JEYoL0YqRis2I1EieEYkLUY1NiNRJH46fkYkLUY1NiNRIjFGJC1GQDYjUScmcGx1cztGJC1GNTYjUSkmaGVsbGlwO0YkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L27">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(c, 5);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYtLUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1JI21pRzYkRiUvRidGKTYjUSJ4RihGMy1GIzYlLUkmbWZyYWNHNiRGJS9GJ0YpNiRGLS1GLjYjUSIyRigtRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoLUklbXN1cEc2JEYlL0YnRik2JEY5RkZGMy1GIzYlLUZCNiRGLS1GLjYjUSI2RihGSS1GTTYkRjktRi42I1EiM0YoRjMtRiM2JS1GQjYkRi0tRi42I1EjMjRGKEZJLUZNNiRGOS1GLjYjUSI0RihGMy1GIzYlLUZCNiRGLS1GLjYjUSQxMjBGKEZJLUZNNiRGOS1GLjYjUSI1Rig=">LC4iIiJGI0kieEc2IkYjKiRGJCIiIyNGI0YnKiRGJCIiJCNGIyIiJyokRiQiIiUjRiMiI0MqJEYkIiImI0YjIiQ/Ig==</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L28">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(c, 10);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDY3LUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1JI21pRzYkRiUvRidGKTYjUSJ4RihGMy1GIzYlLUkmbWZyYWNHNiRGJS9GJ0YpNiRGLS1GLjYjUSIyRigtRjQ2I1ExJkludmlzaWJsZVRpbWVzO0YoLUklbXN1cEc2JEYlL0YnRik2JEY5RkZGMy1GIzYlLUZCNiRGLS1GLjYjUSI2RihGSS1GTTYkRjktRi42I1EiM0YoRjMtRiM2JS1GQjYkRi0tRi42I1EjMjRGKEZJLUZNNiRGOS1GLjYjUSI0RihGMy1GIzYlLUZCNiRGLS1GLjYjUSQxMjBGKEZJLUZNNiRGOS1GLjYjUSI1RihGMy1GIzYlLUZCNiRGLS1GLjYjUSQ3MjBGKEZJLUZNNiRGOUZVRjMtRiM2JS1GQjYkRi0tRi42I1ElNTA0MEYoRkktRk02JEY5LUYuNiNRIjdGKEYzLUYjNiUtRkI2JEYtLUYuNiNRJjQwMzIwRihGSS1GTTYkRjktRi42I1EiOEYoRjMtRiM2JS1GQjYkRi0tRi42I1EnMzYyODgwRihGSS1GTTYkRjktRi42I1EiOUYoRjMtRiM2JS1GQjYkRi0tRi42I1EoMzYyODgwMEYoRkktRk02JEY5LUYuNiNRIzEwRig=">LDgiIiJGI0kieEc2IkYjKiRGJCIiIyNGI0YnKiRGJCIiJCNGIyIiJyokRiQiIiUjRiMiI0MqJEYkIiImI0YjIiQ/IiokRiRGLCNGIyIkPygqJEYkIiIoI0YjIiVTXSokRiQiIikjRiMiJj8uJSokRiQiIiojRiMiJyEpR08qJEYkIiM1I0YjIigrKUdP</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Create a power series from a univariate polynomial over power series.</Text-field>
+<Group drawlabel="true" labelreference="L29">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">f := UnivariatePolynomialOverPowerSeries([PowerSeries(1), PowerSeries(x), PowerSeries(y), GeometricSeries([x,y])], z):</Text-field>
+</Input>
+</Group>
+<Text-field style="Text" layout="Normal">The truncation to homogeneous degree 2 is given by truncating each coefficient to that degree, ignoring <Equation executable="false" style="2D Math" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiZkYo">NiNJImZHNiI=</Equation>s main variable, <Equation executable="false" style="2D Math" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiekYo">NiNJInpHNiI=</Equation>.</Text-field>
+<Group drawlabel="true" labelreference="L30">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(f, 2);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYpLUkjbW5HNiRGJS9GJ0YpNiNRIjFGKC1JI21vRzYkRiUvRidGKTYjUScmcGx1cztGKC1GIzYlLUkobWZlbmNlZEc2JEYlL0YnRik2Iy1GIzYtLUklbXN1cEc2JEYlL0YnRik2JC1JI21pRzYkRiUvRidGKTYjUSJ4RigtRi42I1EiMkYoRjMtRiM2J0ZNLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKEZHRlItRkg2I1EieUYoRjMtRkM2JEZVRk1GM0ZHRjNGVUYzRi1GUi1GQzYkLUZINiNRInpGKC1GLjYjUSIzRihGMy1GIzYlRlVGUi1GQzYkRmZuRk1GMy1GIzYlRkdGUkZmbg==">LCoiIiJGIyomLC4qJEkieEc2IiIiI0YjKiZGJ0YjSSJ5R0YoRiNGKSokRitGKUYjRidGI0YrRiNGI0YjRiNJInpHRigiIiRGIyomRitGI0YtRilGIyomRidGI0YtRiNGIw==</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">If we convert <Equation executable="false" style="2D Math" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiZkYo">NiNJImZHNiI=</Equation> to a power series, its truncation is defined by considering the homogeneous degree in all variables, including <Equation executable="false" style="2D Math" display="LUkjbWlHNiRJKnByb3RlY3RlZEdGJS9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nRzYkRiVJKF9zeXNsaWJHRig2I1EiekYo">NiNJInpHNiI=</Equation>.</Text-field>
+<Group drawlabel="true" labelreference="L31">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">d := PowerSeries(f);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImRGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYoLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUYjNiktRkE2I1EiMUYoLUY0NiNRJyZwbHVzO0YoLUYjNiUtRi42I1EieEYoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ6RihGSy1GIzYlLUYuNiNRInlGKEZTLUklbXN1cEc2JEYlL0YnRik2JEZWLUZBNiNRIjJGKEZLLUkmbWZyYWNHNiRGJS9GJ0YpNiQtRmluNiRGVi1GQTYjUSIzRigtRiM2J0ZILUY0NiNRKCZtaW51cztGKEZQRlxwRmVuLUZBNiNRJH46fkYoRkhGSy1GQTYjUSkmaGVsbGlwO0YoL0klb3BlbkdGKFEnJmxzcWI7RigvSSZjbG9zZUdGKFEnJnJzcWI7Rig=">PkkiZEc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNigtSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtRjA2KS1GNTYjUSIxRiQtSSNtb0c2JEYoL0YqRis2I1EnJnBsdXM7RiQtRjA2JS1JI21pRzYkRigvRipGKzYjUSJ4RiQtRkA2I1ExJkludmlzaWJsZVRpbWVzO0YkLUZINiNRInpGJEY/LUYwNiUtRkg2I1EieUYkRk0tSSVtc3VwRzYkRigvRipGKzYkRlAtRjU2I1EiMkYkRj8tSSZtZnJhY0c2JEYoL0YqRis2JC1GWTYkRlAtRjU2I1EiM0YkLUYwNidGPC1GQDYjUSgmbWludXM7RiRGR0Zmb0ZVLUY1NiNRJH46fkYkRjxGPy1GNTYjUSkmaGVsbGlwO0YkL0klb3BlbkdGJFEnJmxzcWI7RiQvSSZjbG9zZUdGJFEnJnJzcWI7RiQ=</Equation></Text-field>
+</Output>
+</Group>
+<Group drawlabel="true" labelreference="L32">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Truncate(d, 3);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYpLUYjNiUtSSNtaUc2JEYlL0YnRik2I1EieUYoLUkjbW9HNiRGJS9GJ0YpNiNRMSZJbnZpc2libGVUaW1lcztGKC1JJW1zdXBHNiRGJS9GJ0YpNiQtRjA2I1EiekYoLUkjbW5HNiRGJS9GJ0YpNiNRIjJGKC1GNjYjUScmcGx1cztGKC1GPDYkRkAtRkQ2I1EiM0YoRkktRiM2JS1GMDYjUSJ4RihGNUZARkktRkQ2I1EiMUYo">LCoqJkkieUc2IiIiIkkiekdGJSIiI0YmKiRGJyIiJEYmKiZJInhHRiVGJkYnRiZGJkYmRiY=</Equation></Text-field>
+</Output>
+</Group>
+<Text-field style="Text" layout="Normal">Copy a power series.</Text-field>
+<Group drawlabel="true" labelreference="L33">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">e := PowerSeries(d);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2JEkqcHJvdGVjdGVkR0YlL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHNiRGJUkoX3N5c2xpYkdGKDYlLUkjbWlHNiRGJS9GJ0YpNiNRImVGKC1JI21vRzYkRiUvRidGKTYjUSkmQXNzaWduO0YoLUkobWZlbmNlZEc2JEYlL0YnRik2JS1GIzYuLUkjbW5HNiRGJS9GJ0YpNiNRMFBvd2VyU2VyaWVzfm9mfkYoLUYjNiktRkE2I1EiMUYoLUY0NiNRJyZwbHVzO0YoLUYjNiUtRi42I1EieEYoLUY0NiNRMSZJbnZpc2libGVUaW1lcztGKC1GLjYjUSJ6RihGSy1GIzYlLUYuNiNRInlGKEZTLUklbXN1cEc2JEYlL0YnRik2JEZWLUZBNiNRIjJGKEZLLUkmbWZyYWNHNiRGJS9GJ0YpNiQtRmluNiRGVi1GQTYjUSIzRigtRiM2J0ZILUY0NiNRKCZtaW51cztGKEZQRlxwRmVuLUZBNiNRJH46fkYoRkhGS0ZORktGWUZLRmVvRkstRkE2I1EpJmhlbGxpcDtGKC9JJW9wZW5HRihRJyZsc3FiO0YoL0kmY2xvc2VHRihRJyZyc3FiO0Yo">PkkiZUc2Ii1JKG1mZW5jZWRHNiRJKnByb3RlY3RlZEdGKC9JK21vZHVsZW5hbWVHRiRJLFR5cGVzZXR0aW5nRzYkRihJKF9zeXNsaWJHRiQ2JS1JJW1yb3dHNiRGKC9GKkYrNi4tSSNtbkc2JEYoL0YqRis2I1EwUG93ZXJTZXJpZXN+b2Z+RiQtRjA2KS1GNTYjUSIxRiQtSSNtb0c2JEYoL0YqRis2I1EnJnBsdXM7RiQtRjA2JS1JI21pRzYkRigvRipGKzYjUSJ4RiQtRkA2I1ExJkludmlzaWJsZVRpbWVzO0YkLUZINiNRInpGJEY/LUYwNiUtRkg2I1EieUYkRk0tSSVtc3VwRzYkRigvRipGKzYkRlAtRjU2I1EiMkYkRj8tSSZtZnJhY0c2JEYoL0YqRis2JC1GWTYkRlAtRjU2I1EiM0YkLUYwNidGPC1GQDYjUSgmbWludXM7RiRGR0Zmb0ZVLUY1NiNRJH46fkYkRjxGP0ZFRj9GU0Y/Rl9vRj8tRjU2I1EpJmhlbGxpcDtGJC9JJW9wZW5HRiRRJyZsc3FiO0YkL0kmY2xvc2VHRiRRJyZyc3FiO0Yk</Equation></Text-field>
+</Output>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="seealso">See Also</Text-field></Title><Text-field style="Text" layout="Normal"><Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[GeometricSeries]"><Font style="Hyperlink">GeometricSeries</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[Inverse]"><Font style="Hyperlink">Inverse</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries"><Font style="Hyperlink">MultivariatePowerSeries</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[SumOfAllMonomials]"><Font style="Hyperlink">SumOfAllMonomials</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[Truncate]"><Font style="Hyperlink">Truncate</Font></Hyperlink>, <Hyperlink hyperlink="true" linktarget="Help:MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]"><Font style="Hyperlink">UnivariatePolynomialOverPowerSeries</Font></Hyperlink></Text-field>
+</Section>
+<Section collapsed="true" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2" bookmark="compatibility">Compatibility</Text-field></Title>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The <Font style="Help Maple Name">MultivariatePowerSeries[PowerSeries]</Font> command was introduced in Maple 2021.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">For more information on Maple 2021 changes, see <Hyperlink linktarget="Help:updates,v2021"><Font style="Hyperlink">Updates in Maple 2021</Font></Hyperlink>.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The <Font style="Help Maple Name">MultivariatePowerSeries[PowerSeries]</Font> command was updated in Maple 2022.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">The <Font style="Help Maple Name">r</Font> and <Font style="Help Maple Name">e</Font> parameters were introduced in Maple 2022.</Text-field>
+<Text-field style="Text" layout="Bullet Item" bullet="dot">For more information on Maple 2022 changes, see <Hyperlink linktarget="Help:updates,v2022"><Font style="Hyperlink">Updates in Maple 2022</Font></Hyperlink>.</Text-field></Section>
+</Worksheet>

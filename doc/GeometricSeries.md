@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/GeometricSeries",versionnew="{XENOMORPH}") MultivariatePowerSeries[GeometricSeries]
-##TITLE(halfline="Create the geometric series over a set of variables")
+##TITLE(halfline="create the geometric series over a set of variables")
 ##    MultivariatePowerSeries[GeometricSeries]
 ##ALIAS GeometricSeries, MultivariatePowerSeries:-GeometricSeries, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca

@@ -12,7 +12,7 @@ Try[testnoerror]("test 1", PSO:-GeometricSeries([x, y]), 'assign'='psGeo');
 
 # Test DeepCopy 
 Try[testnoerror]("test 2", PSO:-DeepCopy(psGeo), 'assign'='psGeo2');
-Try("test 3", PSO:-ApproximatelyEqual(psGeo, psGeo2), true);
+Try("test 3", PSO:-ApproximatelyEqual(psGeo, psGeo2, ':-force'), true);
 Try[testnoerror]("test 4", PSO:-HomogeneousPart(psGeo, 10));
 Try("test 5", PSO:-GetPrecision(psGeo), 10);
 Try("test 6", PSO:-GetPrecision(psGeo2), 1);

@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
-##PROCEDURE(help,nospec,label="MultivariatePowerSeries/Negate",versionnew="{XENOMORPH}") MultivariatePowerSeries[Negate]
-##TITLE(halfline="Negate a power series or a univariate polynomial over power series")
+##PROCEDURE(help,nospec,label="MultivariatePowerSeries/Negate",versionnew="{XENOMORPH}", versionupdated="{ZONKEY}") MultivariatePowerSeries[Negate]
+##TITLE(halfline="negate a power series or a Puiseux series or a univariate polynomial over power series")
 ##    MultivariatePowerSeries[Negate]
 ##ALIAS Negate, MultivariatePowerSeries:-Negate, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca
@@ -41,9 +41,25 @@
 ##- The additive inverse of _g_ should be equal to _f_.
 ##> ApproximatelyEqual(f, Negate(g), 10);
 ##< true
+##- Now we define a Puiseux series 's' and compute its additive inverse.
+##> s := PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)]);
+##<(verification="type") object
+##> ns := Negate(s);
+##<(verification="type") object
+##> Truncate(s+ns, 20);
+##< 0
+##- Finally, we create a univariate polynomial over power series from a list of Puiseux series.
+##> h := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
+##<(verification="type") object
+##- We compute '-h'.
+##> nh := Negate(h);
+##<(verification="type") object
+##> Truncate(h+nh, 20);
+##< 0
 ##
 ##SEEALSO
 ##- "PowerSeries"
+##- "PuiseuxSeries"
 ##- "GeometricSeries"
 ##- "Subtract"
 ##- "Multiply"
@@ -52,6 +68,7 @@
 ##
 ##XREFMAP
 ##- PowerSeries : Help:MultivariatePowerSeries[PowerSeries]
+##- PuiseuxSeries : MultivariatePowerSeries[PuiseuxSeries]
 ##- GeometricSeries : Help:MultivariatePowerSeries[GeometricSeries]
 ##- Subtract : Help:MultivariatePowerSeries[Subtract]
 ##- Multiply : Help:MultivariatePowerSeries[Multiply]

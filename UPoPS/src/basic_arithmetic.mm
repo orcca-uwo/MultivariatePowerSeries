@@ -18,7 +18,7 @@ export
             new_upoly(u+1) := 0; # reallocate Array 
             local tmp_upoly := ifelse(DEGREE(self) > DEGREE(other), apoly, bpoly);
             for local i from l+1 to u do
-                new_upoly[i] := PowerSeriesObject:-DeepCopy(tmp_upoly[i]);
+                new_upoly[i] := function:-DeepCopy(tmp_upoly[i]);
             end do;
         end if;
         return Object(UnivariatePolynomialOverPowerSeriesObject, new_upoly, x);
@@ -27,7 +27,9 @@ export
 # NaryAdd 
 # to add a sequence of UPoPS objects
 export 
-    NaryAdd ::static := proc(terms :: seq({UnivariatePolynomialOverPowerSeriesObject, PowerSeriesObject, algebraic}), $)
+    NaryAdd ::static := proc(terms :: seq({UnivariatePolynomialOverPowerSeriesObject, 
+                                           PowerSeriesObject, PuiseuxSeriesObject,
+                                           algebraic}), $)
     local lterms := [terms];
     local vname;
         
@@ -35,8 +37,16 @@ export
             local upops, rest;
             upops, rest := selectremove(type, lterms, UnivariatePolynomialOverPowerSeriesObject);
             vname := get_common_vname(op(upops));
+
+            if ormap(type, rest, PuiseuxSeriesObject) then  
+                rest := map(PuiseuxSeries, rest);
+            elif andmap(type, rest, PowerSeriesObject)=false then
+                rest := add(rest);
+                rest := [PowerSeries(rest)];
+            end if;
             
-            local pso := PowerSeriesObject:-NaryAdd(op(rest));
+            local pso := function:-NaryAdd(op(rest));
+            
             lterms := [op(upops), pso:-ConvertToUPoPS(pso, vname)];
         else
             vname := get_common_vname(op(lterms));
@@ -48,18 +58,28 @@ export
         end if;
         
     local u, d := max(seq(DEGREE(u), u in lterms));
+    
+    # We check if there is a UPoP with PuSo coefficients.
+    # If this is the case, then we convert everything to UPuP with 
+    # PuSO coefficients.
+    if ormap(UnivariatePolynomialOverPowerSeriesObject:-IsPuSOUPoP, lterms) then
+        lterms := map(UnivariatePolynomialOverPowerSeriesObject:-ConvertToPuSOUPoP, lterms)
+    end if;
+
     local upoly := Array(0 .. d);
         for local i from 0 to d do
             lterms := select(u -> u:-Degree(u) >= i, lterms);
-            upoly[i] := PowerSeriesObject:-NaryAdd(seq(u:-upoly[i], u in lterms));
+            upoly[i] := function:-NaryAdd(seq(u:-upoly[i], u in lterms));
         end do;
 
         return Object(UnivariatePolynomialOverPowerSeriesObject, upoly, vname);
     end proc;
 
 export
-    `+` ::static := proc(terms :: seq({UnivariatePolynomialOverPowerSeriesObject, PowerSeriesObject, algebraic}), $)
-        return NaryAdd(terms);
+    `+` ::static := proc(terms :: seq({UnivariatePolynomialOverPowerSeriesObject, 
+                                       PowerSeriesObject, PuiseuxSeriesObject,
+                                       algebraic}), $)
+        return MultivariatePowerSeries:-Add(terms);
     end proc;
 
 # BinarySub
@@ -73,16 +93,16 @@ export
         local l := min(DEGREE(self), DEGREE(other));
         local apoly := self:-upoly;
         local bpoly := other:-upoly;
-        local new_upoly := Array(0 .. l, i -> PowerSeriesObject:-BinarySub(apoly[i], bpoly[i]));
+        local new_upoly := Array(0 .. l, i -> function:-BinarySub(apoly[i], bpoly[i]));
         if DEGREE(self) < DEGREE(other) then
             new_upoly(u+1) := 0; # reallocate Array 
             for local i from l+1 to u do
-                new_upoly[i] := PowerSeriesObject:-Negate(bpoly[i]);
+                new_upoly[i] := function:-Negate(bpoly[i]);
             end do;
         elif DEGREE(self) > DEGREE(other) then
             new_upoly(u+1) := 0;
             for local i from l+1 to u do 
-                new_upoly[i] := PowerSeriesObject:-DeepCopy(apoly[i]);
+                new_upoly[i] := function:-DeepCopy(apoly[i]);
             end do;
         end if;
         return Object(UnivariatePolynomialOverPowerSeriesObject, new_upoly, x);
@@ -92,7 +112,7 @@ export
 # to negate the input object
 export 
     Negate ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
-        local new_upoly := map(PowerSeriesObject:-Negate, self:-upoly);
+        local new_upoly := map(function:-Negate, self:-upoly);
         return Object(UnivariatePolynomialOverPowerSeriesObject, new_upoly, self:-vname);
     end proc;
 
@@ -107,11 +127,11 @@ export
         local new_upoly := Array(0 .. d);
         for local i from 0 to DEGREE(self) do
             for local j from 0 to DEGREE(other) do
-                local product := PowerSeriesObject:-BinaryMultiply(self:-upoly[i], other:-upoly[j]);
+                local product := function:-BinaryMultiply(self:-upoly[i], other:-upoly[j]);
                 if new_upoly[i+j] = 0 then
                     new_upoly[i+j] := product;
                 else 
-                    new_upoly[i+j] := PowerSeriesObject:-BinaryAdd(new_upoly[i+j], product);
+                    new_upoly[i+j] := function:-BinaryAdd(new_upoly[i+j], product);
                 end if;
             end do;
         end do;
@@ -135,7 +155,8 @@ local
 # size : if the degree pattern is known, then use one of these three different modes 
 #        {constant, increasing, decreasing} or leave it as default 
 export
-    NaryMultiply ::static := proc(factors :: seq({UnivariatePolynomialOverPowerSeriesObject, PowerSeriesObject, algebraic}),
+    NaryMultiply ::static := proc(factors :: seq({UnivariatePolynomialOverPowerSeriesObject, 
+                                                  PowerSeriesObject, PuiseuxSeriesObject, algebraic}),
                                   {size :: identical(constant, increasing, decreasing) := constant},
                                   $)
         local lfactors := [factors];
@@ -143,12 +164,28 @@ export
             local upops, rest;
             upops, rest := selectremove(type, lfactors, UnivariatePolynomialOverPowerSeriesObject);
             local vname := get_common_vname(op(upops));
+
+            if ormap(type, rest, PuiseuxSeriesObject) then
+                rest := map(PuiseuxSeries, rest);
+            elif andmap(type, rest, PowerSeriesObject)=false then
+                rest := mul(rest);
+                rest := [PowerSeries(rest)];
+            end if;
             
-            local pso := PowerSeriesObject:-NaryMultiply(op(rest));
+            local pso := function:-NaryMultiply(op(rest));
+
             lfactors := [op(upops), pso:-ConvertToUPoPS(pso, vname)];
         end if;
 
         local n := numelems(lfactors);
+
+        # We check if there is a UPoP with PuSo coefficients.
+        # If this is the case, then we convert everything to UPuP with 
+        # PuSO coefficients.
+        if ormap(UnivariatePolynomialOverPowerSeriesObject:-IsPuSOUPoP, lfactors) then
+            lfactors := map(UnivariatePolynomialOverPowerSeriesObject:-ConvertToPuSOUPoP, lfactors)
+        end if;
+
         if n < 2 then
             return ifelse(n = 1, DeepCopy(lfactors[1]), One());
         elif size = constant then 
@@ -165,8 +202,10 @@ export
     end proc;
 
 export
-    `*` ::static := proc(factors :: seq({UnivariatePolynomialOverPowerSeriesObject, PowerSeriesObject, algebraic}), $)
-        return NaryMultiply(factors);
+    `*` ::static := proc(factors :: seq({UnivariatePolynomialOverPowerSeriesObject, 
+                                         PowerSeriesObject, PuiseuxSeriesObject, 
+                                         algebraic}), $)
+        return MultivariatePowerSeries:-Multiply(factors);
     end proc;
 
 # Exponentiate
@@ -215,7 +254,7 @@ export
 # to reduce memory usage, we ended up using only CoefficientList.
 # used in taylorShift method 
 local 
-    taylor_shift_matrix ::static := proc(c :: {numeric, algebraic, algnum, algnumext, abstract_rootof, radical},
+    taylor_shift_matrix ::static := proc(c :: COEFFICIENT_TYPE,
                                         d :: nonnegint,
                                         $)
         local mat := Matrix(d + 1, d + 1);
@@ -252,8 +291,13 @@ local
 # f(y) -> f(y + c) where c is a numeric/algebraic.
 export 
     TaylorShift ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, 
-                                c :: {numeric, algebraic, algnum, algnumext, abstract_rootof, radical},
+                                c :: COEFFICIENT_TYPE,
                                 $)
+        if self:-IsPuSOUPoP(self)=true then
+            error "invalid input for the TaylorShift function %1 must "
+                    "have power series coefficients.", self;
+        end if;
+
         if c = 0 then
             return self;
         end if;
