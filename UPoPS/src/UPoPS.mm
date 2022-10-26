@@ -10,7 +10,10 @@ local
     # vname : tha name of main variable 
     vname :: name,
     # dstyle : a display style for a specific UPoPS
-    dstyle :: UPOPSDS_TYPE; 
+    dstyle :: UPOPSDS_TYPE,
+    # Bound for the Puiseux theorem
+    Puiseux_bound_static :: static(nonnegint) := 10,
+    Puiseux_bound :: {nonnegint, identical(undefined)} := undefined; 
 
 # return Expanded of x wehere d is a dummy variable for the sake of efficiency 
 $define AUTO_EXPAND(d, x) \
@@ -96,7 +99,8 @@ export
                              output :: identical("typeset", "string") := "typeset",
                              $)
         uses T = Typesetting;
-        local mystyle;
+        local mystyle, displayresult;
+
         if user_dstyle <> [] then
             mystyle := user_dstyle;
         elif self:-dstyle <> [] then
@@ -104,47 +108,41 @@ export
         else
             mystyle := defaultDisplayStyle;
         end if;
+        local psstyle := select(type, mystyle, 'PSDS_ENTRYTYPE');
         
         local min_deg := min(DEGREE(self), eval(':-maxdegree', [op(mystyle), ':-maxdegree'=infinity]));
-        local result := Array(0 .. min_deg);
+        local nterms := eval(':-maxterms', [op(mystyle), ':-maxterms'=50]);
+        local result := Array(1 .. 0);
         # _Z shouldn't be documented
         local x := ifelse(self:-vname <> undefined, self:-vname, '_Z');
-        local displayresult := PowerSeriesObject:-Display(self:-upoly[0], select(type, mystyle, 'PSDS_ENTRYTYPE'), output);
+
+        displayresult := function:-Display(self:-upoly[0], psstyle, output, 
+                                           ':-updateterms' = 'nterms');
+
         if output = "string" then
-            result[0] := sprintf("(%s) + ", displayresult);
+            result ,= sprintf("(%s)", displayresult);
         else
-            result[0] := T:-mfenced(T:-mrow(displayresult)),  T:-mn("&plus;");
+            result ,= T:-mfenced(T:-mrow(displayresult));
         end if;
-        # it will update defaultDisplayStyle... 
-        for local d from 1 to min_deg - 1 do
-            displayresult := PowerSeriesObject:-Display(self:-upoly[d], select(type, mystyle, 'PSDS_ENTRYTYPE'), output);
+
+        local d;
+        for d from 1 to min_deg while nterms > 0 do
+            displayresult := function:-Display(
+                self:-upoly[d], [':-maxterms' = nterms, op(psstyle)], output, ':-updateterms' = 'nterms');
+
             if output = "string" then
-                result[d] := sprintf("(%s) %a + ", displayresult, x^d);
+                result ,= sprintf(" + (%s) %a", displayresult, x^d);
             else
-                result[d] := T:-mfenced(T:-mrow(displayresult)), T:-mo("&InvisibleTimes;"), apply(T:-Typeset, x^d), T:-mn("&plus;");
+                result ,= T:-mn("&plus;"), T:-mfenced(T:-mrow(displayresult)), T:-mo("&InvisibleTimes;"), apply(T:-Typeset, x^d);
             end if;
         end do;
 
-        displayresult := PowerSeriesObject:-Display(self:-upoly[min_deg], select(type, mystyle, 'PSDS_ENTRYTYPE'), output);
-        if min_deg > 0 then
+        # The last degree included, at least partially, is d-1.
+        if d <= DEGREE(self) then
             if output = "string" then
-                result[min_deg] := sprintf("(%s) %a", displayresult, x^min_deg);
+                result ,= " + ...";
             else
-                result[min_deg] := T:-mfenced(T:-mrow(displayresult)), T:-mo("&InvisibleTimes;"), apply(T:-Typeset, x^min_deg);
-            end if;
-        else
-            if output = "string" then
-                result[min_deg] := sprintf("(%s)", displayresult);
-            else
-                result[min_deg] := T:-mfenced(T:-mrow(displayresult));
-            end if;
-        end if;
-
-        if min_deg < DEGREE(self) then
-            if output = "string" then
-                result[min_deg] := cat(result[min_deg], " + ...");
-            else
-                result[min_deg] := result[min_deg], T:-mn("&plus;"), T:-mn("&hellip;");
+                result ,= T:-mn("&plus;"), T:-mn("&hellip;");
             end if;
         end if;
 
@@ -172,10 +170,11 @@ local
     return 'Object'('UnivariatePolynomialOverPowerSeriesObject', self:-upoly);
   end proc;
 
-$include "UPoPS/src/basic_routines.mm"
-$include "UPoPS/src/basic_arithmetic.mm"
-$include "UPoPS/src/weierstrass_preparation.mm"
-$include "UPoPS/src/factorization.mm"
+$include "MultivariatePowerSeries/UPoPS/src/basic_routines.mm"
+$include "MultivariatePowerSeries/UPoPS/src/basic_arithmetic.mm"
+$include "MultivariatePowerSeries/UPoPS/src/weierstrass_preparation.mm"
+$include "MultivariatePowerSeries/UPoPS/src/factorization.mm"
+$include "MultivariatePowerSeries/UPoPS/src/Puiseux_factorization.mm"
 
 $undef AUTO_EXPAND
 $undef DEGREE

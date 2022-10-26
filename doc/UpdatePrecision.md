@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/UpdatePrecision",versionnew="{XENOMORPH}") MultivariatePowerSeries[UpdatePrecision]
-##TITLE(halfline="Update the precision to which a power series or univariate polynomial over power series is known")
+##TITLE(halfline="update the precision to which a power series or univariate polynomial over power series is known")
 ##    MultivariatePowerSeries[UpdatePrecision]
 ##ALIAS UpdatePrecision, MultivariatePowerSeries:-UpdatePrecision, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca

@@ -6,8 +6,12 @@
 # to deep copy of the input object
 export 
     DeepCopy ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
-        local new_upoly := map(PowerSeriesObject:-DeepCopy, self:-upoly);
-        return Object(UnivariatePolynomialOverPowerSeriesObject, new_upoly, self:-vname);
+        local new_upoly := map(function:-DeepCopy, self:-upoly);
+        local upops := Object(UnivariatePolynomialOverPowerSeriesObject, new_upoly, self:-vname);
+
+        upops:-Puiseux_bound := self:-Puiseux_bound;
+
+        return upops;
     end proc;
 
 # GetCoefficient
@@ -29,7 +33,7 @@ export
 export 
     GetAnalyticExpression ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
         local i, lt;
-        local algexprs := [seq(PowerSeriesObject:-GetAnalyticExpression(lt), lt in self:-upoly)];
+        local algexprs := [seq(function:-GetAnalyticExpression(lt), lt in self:-upoly)];
         if member(undefined, algexprs) or self:-vname = undefined then 
             return 'undefined';
         else 
@@ -62,11 +66,16 @@ export
     UpdatePrecision ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, 
                                     prec :: nonnegint, 
                                     $)
-        for local i from 0 to DEGREE(self) do
-            PowerSeriesObject:-HomogeneousPart_local(self:-upoly[i], prec);
-        end do;
-        return self;
-    end proc;
+    if self:-IsPuSOUPoP(self)=true then
+        error "invalid input for the UpdatePrecision function %1 must "
+                "have power series coefficients.", self;
+    end if;
+
+    for local i from 0 to DEGREE(self) do
+        PowerSeriesObject:-HomogeneousPart_local(self:-upoly[i], prec);
+    end do;
+    return self;
+end proc;
 
 # FromPolynomial
 # to get a UPoPS from a polynomial w.r.t the main variable x::name
@@ -76,7 +85,7 @@ export
                             x :: name,
                             $)
         local new_p, dummy;
-        if type(p, {numeric, algnum, algnumext, abstract_rootof}) then
+        if type(p, 'COEFFICIENT_TYPE') then
             return UnivariatePolynomialOverPowerSeriesObject:-Constant(p);
         else
             new_p := AUTO_EXPAND(dummy, p); 
@@ -88,15 +97,22 @@ export
         local d := degree(new_p, x);
         local cfs := PolynomialTools:-CoefficientList(new_p, x);
         local upoly := Array(0 .. d, i -> PowerSeriesObject:-FromPolynomial(cfs[i+1]));
+        
         return Object(UnivariatePolynomialOverPowerSeriesObject, upoly, x);
     end proc;
 
-# ConvertToPowerSeries
+# ConvertToPowerSeries 
 # to convert a UPoPS to a PowerSeriesObject
 export 
     ConvertToPowerSeries ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
+        if self:-IsPuSOUPoP(self)=true then
+            error "invalid input for the ConvertToPowerSeries function %1 must "
+                    "have power series coefficients.", up;
+        end if;
+
         local i;
         local coefs := [seq(self:-vname^i, i = 0 .. DEGREE(self))];
+        
         return PowerSeriesObject:-NaryAdd(seq(self:-upoly), ':-coefficients' = coefs);
     end proc;
 
@@ -117,11 +133,19 @@ export
                 error "invalid input: cannot truncate at degree %1 in totaldegree mode", deg;
             end if;
             for local i from 0 to min(DEGREE(self), deg) do 
-                poly += AUTO_EXPAND(dummy, PowerSeriesObject:-Truncate(self:-upoly[i], deg - i ) * x^i );
+                if type(self:-upoly[i], PowerSeriesObject) then
+                    poly += AUTO_EXPAND(dummy, function:-Truncate(self:-upoly[i], deg - i ) * x^i );
+                else 
+                    poly += expand(function:-Truncate(self:-upoly[i], deg) * x^i); 
+                end if;
             end do;
         else 
             for local i from 0 to DEGREE(self) do
-                poly += AUTO_EXPAND(dummy, PowerSeriesObject:-Truncate(self:-upoly[i], deg) * x^i); 
+                if type(self:-upoly[i], PowerSeriesObject) then
+                    poly += AUTO_EXPAND(dummy, function:-Truncate(self:-upoly[i], deg) * x^i); 
+                else 
+                    poly += expand(function:-Truncate(self:-upoly[i], deg) * x^i); 
+                end if;
             end do;
         end if;
         return collect(poly, x);
@@ -145,7 +169,7 @@ export
 # Constant 
 # to create a constant UPoPS
 export 
-    Constant ::static := proc(p :: {numeric, algnum, algnumext, abstract_rootof}, $)
+    Constant ::static := proc(p :: COEFFICIENT_TYPE, $)
         if p = 0 then
             return Zero();
         elif p = 1 then
@@ -161,42 +185,74 @@ export
 export 
     ApproximatelyZero ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject,
                             deg :: integer := -2,
-                            $)
-        for local i from 0  to upperbound(self:-upoly) do
-            if not PowerSeriesObject:-ApproximatelyZero(self:-upoly[i], deg) then
+                            {force :: truefalse := false},
+                            $)    
+    local sw := self:-IsPuSOUPoP(self);
+                            
+    for local i from 0  to upperbound(self:-upoly) do
+        if sw = false then
+            if not PowerSeriesObject:-ApproximatelyZero(self:-upoly[i], deg, _options['force']) then
                 return false;
             end if;
-        end do;
-        return true;
-    end proc;
+        else 
+            if not PuiseuxSeriesObject:-ApproximatelyZero(self:-upoly[i], deg) then
+                return false;
+            end if;
+        end if;
+    end do;
+    return true;
+end proc;
 
 # IsUnit
 # to check if the self:-upoly[0] is a unit
 export 
     IsUnit ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
-        return PowerSeriesObject:-IsUnit(self:-upoly[0]);
+        if self:-IsPuSOUPoP(self)= true then 
+            error "invalid input for the IsUnit function %1 must "
+                  "have power series coefficients.", self;
+        else
+            return PowerSeriesObject:-IsUnit(self:-upoly[0]);
+        end if;
     end proc;
 
 # ApproximatelyEqual
 # see PowerSeriesObject:-ApproximatelyEqual for details
 export 
-    ApproximatelyEqual ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, 
-                            other :: UnivariatePolynomialOverPowerSeriesObject,
+    ApproximatelyEqual ::static := proc(_self :: UnivariatePolynomialOverPowerSeriesObject, 
+                            _other :: UnivariatePolynomialOverPowerSeriesObject,
                             deg :: integer := -2,
+                            {force :: truefalse := false},
                             $)
-        if deg = -1 then 
-            return true;
-        elif DEGREE(self) <> DEGREE(other) or upperbound(self:-upoly) <> upperbound(other:-upoly) then
-            return false;
-        end if;
-        if upperbound(self:-upoly) < 0 then return true; end if;
-        for local i from 0 to DEGREE(self) do 
-            if not PowerSeriesObject:-ApproximatelyEqual(self:-upoly[i], other:-upoly[i], deg) then
+    local self, other;
+    local sw := false;
+    if _self:-IsPuSOUPoP(_self)= true or _other:-IsPuSOUPoP(_other)= true then        
+        self := _self:-ConvertToPuSOUPoP(_self);
+        other := _other:-ConvertToPuSOUPoP(_other);
+        sw := true;
+    else 
+        self := _self;
+        other := _other;
+    end if;
+
+    if deg = -1 then 
+        return true;
+    elif DEGREE(self) <> DEGREE(other) or upperbound(self:-upoly) <> upperbound(other:-upoly) then
+        return false;
+    end if;
+    if upperbound(self:-upoly) < 0 then return true; end if;
+    for local i from 0 to DEGREE(self) do 
+        if sw = false then
+            if not PowerSeriesObject:-ApproximatelyEqual(self:-upoly[i], other:-upoly[i], deg, _options['force']) then
                 return false;
             end if;
-        end do;
-        return true;
-    end proc;
+        else 
+            if not PuiseuxSeriesObject:-ApproximatelyEqual(self:-upoly[i], other:-upoly[i], deg) then
+                return false;
+            end if;
+        end if;
+    end do;
+    return true;
+end proc;
 
 # a local function to return the common vname of self and other 
 # mainly used in basic_arithmetic methods 
@@ -229,3 +285,66 @@ export
             return `union`(seq(pso:-Variables(pso), pso in self:-upoly), {self:-vname});
         end if;
     end proc;
+
+# To know if it is a UPOP with PuSO coefficients.
+# If the coefficients of self are PuSOs then the function
+# returns true. Otherwise, false is returned.
+export IsPuSOUPoP ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
+    return ormap(type, self:-upoly, PuiseuxSeriesObject);
+end proc;
+
+# To convert a UPoP with PSO coefficient to a UPoP with PuSO as 
+# coefficients.
+export ConvertToPuSOUPoP::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
+    if self:-IsPuSOUPoP(self) = true then
+        return self;
+    else
+        local A := map(PuiseuxSeries, self:-upoly);
+
+        return Object(UnivariatePolynomialOverPowerSeriesObject, A, self:-vname);;
+    end if;
+end proc;
+
+# To know if a UPoPS is monic.
+export IsMonic::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
+    local n := DEGREE(self);
+    local a_n := self:-GetCoefficient(self, n);
+
+    local ana := a_n:-GetAnalyticExpression(a_n);
+
+    if normal(ana)=1 then
+        return true;
+    else 
+        return false;
+    end if;
+end proc;
+
+# To make a UPoPS monic as a UPoPuS.
+export MakeMonic::static := proc(_self :: UnivariatePolynomialOverPowerSeriesObject, 
+                                 {returnleadingcoefficient :: {truefalse, identical(automatic)}
+                                  := ':-automatic'}, $)
+    local self := _self:-ConvertToPuSOUPoP(_self);
+    local n := DEGREE(self);
+    local a := self:-GetCoefficient(self, n);
+
+    if self:-IsMonic(self) then 
+        if returnleadingcoefficient = true then
+            return [self, Object(a, 1)];
+        else 
+            return self;
+        end if;
+    end if;
+    
+    local a_inverse := a:-Inverse(a);
+    local upoly := self:-upoly;
+    upoly := map(Multiply, upoly, a_inverse);
+    upoly[n] := Object(a, 1);
+
+    local output := Object(UnivariatePolynomialOverPowerSeriesObject, upoly, self:-vname);
+    
+    if returnleadingcoefficient = true then
+        return [output, a];
+    else 
+        return output;
+    end if;
+end proc;

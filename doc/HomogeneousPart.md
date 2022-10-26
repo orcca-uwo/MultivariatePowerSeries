@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/HomogeneousPart",versionnew="{XENOMORPH}") MultivariatePowerSeries[HomogeneousPart]
-##TITLE(halfline="Compute the homogeneous part of a power series for a particular degree")
+##TITLE(halfline="compute the homogeneous part of a power series for a particular degree")
 ##    MultivariatePowerSeries[HomogeneousPart]
 ##ALIAS HomogeneousPart, MultivariatePowerSeries:-HomogeneousPart, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca

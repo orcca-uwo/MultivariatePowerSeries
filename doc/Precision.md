@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/Precision",versionnew="{XENOMORPH}") MultivariatePowerSeries[Precision]
-##TITLE(halfline="Get the current precision to which a power series is known")
+##TITLE(halfline="get the current precision to which a power series is known")
 ##    MultivariatePowerSeries[Precision]
 ##ALIAS Precision, MultivariatePowerSeries:-Precision, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca

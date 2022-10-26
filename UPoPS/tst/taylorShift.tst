@@ -11,18 +11,18 @@ Try[testnoerror]("test 1", UPoPSObject:-Zero(), 'assign'='upZero');
 
 # Test TaylorShift
 Try[testnoerror]("test 2", UPoPSObject:-TaylorShift(upZero, 0), 'assign'='upTS');
-Try("test 3", UPoPSObject:-ApproximatelyEqual(upZero, upTS), true);
+Try("test 3", UPoPSObject:-ApproximatelyEqual(upZero, upTS, ':-force'), true);
 
 Try[testnoerror]("test 4", UPoPSObject:-TaylorShift(upZero, 1), 'assign'='upTS');
-Try("test 5", UPoPSObject:-ApproximatelyEqual(upZero, upTS), true);
+Try("test 5", UPoPSObject:-ApproximatelyEqual(upZero, upTS, ':-force'), true);
 
 Try[testnoerror]("test 6", UPoPSObject:-TaylorShift(upZero, 0), 'assign'='upTS');
-Try("test 7", UPoPSObject:-ApproximatelyEqual(upZero, upTS), true);
+Try("test 7", UPoPSObject:-ApproximatelyEqual(upZero, upTS, ':-force'), true);
 
 Try[testnoerror]("test 8", UPoPSObject:-FromPolynomial(13*x^10*z - 3*y*x^5 + 2*x*y + 2*x + 1, 'x'), 'assign'='upP');
 Try[testnoerror]("test 9", UPoPSObject:-TaylorShift(upP, 0), 'assign'='upTS');
 Try[testnoerror]("test 10", UPoPSObject:-Truncate(upTS, 10), 'assign'='ts');
-Try("test 11", UPoPSObject:-ApproximatelyEqual(upTS, upP), true);
+Try("test 11", UPoPSObject:-ApproximatelyEqual(upTS, upP, ':-force'), true);
 Try[testnoerror]("test 12", x -> expand(13*x^10*z - 3*y*x^5 + 2*x*y + 2*x + 1) , 'assign'='func');
 Try("test 13", evalb(expand(ts) = func(x + 0)), true);
 
@@ -48,18 +48,18 @@ Try[testnoerror]("test 26", UnivariatePolynomialOverPowerSeries(0), 'assign'='up
 
 # Test TaylorShift
 Try[testnoerror]("test 27", TaylorShift(upZero, 0), 'assign'='upTS');
-Try("test 28", ApproximatelyEqual(upZero, upTS), true);
+Try("test 28", ApproximatelyEqual(upZero, upTS, ':-force'), true);
 
 Try[testnoerror]("test 29", TaylorShift(upZero, 1), 'assign'='upTS');
-Try("test 30", ApproximatelyEqual(upZero, upTS), true);
+Try("test 30", ApproximatelyEqual(upZero, upTS, ':-force'), true);
 
 Try[testnoerror]("test 31", TaylorShift(upZero, 0), 'assign'='upTS');
-Try("test 32", ApproximatelyEqual(upZero, upTS), true);
+Try("test 32", ApproximatelyEqual(upZero, upTS, ':-force'), true);
 
 Try[testnoerror]("test 33", UnivariatePolynomialOverPowerSeries(13*x^10*z - 3*y*x^5 + 2*x*y + 2*x + 1, 'x'), 'assign'='upP');
 Try[testnoerror]("test 34", TaylorShift(upP, 0), 'assign'='upTS');
 Try[testnoerror]("test 35", Truncate(upTS, 10), 'assign'='ts');
-Try("test 36", ApproximatelyEqual(upTS, upP), true);
+Try("test 36", ApproximatelyEqual(upTS, upP, ':-force'), true);
 Try[testnoerror]("test 37", x -> expand(13*x^10*z - 3*y*x^5 + 2*x*y + 2*x + 1) , 'assign'='func');
 Try("test 38", evalb(expand(ts) = func(x + 0)), true);
 

@@ -149,7 +149,7 @@ export
 # Constant 
 # to create Constant PowerSeriesObject
 export 
-    Constant ::static := proc(p :: {numeric, algnum, algnum^fraction}, $)
+    Constant ::static := proc(p :: COEFFICIENT_TYPE, $)
         if p = 0 then
             return Zero();
         elif p = 1 then
@@ -181,15 +181,16 @@ export
 export 
     ApproximatelyZero ::static := proc(self :: PowerSeriesObject,
                             deg :: integer := -2,
+                            {force :: truefalse := false},
                             $)
         # if the algexpr equals 0
-        if self:-algexpr <> undefined and self:-algexpr = 0 then 
+        if (not force) and self:-algexpr <> undefined and self:-algexpr = 0 then 
             return true;
         end if;
         #
         local d := ifelse(deg < -1, self:-deg, deg);
-        self:-ensure_degree(self, d);
         for local i from 0 to d do
+            self:-ensure_degree(self, i);
             if self:-hpoly[i] <> 0 then
                 return false;
             end if;
@@ -206,16 +207,17 @@ export
     ApproximatelyEqual ::static := proc(self :: PowerSeriesObject, 
                             other :: PowerSeriesObject,
                             deg :: integer := -2,
+                            {force :: truefalse := false},
                             $)
         # if the algexprs equal 
-        if self:-algexpr <> undefined and self:-algexpr = other:-algexpr then 
+        if (not force) and self:-algexpr <> undefined and self:-algexpr = other:-algexpr then 
             return true;
         end if;
         # 
         local d := ifelse(deg < -1, max(self:-deg, other:-deg), deg);
-        self:-ensure_degree(self, d);
-        other:-ensure_degree(other, d);
         for local i from 0 to d do
+            self:-ensure_degree(self, i);
+            other:-ensure_degree(other, i);
             if self:-hpoly[i] <> other:-hpoly[i] then
                 return false;
             end if;
@@ -271,11 +273,13 @@ export
         else 
             new_poly := expand(p);
         end if;
-        if type(new_poly, {':-numeric', ':-algnum', ':-algnum'^':-fraction'}) then
+        if type(new_poly, 'COEFFICIENT_TYPE') then
             return Constant(new_poly);
         end if;
         local homo_poly_array := convert_hpoly_from_poly(new_poly);
-        return Object(PowerSeriesObject, homo_poly_array, degree(new_poly), poly_gen, indets(new_poly, ':-name'), p);
+
+        return Object(PowerSeriesObject, homo_poly_array, degree(new_poly), poly_gen, 
+                      indets( new_poly, ':-And'(':-name',':-Not'(':-constant'))), p);
     end proc;
 
 # Truncate

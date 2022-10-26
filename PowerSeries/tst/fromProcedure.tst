@@ -8,9 +8,9 @@ PSO := MultivariatePowerSeries:-PowerSeriesObject:
 kernelopts(opaquemodules=true):
 
 Try[testnoerror]("test 1", PSO:-FromProcedure((d -> 0), 0, check = true, expand = true), 'assign'='ps');
-Try("test 2", PSO:-ApproximatelyZero(ps, 20), true);
+Try("test 2", PSO:-ApproximatelyZero(ps, 20, 'force'), true);
 Try[testnoerror]("test 3", PSO:-FromProcedure((d -> 0), 0, check = false, expand = false), 'assign'='ps');
-Try("test 4", PSO:-ApproximatelyZero(ps, 20), true);
+Try("test 4", PSO:-ApproximatelyZero(ps, 20, 'force'), true);
 
 foo_one := proc(d) return ifelse(d = 0, 1, 0); end proc;
 Try[testnoerror]("test 5", PSO:-FromProcedure(foo_one, 1, check = true, expand = true), 'assign'='ps');

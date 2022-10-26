@@ -96,6 +96,11 @@ export
     WeierstrassPreparation ::static := proc(up :: UnivariatePolynomialOverPowerSeriesObject, 
                                             prec :: nonnegint := undefined, 
                                             $)
+        if up:-IsPuSOUPoP(up)=true then
+            error "invalid input for the WeierstrassPreparation function %1 must "
+                    "have power series coefficients.", up;
+        end if;
+
         local d := pDegree(up);
         if d = 0 then
             return UnivariatePolynomialOverPowerSeriesObject:-One(), DeepCopy(up);

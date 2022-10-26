@@ -11,14 +11,14 @@ Try[testnoerror]("test 1", UPoPSObject:-Zero(), 'assign'='upZero');
 Try("test 2", UPoPSObject:-Degree(upZero), 0);
 Try("test 3", UPoPSObject:-Truncate(upZero, 10), 0);
 Try[testerror]("test 4", UPoPSObject:-GetCoefficient(upZero, 1), "invalid input: degree out of range");
-Try("test 5", UPoPSObject:-ApproximatelyEqual(upZero, upZero), true);
+Try("test 5", UPoPSObject:-ApproximatelyEqual(upZero, upZero, ':-force'), true);
 
 ####################################################################
 
 Try[testnoerror]("test 6", UnivariatePolynomialOverPowerSeries(0), 'assign'='upZero');
 Try("test 7", Degree(upZero), 0);
-Try("test 8", ApproximatelyZero(GetCoefficient(upZero, 0)), true);
+Try("test 8", ApproximatelyZero(GetCoefficient(upZero, 0), 'force'), true);
 Try[testerror]("test 9", GetCoefficient(upZero, 1), "invalid input: degree out of range");
-Try("test 10", ApproximatelyEqual(upZero, upZero), true);
+Try("test 10", ApproximatelyEqual(upZero, upZero, ':-force'), true);
 
 #end test

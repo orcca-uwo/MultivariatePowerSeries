@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
-##PROCEDURE(help,nospec,label="MultivariatePowerSeries/HenselFactorize",versionnew="{XENOMORPH}") MultivariatePowerSeries[HenselFactorize]
-##TITLE(halfline="Factorize a univariate polynomial over power series")
+##PROCEDURE(help,nospec,label="MultivariatePowerSeries/HenselFactorize",versionnew="{XENOMORPH}",versionupdated="{ZONKEY}") MultivariatePowerSeries[HenselFactorize]
+##TITLE(halfline="factorize a univariate polynomial over power series")
 ##    MultivariatePowerSeries[HenselFactorize]
 ##ALIAS HenselFactorize, MultivariatePowerSeries:-HenselFactorize, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca
@@ -21,13 +21,13 @@
 ##  The factors may not be linear, since 'u' is not factored over the field of
 ##  Puiseux series of the coefficients of 'u'.
 ##- There are two requirements on 'u' for 'HenselFactorize' to succeed in factorizing 'u'. If either
-##  of these requirements is not met, an error is signaled.
+##  of these requirements is not met, an error is thrown.
 ##-- The leading coefficient 'pn' of 'u' (the power series that is the coefficient of the highest
 ##   power of the main variable) must be invertible. That is, its constant term (the homogeneous
-##   part of 'pn' of degree 0) needs to be nonzero.
+##   part of 'pn' of degree 0) must be nonzero.
 ##-- Furthermore, for each power series 'p' that is a coefficient of 'u', the constant coefficient
 ##   of 'p' (that is, the homogeneous part of degree 0) divided by the constant coefficient of 'pn'
-##   needs to be an algebraic number. That is, the coefficient needs to be of type "algnum", either
+##   must be an algebraic number. That is, the coefficient needs to be of type "algnum", either
 ##   immediately or after applying "convert/RootOf". These coefficients are exactly the coefficients
 ##   of the polynomial 'f' returned by ~EvaluateAtOrigin(v)~ in the algorithm description below.
 ##- The command ~HenselFactorize(u)~ proceeds as follows.
@@ -61,9 +61,10 @@
 ##   the resulting list of factors, even if it is different from 1. In this case, the resulting list
 ##   of factors will contain only univariate polynomials over power series of positive degree in the
 ##   main variable.
-##-- By default (or if this behaviour is selected explicitly by including the option
+##-- By default (or if this behavior is selected explicitly by including the option
 ##   ~returnleadingcoefficient = automatic~), 'pn' is returned as the first entry of the resulting
 ##   list of factors *only* if it is *not known* to be equal to 1, and omitted otherwise.
+##INCLUDE compatibility_warning.mi
 ##
 ##INCLUDE assignment_warning.mi
 ##
@@ -110,21 +111,24 @@
 ##
 ##SEEALSO
 ##- "UnivariatePolynomialOverPowerSeries"
+##- "PuiseuxSeries"
 ##- "TaylorShift"
 ##- "WeierstrassPreparation"
 ##- "EvaluateAtOrigin"
 ##- "UpdatePrecision"
+##- "PuiseuxFactorize"
 ##
 ##REFERENCES
-##-(lead=indent) Alexander Brandt, Mahsa Kazemi, Marc Moreno Maza
+##-(lead=indent) Alexander Brandt, Mahsa Kazemi, Marc Moreno Maza.
 ##  \"Power Series Arithmetic with the BPAS Library.\"
 ##  **Computer Algebra in Scientific Computing (CASC)**, **Lecture Notes in Computer Science - 12291**, (2020): 108-128.
-##-(lead=indent) Mohammadali Asadi, Alexander Brandt, Mahsa Kazemi, Marc Moreno Maza, and Erik Postma: 
-## \" Multivariate Power Series in Maple.\" **Maple Conference 2020, Waterloo, Ontario, Canada, November 2-6, 2020**,
-## **Communications in Computer and Information Science (CCIS) series - Springer 2020** (submitted).
+##-(lead=indent) Mohammadali Asadi, Alexander Brandt, Mahsa Kazemi, Marc Moreno Maza, and Erik Postma. 
+## \"Multivariate Power Series in Maple.\" In: Corless R.M., Gerhard J., Kotsireas I.S. (eds) **Maple in Mathematics Education and Research. MC 2020.**
+## **Communications in Computer and Information Science (CCIS)**, Vol: **1414** Springer (2021): 48-66.
 ##
 ##XREFMAP
 ##- UnivariatePolynomialOverPowerSeries : Help:MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]
+##- PuiseuxSeries : MultivariatePowerSeries[PuiseuxSeries]
 ##- TaylorShift : Help:MultivariatePowerSeries[TaylorShift]
 ##- WeierstrassPreparation : Help:MultivariatePowerSeries[WeierstrassPreparation]
 ##- EvaluateAtOrigin : Help:MultivariatePowerSeries[EvaluateAtOrigin]
@@ -132,3 +136,4 @@
 ##- algnum : Help:type/algnum
 ##- convert/RootOf : Help:convert/RootOf
 ##- "analytic expression" : Help:MultivariatePowerSeries[GetAnalyticExpression]
+##- PuiseuxFactorize : Help:MultivariatePowerSeries[PuiseuxFactorize]

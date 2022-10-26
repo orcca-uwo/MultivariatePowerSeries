@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/Divide",versionnew="{XENOMORPH}") MultivariatePowerSeries[Divide]
-##TITLE(halfline="Divide two power series")
+##TITLE(halfline="divide two power series")
 ##    MultivariatePowerSeries[Divide]
 ##ALIAS Divide, MultivariatePowerSeries:-Divide, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca
@@ -16,7 +16,7 @@
 ##DESCRIPTION
 ##- The commands ~a/b~ and ~Divide(a,b)~ return the product of 'a' by the inverse of 'b'.
 ##  The power series 'b' is required to be  invertible, that is,
-##  'b' must have a non-zero constant term.
+##  'b' must have a nonzero constant term.
 ##
 ##INCLUDE assignment_warning.mi
 ##

@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/EvaluateAtOrigin",versionnew="{XENOMORPH}") MultivariatePowerSeries[EvaluateAtOrigin]
-##TITLE(halfline="Evaluate the coefficients of a univariate polynomial over power series at the origin")
+##TITLE(halfline="evaluate the coefficients of a univariate polynomial over power series at the origin")
 ##    MultivariatePowerSeries[EvaluateAtOrigin]
 ##ALIAS EvaluateAtOrigin, MultivariatePowerSeries:-EvaluateAtOrigin, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca

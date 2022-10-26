@@ -1,0 +1,7 @@
+##- Let _X_:=[_x[1]_,...,_x[p]_] and _U_:=[_u[1]_,..,_u[m]_] be ordered variables,
+##	_R_:=[_r[1]_,...,_r[m]_] be a list of grevlex positive p-dimensional rational 
+##	rays, and e = (_e[1]_,..,_e[p]_) be a point in _Q^p_. 
+## 	Let also _X^r_ denote _x[1]^v[1]_*...*_x[p]^v[p]_ for v=(_v[1]_,...,_v[p]_) in _Q^p_. 
+##  Internally a Puiseux could be understood as the change of variables  
+##	_u[i]_ = _X^r[i]_ for 'i=1,...,m' applied to the terms of 'g(U)' and 
+##	then multiplied by _X^e_.
