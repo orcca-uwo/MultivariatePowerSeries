@@ -25,8 +25,6 @@ testall: $(ALLTESTARGS)
 
 sanitytest: $(SANITYTARGS)
 
-##	@(cd MultivariatePowerSeries/PowerSeries/tst ; maple2022 -A 2 -B -b MultivariatePowerSeres.mla fromPolynomial.tst)
-
 mla: 
 	rm -f $(MLAFILE);
 	cd ..; maple -q MultivariatePowerSeries/build_me.mpl;
