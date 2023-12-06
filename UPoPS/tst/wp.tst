@@ -23,7 +23,7 @@ Try[testnoerror]("test 14", WeierstrassPreparation(up), 'assign'='wp1');
 Try[testnoerror]("test 15", Truncate(wp1[1], 10), 'assign'='p');
 Try("test 16", evalb(expand(p) = x^2) , true);
 Try[testnoerror]("test 17", Truncate(wp1[2], 10), 'assign'='alpha');
-Try("test 18", evalb(Algebraic:-Expand(alpha) = y^2+RootOf(_Z^2-2,index = 1)) , true);
+Try("test 18", evalb(evala(Expand(alpha)) = y^2+2^(1/2)) , true);
 
 createWPInput1 := proc(d::nonnegint)
 local upoly, i;

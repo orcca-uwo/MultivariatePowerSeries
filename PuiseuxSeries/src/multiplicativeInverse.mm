@@ -130,7 +130,7 @@ export Inverse ::static := proc(_self :: PuiseuxSeriesObject,
             new_e[C:-ord[i]] := new_e[C:-ord[i]]- min_monomial_exps[i] ;
         end do;
 
-    return Object(PuiseuxSeriesObject, newPso, C:-ord, new_ordCV, new_rays, new_e);
+        return Object(PuiseuxSeriesObject, newPso, C:-ord, new_ordCV, new_rays, new_e);
     end if;
 end proc;
 
@@ -198,7 +198,7 @@ end proc;
 # To set a nonzero_pso_bound or a nonzero_pso_bound_static.
 export SetNonzeroPowerSeriesDegreeBound ::static := proc(_self :: PuiseuxSeriesObject,
                                                   bound::nonnegint,
-                                                  {instance :: truefalse := false},
+                                                  {instance :: truefalse := true},
                                                   $)
     local old_value;
     
@@ -214,10 +214,10 @@ export SetNonzeroPowerSeriesDegreeBound ::static := proc(_self :: PuiseuxSeriesO
 end proc;
 
 # To set a smallest_term_bound or a smallest_term_bound_static.
-export SetSmallestPowerSeriesDegreeBound ::static := proc(_self :: PuiseuxSeriesObject,
-                                                    bound::nonnegint,
-                                                    {instance :: truefalse := false},
-                                                    $)
+export SetSmallestTermDegreeBound ::static := proc(_self :: PuiseuxSeriesObject,
+                                                   bound::nonnegint,
+                                                   {instance :: truefalse := true},
+                                                   $)
     local old_value;
     
     if instance then
@@ -257,7 +257,7 @@ local LookForNonZeroTermInPso::static := proc(_self :: PuiseuxSeriesObject,
         end if;
     end do;
 
-    error "when inverting a Puiseux series, found no nonzero term of power series degree less than %1. The Puiseux series may be 0, or you may need to increase the bound using the `bound` argument to the Inverse command, or using the SetPowerSeriesDegreeBound command", bound;
+    error "when inverting a Puiseux series, found no nonzero term of power series degree less than %1. The Puiseux series may be 0, or you may need to increase the bound using the `bound` argument to the Inverse command, or using the SetNonzeroPowerSeriesDegreeBound command", bound;
 end proc;
 
 # We look for the smallest grevlex term in _self using d1 and d2

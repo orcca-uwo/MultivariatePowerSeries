@@ -13,11 +13,7 @@ local
     nonzero_pso_bound_static :: static(nonnegint) := 10,
     nonzero_pso_bound :: {nonnegint, identical(undefined)} := undefined,
     smallest_term_bound_static :: static(nonnegint) := 10,
-    smallest_term_bound :: {nonnegint, identical(undefined)} := undefined,
-    # Bound for the Puiseux theorem
-    Puiseux_bound_static :: static(nonnegint) := 10,
-    Puiseux_bound :: {nonnegint, identical(undefined)} := undefined; 
-
+    smallest_term_bound :: {nonnegint, identical(undefined)} := undefined;
 
 local ModuleApply::static := proc()
     return Object(PuiseuxSeriesObject, _passed);
@@ -61,7 +57,7 @@ local CreatePuSOFromRays::static := proc(new :: PuiseuxSeriesObject,
         else 
             error "an order for the power series variables must be specified";
         end if;
-    elif new:-pso:-Variables(new:-pso) = convert(ordCV, ':-set') then
+    elif new:-pso:-Variables(new:-pso) subset convert(ordCV, ':-set') then
         new:-ordCV := ordCV;
     else
         error "the variables in %1 must be equal to %2", new:-pso, ordCV;
@@ -122,14 +118,14 @@ local CreatePuSOFromEqu::static :=  proc(new :: PuiseuxSeriesObject,
     new:-ordCV := map(lhs, mp);
 
     # We check that there is an equation for each variable in pso
-    if not convert(new:-ordCV, ':-set') = new:-pso:-Variables(new:-pso) then
-        error "the variables in %1 must be equal to %2", mp, new:-pso:-Variables(new:-pso);
+    if not function:-Variables(new:-pso) subset convert(new:-ordCV, ':-set') then
+        error "the variables in %1 must contain each of %2", mp, function:-Variables(new:-pso);
     end if;
 
     # We convert the rhs of the equations as a list separated by *
     local as_products := map(convert, map(rhs, mp), ':-list', :-`*`);
     # We separate the previous list as a list separated by ^
-    local as_powers := map2(map, convert, as_products, ':-list', `^`);
+    local as_powers := map2(map, convert, as_products, ':-list', :-`^`);
     # We generate the order for the cone
     local ord := map2(op, 1, map(op, as_powers));
     new:-ord := convert(convert(ord, ':-set'), ':-list');
@@ -438,7 +434,7 @@ local PolynomialChangeOfVariables::static := proc(_self :: PuiseuxSeriesObject,
     # of the new variables and rays.
     local result := [seq(LinearAlgebra:-LinearSolve(M^+, r), r in rays_as_vectors)];
 
-    local cv := [seq(mul(new_ordCV^~r), r in result)];
+    local cv := [seq(mul(:-`~`[:-`^`](new_ordCV, ':-` $`', r)), r in result)];
     cv := old_ordCV=~cv;
 
     return cv;

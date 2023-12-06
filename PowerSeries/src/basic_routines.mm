@@ -170,8 +170,10 @@ export
 export 
     IsUnit ::static := proc(self :: PowerSeriesObject,
                             $)
-        # returned HOMOGENEOUS_PART is already AUTO_EXPANDed 
-        return evalb(HOMOGENEOUS_PART(self, 0) <> 0);
+        local dummy;
+        local my_hom_part := HOMOGENEOUS_PART(self, 0);
+        
+        return evalb(AUTO_EXPAND(dummy,my_hom_part) <> 0);
     end proc;
 
 # ApproximatelyZero

@@ -35,7 +35,7 @@ Try("test 21", PSO:-HomogeneousPart(psConst, 0), RootOf(z^2 + 1));
 Try("test 22", PSO:-HomogeneousPart(psConst, 1), 0);
 
 Try[testnoerror]("test 23", PSO:-Constant(sqrt(3)), 'assign'='pssqrt');
-Try("test 24", PSO:-HomogeneousPart(pssqrt, 0), RootOf(_Z^2-3,index = 1));
+Try[verify,simplify]("test 24", PSO:-HomogeneousPart(pssqrt, 0), RootOf(_Z^2-3,index = 1));
 Try("test 25", PSO:-HomogeneousPart(pssqrt, 1), 0);
 
 
@@ -69,7 +69,7 @@ Try("test 45",  HomogeneousPart(psConst, 0), RootOf(z^2 + 1));
 Try("test 46",  HomogeneousPart(psConst, 1), 0);
 
 Try[testnoerror]("test 47",   PowerSeries(sqrt(3)), 'assign'='pssqrt');
-Try("test 48",  HomogeneousPart(pssqrt, 0), RootOf(_Z^2-3,index = 1));
+Try[verify,simplify]("test 48",  HomogeneousPart(pssqrt, 0), RootOf(_Z^2-3,index = 1));
 Try("test 49",  HomogeneousPart(pssqrt, 1), 0);
 
 #end test

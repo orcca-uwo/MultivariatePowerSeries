@@ -181,10 +181,15 @@ local MakePsoCompatible::static := proc(_self :: PuiseuxSeriesObject,
 	# of the new variables and rays.
 	local result := [seq(LinearAlgebra:-LinearSolve(M^+, r), r in rays)];
 
-	local cv := [seq(mul(ordCV^~r), r in result)];
+	local cv := [seq(mul(:-`~`[:-`^`](ordCV, ':-` $`', r)), r in result)];
 	cv := _self:-ordCV=~cv;
 
-	return _self:-pso:-Substitute(cv, _self:-pso);
+	local mp_ck := andseq(lhs(r)=rhs(r), r in cv);
+	if mp = [] or mp_ck then 
+		return _self:-pso;
+	else 
+		return _self:-pso:-Substitute(cv, _self:-pso);
+	end if;
 end proc;
 
 # We make the orders from _self and other compatible, if possible

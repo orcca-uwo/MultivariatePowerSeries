@@ -1,13 +1,12 @@
-# Exponentiation
-# to compute _self^n 
-# n : nonnegint 
 export Exponentiate ::static := proc(_self :: PuiseuxSeriesObject, 
-                                n :: nonnegint, 
+                                n :: integer, 
                                 $)
         if n = 0 then 
             return Object(PuiseuxSeriesObject, 1); 
         elif n = 1 then 
             return _self;
+        elif n < 0 then
+            return thisproc(Inverse(_self), -n);
         end if;        
         local p := _self;
         local m := abs(n);
@@ -21,3 +20,8 @@ export Exponentiate ::static := proc(_self :: PuiseuxSeriesObject,
         end do;
         return p:-NaryMultiply(seq(res));
     end proc;
+export `^`::static := proc(_self :: PuiseuxSeriesObject,
+                           n :: integer,
+                           $)
+    return _self:-Exponentiate(_passed);
+end proc;

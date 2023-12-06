@@ -13,11 +13,14 @@ local
     dstyle :: UPOPSDS_TYPE,
     # Bound for the Puiseux theorem
     Puiseux_bound_static :: static(nonnegint) := 10,
-    Puiseux_bound :: {nonnegint, identical(undefined)} := undefined; 
+    Puiseux_bound :: {nonnegint, identical(undefined)} := undefined,
+    # Bound for the extended Hensel construction
+    Hensel_bound_static :: static(nonnegint) := 10,
+    Hensel_bound :: {nonnegint, identical(undefined)} := undefined; 
 
 # return Expanded of x wehere d is a dummy variable for the sake of efficiency 
 $define AUTO_EXPAND(d, x) \
-    ifelse(type((d := x), ':-polynom'(':-complex'(':-numeric'))), expand(d), Algebraic:-Expand(subsindets(d, ':-radical', convert, RootOf)))
+    ifelse(type((d := x), ':-polynom'(':-complex'(':-numeric'))), expand(d), evala(':-Expand'(d)))
 
 # return degree of x, i.e. upperbound(x:-upoly) 
 $define DEGREE(x) \
@@ -146,10 +149,17 @@ export
             end if;
         end if;
 
-        if output = "string" then
-            return cat("< UnivariatePolynomialOverPowerSeries: ", seq(result), " >");
+    local objectname;
+        if self:-IsPuSOUPoP(self) then
+            objectname := "UnivariatePolynomialOverPuiseuxSeries";
         else
-            return T:-mfenced(T:-mrow(T:-mn("UnivariatePolynomialOverPowerSeries:   "),
+            objectname := "UnivariatePolynomialOverPowerSeries";
+        end if;
+
+        if output = "string" then
+            return String("< ", objectname, ": ", seq(result), " >");
+        else
+            return T:-mfenced(T:-mrow(T:-mn(String(objectname, ":   ")),
                                       seq(result)), ':-open' = "&lsqb;", ':-close' = "&rsqb;");
         end if;
     end proc; 
@@ -175,6 +185,7 @@ $include "MultivariatePowerSeries/UPoPS/src/basic_arithmetic.mm"
 $include "MultivariatePowerSeries/UPoPS/src/weierstrass_preparation.mm"
 $include "MultivariatePowerSeries/UPoPS/src/factorization.mm"
 $include "MultivariatePowerSeries/UPoPS/src/Puiseux_factorization.mm"
+$include "MultivariatePowerSeries/UPoPS/src/extended_Hensel_construction.mm"
 
 $undef AUTO_EXPAND
 $undef DEGREE

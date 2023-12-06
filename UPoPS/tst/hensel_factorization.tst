@@ -24,7 +24,7 @@ Try("test 12", expand(mul(Truncate(fact[i]), i = 1 .. 5)), p);
 
 Try[testnoerror]("test 13", HenselFactorize(UnivariatePolynomialOverPowerSeries((z + sqrt(3))*(z^2 + 1), z)), 'assign'='fact');
 Try("test 14", numelems(fact), 3);
-Try("test 15", expand(mul(Truncate(fact[i]), i = 1 .. 3)), RootOf(_Z^2 - 3, index = 1)*z^2 + z^3 + RootOf(_Z^2 - 3, index = 1) + z);
+Try[verify,simplify]("test 15", expand(mul(Truncate(fact[i]), i = 1 .. 3)), RootOf(_Z^2 - 3, index = 1)*z^2 + z^3 + RootOf(_Z^2 - 3, index = 1) + z);
 
 Try[testnoerror]("test 16", HenselFactorize(UnivariatePolynomialOverPowerSeries((z - 1)*(z - 2)*(z - 3) + x*(z^2 + z), z)), 'assign'='fact');
 Try("test 17", numelems(fact), 3);

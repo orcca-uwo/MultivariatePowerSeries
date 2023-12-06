@@ -297,16 +297,19 @@ local loop_upper_bound := (if minimum_order = infinity then
                            else
                                minimum_order - 1;
                            end if);
-    _self:-hpoly(loop_upper_bound + 1) := 0;
-    for local d from ancestors:-degrees_stored + 1 to loop_upper_bound do
-        if assigned(split_per_degree[d]) then
-            _self:-hpoly[d] := add(split_per_degree[d]);
-        else
-            _self:-hpoly[d] := 0;
-        end if;
-        ancestors:-degrees_stored := d;
-    end do;
-    _self:-deg := loop_upper_bound;
+
+    if loop_upper_bound > ancestors:-degrees_stored then
+        _self:-hpoly(loop_upper_bound + 1) := 0;
+        for local d from ancestors:-degrees_stored + 1 to loop_upper_bound do
+            if assigned(split_per_degree[d]) then
+                _self:-hpoly[d] := add(split_per_degree[d]);
+            else
+                _self:-hpoly[d] := 0;
+            end if;
+            ancestors:-degrees_stored := d;
+        end do;
+        _self:-deg := loop_upper_bound;
+    end if;
 end proc;
 
 local

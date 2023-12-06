@@ -10,6 +10,7 @@ export
         local upops := Object(UnivariatePolynomialOverPowerSeriesObject, new_upoly, self:-vname);
 
         upops:-Puiseux_bound := self:-Puiseux_bound;
+        upops:-Hensel_bound := self:-Hensel_bound;
 
         return upops;
     end proc;
@@ -66,13 +67,13 @@ export
     UpdatePrecision ::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, 
                                     prec :: nonnegint, 
                                     $)
-    if self:-IsPuSOUPoP(self)=true then
-        error "invalid input for the UpdatePrecision function %1 must "
-                "have power series coefficients.", self;
-    end if;
-
     for local i from 0 to DEGREE(self) do
-        PowerSeriesObject:-HomogeneousPart_local(self:-upoly[i], prec);
+        if self:-IsPuSOUPoP(self)=true then
+            PowerSeriesObject:-HomogeneousPart_local(self:-upoly[i]:-GetPowerSeries(self:-upoly[i]), 
+                                                        prec);
+        else 
+            PowerSeriesObject:-HomogeneousPart_local(self:-upoly[i], prec);
+        end if;
     end do;
     return self;
 end proc;
@@ -295,13 +296,14 @@ end proc;
 
 # To convert a UPoP with PSO coefficient to a UPoP with PuSO as 
 # coefficients.
-export ConvertToPuSOUPoP::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, $)
+export ConvertToPuSOUPoP::static := proc(self :: UnivariatePolynomialOverPowerSeriesObject, 
+                                            mp::list(`=`( name, {:-`*`( { name, name^rational } ), name, name^rational})) := [], $)
     if self:-IsPuSOUPoP(self) = true then
         return self;
     else
-        local A := map(PuiseuxSeries, self:-upoly);
+        local A := map(PuiseuxSeries, self:-upoly, mp);
 
-        return Object(UnivariatePolynomialOverPowerSeriesObject, A, self:-vname);;
+        return MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeries(A, self:-vname);
     end if;
 end proc;
 

@@ -46,22 +46,11 @@ end proc;
 # (not necessarily >= 0). The the order of P is defined as
 # min{m/n : a_m <> 0}.
 export GetOrder::static := proc(_self :: PuiseuxSeriesObject, 
-								bnd :: nonnegint := FAIL, $)
-	local my_Puiseux_bound;
-
+								bnd :: {nonnegint, identical(infinity)} := 10, $)
 	if numelems(_self:-ord) > 1 then 
 		error "invalid input: %1 must be a"
               " polynomial in one variable", _self;
 	end if;
-
-	# We check the Puiseux's bound.
-    if bnd <> FAIL then
-        my_Puiseux_bound := bnd;
-    elif _self:-Puiseux_bound <> undefined then
-        my_Puiseux_bound := _self:-Puiseux_bound;
-    else
-        my_Puiseux_bound := _self:-Puiseux_bound_static;
-    end if;
 
 	local ana := _self:-GetAnalyticExpression(_self);
 	if ana=0 then
@@ -78,11 +67,11 @@ export GetOrder::static := proc(_self :: PuiseuxSeriesObject,
 
 	local p;
 
-	for local i from 0 to my_Puiseux_bound do
+	for local i from 0 to bnd do
 		p := function:-HomogeneousPart(_self:-pso, i);
 		p := subs(_self:-ChangeOfVariables(_self), p);
 
-		if p<>0 then
+		if not Testzero(p) then
 			if _self:-rays <> [] then
 				return i*_self:-rays[1][1] + _self:-e[_self:-ord[1]];
 			else 
@@ -92,5 +81,5 @@ export GetOrder::static := proc(_self :: PuiseuxSeriesObject,
 	end do;
 
 	error "the order of %1 cannot be determined"
-          " with the current bound %2", _self, my_Puiseux_bound;
+          " with the current bound %2", _self, bnd;
 end proc;

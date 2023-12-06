@@ -209,13 +209,16 @@ $define UPOPSDS_TYPE \
                      end if);
                 
                 if ormap(pso -> x in pso:-Variables(pso), pp) then
-                    error "expected list or Array of power series objects independent of %1, but found "
+                    error "expected list or Array of power/Puiseux series objects independent of %1, but found "
                     "some that were dependent on it", x;
                 end if;
                 
                 return Object(UnivariatePolynomialOverPowerSeriesObject, pp, x);
             end if;
         end proc;
+
+    export 
+        UnivariatePolynomialOverPuiseuxSeries := UnivariatePolynomialOverPowerSeries;
 
     # a wrapper for PSO:-Truncate and UPoPS:-Truncate
     export 
@@ -397,6 +400,23 @@ $define UPOPSDS_TYPE \
             return obj:-HenselFactorize(_passed);
         end proc;
 
+    # Extended Hensel contruction UPoPS.
+    export ExtendedHenselConstruction := proc(obj :: UnivariatePolynomialOverPowerSeriesObject)
+        return obj:-ExtendedHenselConstruction(_passed); 
+    end proc;
+
+    # To set a Hensel_bound or a Hensel_bound_static.
+    export SetHenselBound := proc(bound::nonnegint,
+                                   obj :: UnivariatePolynomialOverPowerSeriesObject := NULL,
+                                   $)
+        if obj=NULL then
+            return function:-SetHenselBound(UnivariatePolynomialOverPowerSeriesObject,
+                                        bound, 'instance' = false);
+        else
+            return function:-SetHenselBound(obj, bound); 
+        end if;
+    end proc;
+
     export
         Variables := proc(obj :: {UnivariatePolynomialOverPowerSeriesObject, 
                                   PowerSeriesObject, PuiseuxSeriesObject}, $)
@@ -440,8 +460,8 @@ $define UPOPSDS_TYPE \
     end proc;
 
     # Get order of the Puiseux series.
-    export GetOrder := proc(obj :: PuiseuxSeriesObject, $)
-        return obj:-GetOrder(obj); 
+    export GetOrder := proc(obj :: PuiseuxSeriesObject, bnd :: {nonnegint, identical(infinity)}, $)
+        return obj:-GetOrder(_passed); 
     end proc;
 
     # Get the monomial that multiplies the PuSO.
@@ -460,34 +480,31 @@ $define UPOPSDS_TYPE \
                                             $)
         if obj=NULL then
             return obj:-SetNonzeroPowerSeriesDegreeBound(PuiseuxSeriesObject,
-                                                          bound,
-                                                          'instance' = true);
+                                                         bound, 'instance' = false);
         else
             return obj:-SetNonzeroPowerSeriesDegreeBound(obj, bound); 
         end if;
     end proc;
 
     # To set a smallest_pso_bound or a smallest_pso_bound_static.
-    export SetSmallestPowerSeriesDegreeBound := proc(bound::nonnegint,
-                                             obj :: PuiseuxSeriesObject := NULL,
-                                             $)
+    export SetSmallestTermDegreeBound := proc(bound::nonnegint,
+                                              obj :: PuiseuxSeriesObject := NULL,
+                                              $)
         if obj=NULL then
-            return obj:-SetSmallestPowerSeriesDegreeBound(PuiseuxSeriesObject,
-                                                          bound,
-                                                          'instance' = true);
+            return obj:-SetSmallestTermDegreeBound(PuiseuxSeriesObject,
+                                                   bound, 'instance' = false);
         else
-            return obj:-SetSmallestPowerSeriesDegreeBound(obj, bound); 
+            return obj:-SetSmallestTermDegreeBound(obj, bound); 
         end if;
     end proc;
 
     # To set a Puiseux_bound or a Puiseux_bound_static.
     export SetPuiseuxBound := proc(bound::nonnegint,
                                    obj :: UnivariatePolynomialOverPowerSeriesObject := NULL,
-                                    $)
+                                   $)
         if obj=NULL then
             return obj:-SetPuiseuxBound(UnivariatePolynomialOverPowerSeriesObject,
-                                        bound,
-                                        'instance' = true);
+                                        bound, 'instance' = false);
         else
             return obj:-SetPuiseuxBound(obj, bound); 
         end if;
@@ -500,21 +517,7 @@ $define UPOPSDS_TYPE \
 
 $include "MultivariatePowerSeries/PowerSeries/src/PowerSeries.mm"
 $include "MultivariatePowerSeries/UPoPS/src/UPoPS.mm"
-$include "MultivariatePowerSeries/OldPuiseuxSeries/src/OldPuiseuxSeries.mm"
 $include "MultivariatePowerSeries/PuiseuxSeries/src/PuiseuxSeries.mm"
-$include "MultivariatePowerSeries/LaurentSeries/src/LaurentSeries.mm"
-
-export
-    LaurentSeries := proc()
-        return Object(LaurentSeriesObject, _passed);
-    end proc;
-    
-export
-    _pexports := proc($)
-        remove(member, [exports(MultivariatePowerSeries)],
-               {':-_pexports', ':-LaurentSeries'});
-    end proc;
-
 
 $undef PSDS_ENTRYTYPE 
 $undef PSDS_TYPE 

@@ -6,7 +6,8 @@
 export TschirnhausenTransformation::static := proc(up::UnivariatePolynomialOverPowerSeriesObject, 
                                                    a_in::{PuiseuxSeriesObject, PowerSeriesObject},
                                                    m_in::nonnegint := 0,
-                                                   {detransform :: truefalse := false}, $)
+                                                   {detransform :: truefalse := false}, 
+                                                   {powerseriesmode::truefalse:=false}, $)
     local l, k, coeff, uno, m;
     local n := DEGREE(up);
 
@@ -48,18 +49,27 @@ export TschirnhausenTransformation::static := proc(up::UnivariatePolynomialOverP
     ## Sum_{l=0}^n Sum_{k=0}^l (-1)^k*a_{n-l+k}*binomial(n-l+k, k)*y^(n-l)((1/n)*a)^k.
     local exp_a := Array(0..n);
 
-    exp_a[0] := PuiseuxSeries(1);
+    if powerseriesmode then 
+        exp_a[0] := PowerSeries(1);
+    else 
+        exp_a[0] := PuiseuxSeries(1);
+    end if;
+
     for k to n do
       exp_a[k] := exp_a[k-1] * a;
     end do;
 
-    for l from 0 to n do
+    for l from 1 to n do
         for k from 0 to l do
             coeff := up:-upoly[n-l+k];
+
             A[l] := A[l] + (uno/m)^k*coeff*binomial(n-l+k, k)
                             *exp_a[k];
         end do;
     end do;
+
+    # Case l=0.
+    A[0] := up:-upoly[n];
 
     ArrayTools:-Reverse(A, ':-inplace');
 
@@ -69,7 +79,7 @@ end proc;
 # To set a nonzero_pso_bound or a nonzero_pso_bound_static.
 export SetPuiseuxBound ::static := proc(_self :: UnivariatePolynomialOverPowerSeriesObject,
                                                  bound::nonnegint,
-                                                 {instance :: truefalse := false},
+                                                 {instance :: truefalse := true},
                                                  $)
     local old_value;
     

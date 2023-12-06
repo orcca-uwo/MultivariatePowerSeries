@@ -28,7 +28,7 @@ Try("test 13", PSO:-HomogeneousPart(ps, 10), 0);
 
 Try[testnoerror]("test 14", PSO:-NaryAdd(psZero, psOne, psConst, psI, ':-coefficients' = [1, 2, 3, sqrt(2)]) , 'assign'='ps');
 Try("test 15", PSO:-HomogeneousPart(ps, 0), 17);
-Try("test 16", PSO:-HomogeneousPart(ps, 1), x*RootOf(_Z^2-2,index = 1));
+Try[verify,simplify]("test 16", PSO:-HomogeneousPart(ps, 1), x*RootOf(_Z^2-2,index = 1));
 Try("test 17", PSO:-HomogeneousPart(ps, 3), 0);
 Try("test 18", PSO:-HomogeneousPart(ps, 10), 0);
 

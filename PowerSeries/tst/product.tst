@@ -45,9 +45,9 @@ Try("test 24", evalb( alg2 = RootOf(_Z^2 + 1)*sqrt(2)*x^2 + sqrt(3)*x + x*y + Ro
 Try[testnoerror]("test 25", PSO:-BinaryMultiply(psAlg1, psAlg2), 'assign'='psProd');
 Try("test 26", PSO:-ApproximatelyZero(psProd, 'force'), false);
 Try("test 27", PSO:-HomogeneousPart(psProd, 0), -1);
-Try("test 28", PSO:-HomogeneousPart(psProd, 1), RootOf(_Z^2+1)*RootOf(_Z^2-3,index = 1)*x-x*RootOf(_Z^2+1));
-Try("test 29", PSO:-HomogeneousPart(psProd, 2), -x^2*RootOf(_Z^2-2,index = 1)-x^2*RootOf(_Z^2-3,index = 1)+RootOf(_Z^2+1)*x*y);
-Try("test 30", PSO:-HomogeneousPart(psProd, 3), -RootOf(_Z^2+1)*RootOf(_Z^2-2,index = 1)*x^3-x^2*y);
+Try[verify,simplify]("test 28", PSO:-HomogeneousPart(psProd, 1), RootOf(_Z^2+1)*RootOf(_Z^2-3,index = 1)*x-x*RootOf(_Z^2+1));
+Try[verify,simplify]("test 29", PSO:-HomogeneousPart(psProd, 2), -x^2*RootOf(_Z^2-2,index = 1)-x^2*RootOf(_Z^2-3,index = 1)+RootOf(_Z^2+1)*x*y);
+Try[verify,simplify]("test 30", PSO:-HomogeneousPart(psProd, 3), -RootOf(_Z^2+1)*RootOf(_Z^2-2,index = 1)*x^3-x^2*y);
 Try("test 31", PSO:-HomogeneousPart(psProd, 4), 0);
 
 
@@ -91,9 +91,9 @@ Try("test 11.16", evalb( alg2 = RootOf(_Z^2 + 1)*sqrt(2)*x^2 + sqrt(3)*x + x*y +
 Try[testnoerror]("test 11.17", BinaryMultiply(psAlg1, psAlg2), 'assign'='psProd');
 Try("test 11.18", ApproximatelyZero(psProd, 'force'), false);
 Try("test 11.20", HomogeneousPart(psProd, 0), -1);
-Try("test 11.21", HomogeneousPart(psProd, 1), RootOf(_Z^2+1)*RootOf(_Z^2-3,index = 1)*x-x*RootOf(_Z^2+1));
-Try("test 11.22", HomogeneousPart(psProd, 2), -x^2*RootOf(_Z^2-2,index = 1)-x^2*RootOf(_Z^2-3,index = 1)+RootOf(_Z^2+1)*x*y);
-Try("test 11.23", HomogeneousPart(psProd, 3), -RootOf(_Z^2+1)*RootOf(_Z^2-2,index = 1)*x^3-x^2*y);
+Try[verify,simplify]("test 11.21", HomogeneousPart(psProd, 1), RootOf(_Z^2+1)*RootOf(_Z^2-3,index = 1)*x-x*RootOf(_Z^2+1));
+Try[verify,simplify]("test 11.22", HomogeneousPart(psProd, 2), -x^2*RootOf(_Z^2-2,index = 1)-x^2*RootOf(_Z^2-3,index = 1)+RootOf(_Z^2+1)*x*y);
+Try[verify,simplify]("test 11.23", HomogeneousPart(psProd, 3), -RootOf(_Z^2+1)*RootOf(_Z^2-2,index = 1)*x^3-x^2*y);
 Try("test 11.24", HomogeneousPart(psProd, 4), 0);
 
 

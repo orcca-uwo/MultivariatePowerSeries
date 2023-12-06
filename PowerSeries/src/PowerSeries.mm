@@ -40,7 +40,7 @@ $define HOMOGENEOUS_PART(p, d) \
 
 # return Expanded of x wehere d is a dummy variable for the sake of efficiency 
 $define AUTO_EXPAND(d, x) \
-    ifelse(type((d := x), ':-polynom'(':-complex'(':-numeric'))), expand(d), Algebraic:-Expand(subsindets(d, ':-radical', convert, RootOf)))
+    ifelse(type((d := x), ':-polynom'(':-complex'(':-numeric'))), expand(d), evala(':-Expand'(d)))
  
 # ModuleApply: to make PowerSeriesObject an object factory
 local 

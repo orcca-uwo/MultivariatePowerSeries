@@ -53,7 +53,7 @@ export MultiplyByMonomial::static := proc(_self :: PuiseuxSeriesObject,
     ASSERT(andmap(type, result, ':-nonnegint'), 
                     "the result should be a monomial, but some exponents aren't nonnegative integers");
 
-    local mono := mul(ordCV^~result);
+    local mono := mul(:-`~`[:-`^`](ordCV, ':-` $`', result));
     mono := MultivariatePowerSeries:-PowerSeries(mono);
 
     return pso:-BinaryMultiply(pso, mono);
