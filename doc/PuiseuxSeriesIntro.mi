@@ -1,7 +1,19 @@
-##- Let _X_:=[_x[1]_,...,_x[p]_] and _U_:=[_u[1]_,..,_u[m]_] be ordered variables,
-##	_R_:=[_r[1]_,...,_r[m]_] be a list of grevlex positive p-dimensional rational 
-##	rays, and e = (_e[1]_,..,_e[p]_) be a point in _Q^p_. 
-## 	Let also _X^r_ denote _x[1]^v[1]_*...*_x[p]^v[p]_ for v=(_v[1]_,...,_v[p]_) in _Q^p_. 
-##  Internally a Puiseux could be understood as the change of variables  
-##	_u[i]_ = _X^r[i]_ for 'i=1,...,m' applied to the terms of 'g(U)' and 
-##	then multiplied by _X^e_.
+##- A Puiseux series is a power series in rational powers of the variables. More precisely:
+##-- Let __"X:=(x[1], &hellip; ,x[p])"__ and __"U:=(u[1], &hellip; ,u[m])"__ be ordered lists of
+##  variables.
+##-- Let __"R:=(r[1], &hellip; ,r[m])"__ be a list of _m_ grevlex-positive _p_-dimensional rational
+##  vectors.
+##-- Let __"e:=(e[1], &hellip; , e[p])"__ be a point in __"`&Qopf|;`^p"__.
+##-- Let __"g(U) := &sum;_(n = 0)^infinity g[n](U)"__ be a multivariate power series in _U_ with
+##  homogeneous components _g[n](U)_.
+##-(lead=indent) For any __"v=(v[1], &hellip; ,v[q])"__ in __"`&Qopf|;`^q"__ and any list __"Y =
+##  (y[1], &hellip;, y[q])"__, we write _Y^v_ for __"y[1]^v[1]* &hellip; *y[q]^v[q]"__. Moreover, we
+##  write _X^R_ for the list __"(X^(r[1]), &hellip;, X^(r[m]))"__ of _m_ products of powers of the
+##  variables in _X_. Then _P := X^e * g(X^R)_ is a Puiseux series, and every Puiseux series can be
+##  written in this way. This can be understood as evaluating _g(U)_ at _u[i] = X^r[i]_ and then
+##  multiplying the result by _X^e_.
+##- We call _g_ the internal power series of the Puiseux series _P_; _X_ the variable order of _P_;
+##	_U_ the variable order of _g_; and _R_ the rays of _P_. The rays generate the cone containing
+##	the support of _P_, meaning the set of exponent vectors of _X_ that occur in _P_ with a nonzero
+##	coefficient, as in the paper by Monforte and Kauers (see "References"). The vertex of this cone
+##	is _e_.

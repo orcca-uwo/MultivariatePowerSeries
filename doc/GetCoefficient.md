@@ -16,7 +16,8 @@
 ##- 'd' : non-negative integer
 ##
 ##DESCRIPTION
-##- The command ~GetCoefficient(p,m)~ returns the (complex numeric) coefficient of 'p' with respect to the monomial 'm'.
+##- The command ~GetCoefficient(p,m)~ returns the coefficient of 'p' with respect to the
+##  multivariate monomial 'm'. This coefficient is a complex number.
 ##- The command ~GetCoefficient(u,d)~ returns the coefficient of 'z^d' in 'u', where 'z' is the main
 ##  variable of 'u'. This coefficient is a power series.
 ##
@@ -48,7 +49,7 @@
 ##>(nohelp) GetAnalyticExpression(GetCoefficient(f, 2));
 ##< 1/(1-x-y)
 ##- Create a univariate polynomial over power series from a list of Puiseux series.
-##> g := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
+##> g := UnivariatePolynomialOverPuiseuxSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
 ##<(verification="type") object
 ##> GetCoefficient(f, 2);
 ##<(verification="type") object

@@ -25,7 +25,7 @@
 ##  an earlier call of the form ~SetDisplayStyle(p,d)~, if any.
 ##  Otherwise, the display style of 'p' is taken from
 ## an earlier call of the form ~SetDefaultDisplayStyle(d)~, if any.
-##  Finally, if the given display style doesn't provide values for one (or both) of the settings,
+##  Finally, if the given display style does not provide values for one (or both) of the settings,
 ##  Maple uses the default values 'maxterms=50' and 'precision=infinity'.
 ##- The attribute 'maxterms' sets the maximum number of
 ##  terms of 'p' to be displayed while the the attribute 'precision'

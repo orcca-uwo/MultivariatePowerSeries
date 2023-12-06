@@ -39,7 +39,7 @@
 ##-- Finally, if no display style is set, Maple uses its default values, described together with the
 ##  individual parameters below.
 ##- If some parameters are specified in a display style 'd1' that is overridden by a different
-##  display style 'd2', then Maple will completely ignore 'd1'. Any parameters that are not set in
+##  display style 'd2', then Maple completely ignores 'd1'. Any parameters that are not set in
 ##  'd1' will get their default values.
 ##- When displaying a computation result or calling "Display", the display style can only *limit*
 ##  the terms displayed. It will never cause extra terms to be computed.
@@ -62,20 +62,25 @@
 ##
 ##SUBSECTION The parameters making up a display style
 ##-(lead=bullet) 'maxterms' (default value: 50)
-##-(lead=indent) Applicable to power series and univariate polynomials over power series.
+##-(lead=indent) Applicable to power series, Puiseux series, and univariate polynomials over power
+##  series and over Puiseux series.
 ##-(lead=indent) This parameter sets the maximum number of terms to be displayed. For a power
-##  series, this is straightforward. For a univariate polynomial over power series, the terms in
-##  each of the coefficients (which are power series) are counted.
+##  series or Puiseux series, this is straightforward. For a univariate polynomial over power series
+##  or over Puiseux series, the terms in
+##  each of the coefficients (which are power series or Puiseux series) are counted.
 ##-(lead=bullet) 'precision' (default value: 'infinity')
-##-(lead=indent) Applicable to power series and univariate polynomials over power series.
+##-(lead=indent) Applicable to power series, Puiseux series, and univariate polynomials over power
+##  series and over Puiseux series.
 ##-(lead=indent) This parameter limits the precision, that is, the homogeneous degree of terms to be
-##  displayed. Again, for a power series this is straightforward. For a univariate polynomial over
-##  power series, the degree in the main variable is not counted, only the degrees in the
+##  displayed. Again, for a power series this is straightforward. For a Puiseux series, it limits
+##  the degree of the internal power series of the Puiseux series. For a univariate polynomial over
+##  power series or over Puiseux series, the degree in the main variable is not counted, only the degrees in the
 ##  coefficients.
 ##-(lead=bullet) 'maxdegree' (default value: 'infinity')
-##-(lead=indent) Applicable to univariate polynomials over power series only, not to power series.
+##-(lead=indent) Applicable to univariate polynomials over power series and over Puiseux series
+##  only, not to power series or to Puiseux series.
 ##-(lead=indent) This parameter limits the degree of the main variable for displayed terms. If the
-##  degree of the univariate polynomial over power series in its main variable is greater than the
+##  degree of the univariate polynomial over power series or over Puiseux series in its main variable is greater than the
 ##  specified value, then the rest is elided.
 ##ENDSUBSECTION
 ##

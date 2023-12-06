@@ -1,5 +1,5 @@
 ##ENCODING ISO-8859-1
-##PROCEDURE(help,nospec,label="MultivariatePowerSeries/IsUnit",versionnew="{XENOMORPH}",versionupdated="{ZONKEY}") MultivariatePowerSeries[IsUnit]
+##PROCEDURE(help,nospec,label="MultivariatePowerSeries/IsUnit",versionnew="{XENOMORPH}") MultivariatePowerSeries[IsUnit]
 ##TITLE(halfline="determine if a power series or univariate polynomial over power series is a unit")
 ##    MultivariatePowerSeries[IsUnit]
 ##ALIAS IsUnit, MultivariatePowerSeries:-IsUnit, MultivariatePowerSeries

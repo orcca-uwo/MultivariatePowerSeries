@@ -1,7 +1,7 @@
 ##ENCODING ISO-8859-1
-##PROCEDURE(help,nospec,label="MultivariatePowerSeries/ChangeOfVariables",versionnew="{ZONKEY}") MultivariatePowerSeries[ChangeOfVariables]
+##PROCEDURE(help,nospec,label="MultivariatePowerSeries/ChangeOfVariables",versionnew="{ZONKEY}") MultivariatePowerSeries:-ChangeOfVariables
 ##TITLE(halfline="get the change of variables applied to the internal power series of a Puiseux series")
-##    MultivariatePowerSeries[ChangeOfVariables]
+##    MultivariatePowerSeries:-ChangeOfVariables
 ##ALIAS ChangeOfVariables, MultivariatePowerSeries:-ChangeOfVariables, MultivariatePowerSeries
 ##AUTHOR Matt Calder, Juan Gonzalez Trochez jgonza55@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca, Erik Postma
 ##
@@ -13,9 +13,9 @@
 ##
 ##DESCRIPTION
 ##INCLUDE PuiseuxSeriesIntro.mi
-##-	By using the command ~ChangeOfVariables('s')~, we get the change of variables 
-##	_u[i]_ = _X^r[i]_ for 'i=1,...,m applied to the internal power 
-##	series 'g(U)' of 's'.
+##-	By using the command ~ChangeOfVariables(s)~, we obtain the change of variables 
+##	_u[i] = X^r[i]_ for __"i=1,&hellip;,m"__, applied to the internal power 
+##	series 'g(U)' of 's'. See "PuiseuxSeries" for details on the role of this change of variables.
 ##
 ##INCLUDE assignment_warning.mi
 ##
@@ -39,6 +39,8 @@
 ##- "MultivariatePowerSeries"
 ##- "PuiseuxSeries"
 ## 
+##INCLUDE PxRef.mi
+##
 ##XREFMAP
 ##- MultivariatePowerSeries : Help:MultivariatePowerSeries
 ##- PuiseuxSeries : Help:MultivariatePowerSeries[PuiseuxSeries]

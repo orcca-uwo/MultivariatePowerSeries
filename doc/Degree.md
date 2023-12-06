@@ -14,7 +14,7 @@
 ##DESCRIPTION
 ##- ~Degree(u)~ returns the syntactic degree of the univariate polynomial over power series  or 
 ##	over Puiseux series 'u' with
-##  respect to its main variable. That is, it doesn't test whether the highest degree coefficient is
+##  respect to its main variable. That is, it does not test whether the highest degree coefficient is
 ##  nonzero (because this cannot be done in general); it just returns the highest degree coefficient
 ##  of the main variable that is specified.
 ##
@@ -34,9 +34,9 @@
 ##> Degree(g);
 ##< 3
 ##-(lead=indent) Create a univariate polynomial over power series from a list of Puiseux series.
-##> h := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
+##> h := UnivariatePolynomialOverPuiseuxSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
 ##<(verification="type") object
-##- We verify the degree of 'h' with the degree command.
+##- We verify the degree of 'h' with the `Degree` command.
 ##> Degree(h);
 ##< 4
 ##
@@ -49,7 +49,7 @@
 ##
 ##XREFMAP
 ##- PowerSeries : Help:MultivariatePowerSeries[PowerSeries]
-##- PuiseuxSeries : MultivariatePowerSeries[PuiseuxSeries]
+##- PuiseuxSeries : Help:MultivariatePowerSeries[PuiseuxSeries]
 ##- UnivariatePolynomialOverPowerSeries : Help:MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]
 ##- MainVariable : Help:MultivariatePowerSeries[MainVariable]
 ##- Degree : Help:MultivariatePowerSeries[Degree]

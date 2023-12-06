@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/Copy",versionnew="{XENOMORPH}",versionupdated="{ZONKEY}") MultivariatePowerSeries[Copy]
-##TITLE(halfline="copy a power series or univariate polynomial over power series")
+##TITLE(halfline="copy a power series, a Puiseux series, or univariate polynomial over these series")
 ##    MultivariatePowerSeries[Copy]
 ##ALIAS Copy, MultivariatePowerSeries:-Copy, MultivariatePowerSeries
 ##AUTHOR Ali Asadi masadi4@uwo.ca, Alex Brandt abrandt5@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca
@@ -71,9 +71,11 @@
 ##- "HomogeneousPart"
 ##- "Truncate"
 ##
+##INCLUDE PxRef.mi
+##
 ##XREFMAP
 ##- PowerSeries : Help:MultivariatePowerSeries[PowerSeries]
-##- PuiseuxSeries : MultivariatePowerSeries[PuiseuxSeries]
+##- PuiseuxSeries : Help:MultivariatePowerSeries[PuiseuxSeries]
 ##- Inverse : Help:MultivariatePowerSeries[Inverse]
 ##- Precision : Help:MultivariatePowerSeries[Precision]
 ##- HomogeneousPart : Help:MultivariatePowerSeries[HomogeneousPart]

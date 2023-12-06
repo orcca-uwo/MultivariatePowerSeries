@@ -86,14 +86,14 @@
 ##REFERENCES
 ##-(lead=indent) Alexander Brandt, Mahsa Kazemi, Marc Moreno Maza.
 ##  \"Power Series Arithmetic with the BPAS Library.\"
-##  **Computer Algebra in Scientific Computing (CASC)**, **Lecture Notes in Computer Science - 12291**, (2020): 108-128.
+##  **Computer Algebra in Scientific Computing (CASC)**, **Lecture Notes in Computer Science**. Vol. **12291** (2020): 108-128.
 ##-(lead=indent) Mohammadali Asadi, Alexander Brandt, Mahsa Kazemi, Marc Moreno Maza, and Erik Postma. 
-## \"Multivariate Power Series in Maple.\" In: Corless R.M., Gerhard J., Kotsireas I.S. (eds) **Maple in Mathematics Education and Research. MC 2020.**
-## **Communications in Computer and Information Science (CCIS)**, Vol: **1414** Springer (2021): 48-66.
+## \"Multivariate Power Series in Maple.\" Corless R.M., Gerhard J., Kotsireas I.S. (eds) **Maple in Mathematics Education and Research. MC 2020.**
+## **Communications in Computer and Information Science (CCIS)**. Vol. **1414** Springer (2021): 48-66.
 ##
 ##XREFMAP
 ##- PowerSeries : Help:MultivariatePowerSeries[PowerSeries]
-##- PuiseuxSeries : MultivariatePowerSeries[PuiseuxSeries]
+##- PuiseuxSeries : Help:MultivariatePowerSeries[PuiseuxSeries]
 ##- GeometricSeries : Help:MultivariatePowerSeries[GeometricSeries]
 ##- UnivariatePolynomialOverPowerSeries : Help:MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]
 ##- Multiply : Help:MultivariatePowerSeries[Multiply]

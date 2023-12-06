@@ -21,7 +21,7 @@
 ##- The command ~ApproximatelyEqual(p,q)~ returns `true` if the two power series are equal
 ##  up to the minimum of their currently computed precisions, otherwise `false`.
 ##- The command ~ApproximatelyEqual(p,q,deg)~ returns `true` if the two power series are equal
-##  up to precision 'deg', otherwise `false`. This calling sequence will compute any coefficients needed that have not been computed so far.
+##  up to precision 'deg', otherwise `false`. This calling sequence computes any coefficients needed that have not been computed so far.
 ##- The command ~ApproximatelyEqual(u,v)~ returns `true` if the two univariate polynomials over power series
 ##  are equal up to the currently computed precision of each coefficient power series, otherwise `false`.
 ##- The command ~ApproximatelyEqual(u,v,deg)~ returns `true` if the two univariate polynomials over power series
@@ -32,7 +32,7 @@
 ##  expressions. The default behavior can be explicitly selected by passing the option ~force =
 ##  false~.
 ##- Any form of the 'force' option passed to the `ApproximatelyEqual` command when comparing
-##  univariate polynomials over power series will be used as described above when comparing the
+##  univariate polynomials over power series are used as described above when comparing the
 ##  power series coefficients.
 ##
 ##INCLUDE assignment_warning.mi

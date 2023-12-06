@@ -40,11 +40,11 @@
 ##  main variable, say 'x', but one of the other arguments is a power series that is not known to be
 ##  expressible as a polynomial in 'x'. The same restrictions apply to the calling sequence ~u1 *
 ##  u2~.
-##- ~s1 * s2~ returns the product of 's1' and 's2' as long as 
-##  orders are compatible. The result is a Puiseux series.
+##- ~s1 * s2~ returns the product of the Puiseux series 's1' and 's2'. If the orders of 's1' and
+##  's2' are not compatible, an error is signaled. The result is a Puiseux series.
 ##- The calling sequence ~Multiply(S)~ returns the product of the factors in 'S'. They are converted to
 ##  Puiseux series. If this is not possible, an error
-##  is raised. 
+##  is signaled.
 ##
 ##INCLUDE assignment_warning.mi
 ##
@@ -119,7 +119,7 @@
 ##>	GetPuiseuxSeriesOrder(s1);
 ##>	GetPuiseuxSeriesOrder(s3);
 ##- Finally, we create a univariate polynomial over power series from a list of Puiseux series.
-##> u := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
+##> u := UnivariatePolynomialOverPuiseuxSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
 ##<(verification="type") object
 ##- Now we multiply _u_ with _f_.
 ##> u*f;

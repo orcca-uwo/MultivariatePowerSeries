@@ -1,0 +1,10 @@
+##SUBSECTION(collapsed=false) Remark
+##- The functions "ExtendedHenselConstruction" and "PuiseuxFactorize" both factorize  a
+##	univariate polynomial over the field of univariate Puiseux series into
+##  linear factors, thus into irreducible factors. The "ExtendedHenselConstruction" can also factorize a univariate polynomial over multivariate Puiseux series into linear factors.
+##  In contrast, the "HenselFactorize"
+##  command only lifts the initial factors of the input polynomial
+##  over the ring of power series __"`&Copf|;` &lobrk; y &robrk;"__, thus
+##  the factors may not be linear and, hence, may not be
+##  irreducible over the field of univariate Puiseux series.
+##ENDSUBSECTION

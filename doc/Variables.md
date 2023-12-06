@@ -59,8 +59,8 @@
 ##<(verification="type") object
 ##> Variables(u);
 ##< {x, y, z}
-##- Create a univariate polynomial over power series from a list of Puiseux series.
-##> g := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
+##- Create a univariate polynomial over Puiseux series from a list of Puiseux series.
+##> g := UnivariatePolynomialOverPuiseuxSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
 ##<(verification="type") object
 ##- We verify the variables of 'g'.
 ##> Variables(g);
@@ -82,6 +82,6 @@
 ##- MultivariatePowerSeries : Help:MultivariatePowerSeries
 ##- UnivariatePolynomialOverPowerSeries : Help:MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]
 ##- PowerSeries : Help:MultivariatePowerSeries[PowerSeries]
-##- PuiseuxSeries : MultivariatePowerSeries[PuiseuxSeries]
+##- PuiseuxSeries : Help:MultivariatePowerSeries[PuiseuxSeries]
 ##- MainVariable : Help:MultivariatePowerSeries[MainVariable]
 ##- "main variable" : Help:MultivariatePowerSeries[MainVariable]

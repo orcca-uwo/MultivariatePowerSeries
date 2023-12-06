@@ -59,15 +59,15 @@
 ##  is expanded. If you know that the value returned by 'f' will always be expanded, you can include the optional argument
 ##  'expand=false' to disable these calls for greater efficiency.
 ##- The calling sequence ~PowerSeries(u)~, where 'u' is a univariate polynomial
-##  over power series, returns 'u' as a power series. To be precise, if 'v' is the main variable of 'u'
+##  over power series, returns 'u' as a power series. To be precise, if _v_ is the main variable of 'u'
 ##  and its coefficients are power series
-##  with variables in the set of variables 'x', let 'y' be the union of 'x' with 'v'. Then
+##  with variables in the set of variables _x_, let _y_ be the union of _x_ with _v_. Then
 ##  the power series returned by
 ##  ~PowerSeries(u)~ is the image of 'u' in the power series ring with variables in
-##  'y'. This image is obtained 
-##  by the natural homomorphism mapping the univariate polynomial ring 'R[v]'
-##  into the univariate power series ring 'R[[v]]', where 'R' is the ring of power
-##  series in variables in 'x'.
+##  _y_. This image is obtained 
+##  by the natural homomorphism mapping the univariate polynomial ring _R[v]_
+##  into the univariate power series ring __"R &lobrk; v &robrk;"__, where _R_ is the ring of power
+##  series in variables in _x_.
 ##- The calling sequence ~PowerSeries(ps)~, where 'ps' is a power series, returns a copy of 'ps'.
 ##- The implementation of power series and univariate polynomials over
 ##  power series relies on lazy evaluation (also known as calls-by-need). For details, see

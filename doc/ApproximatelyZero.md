@@ -32,7 +32,7 @@
 ##  true~ option, then the `ApproximatelyZero` command will ignore the analytic expressions. The
 ##  default behavior can be explicitly selected by passing the option ~force = false~.
 ##- Any form of the 'force' option passed to the `ApproximatelyZero` command when comparing a
-##  univariate polynomial over power series will be used as described above when comparing the
+##  univariate polynomial over power series are used as described above when comparing the
 ##  power series coefficients.
 ##
 ##INCLUDE assignment_warning.mi

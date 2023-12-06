@@ -66,7 +66,7 @@
 ##- We define a univariate polynomial over power series involving _a_.
 ##> f := UnivariatePolynomialOverPowerSeries([GeometricSeries(x), GeometricSeries(y), a], z);
 ##- The constant and linear coefficients of _z_ are known to a different precision than the
-##  quadratic coefficient. By default, the 'Truncate' command will return all known coefficients
+##  quadratic coefficient. By default, the 'Truncate' command returns all known coefficients
 ##  regardless of degree.
 ##> Truncate(f);
 ##<(verification="member") {1 + z + (1 + x+y + x^2+2*x*y+y^2 + x^3+3*x^2*y+3*x*y^2+y^3)*z^2,
@@ -86,7 +86,7 @@
 ##- Finally, we truncate 's' using 'mode=absolute'.
 ##> Truncate(s, 5, mode=absolute);
 ##- Finally, we create a univariate polynomial over power series from a list of Puiseux series.
-##> h := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
+##> h := UnivariatePolynomialOverPuiseuxSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
 ##<(verification="type") object
 ##- We truncate '-h'.
 ##> Truncate(h, 5);
@@ -100,6 +100,8 @@
 ##- "Precision"
 ##- "HomogeneousPart"
 ##- "UpdatePrecision"
+##
+##INCLUDE PxRef.mi
 ##
 ##XREFMAP
 ##- PowerSeries : Help:MultivariatePowerSeries[PowerSeries]

@@ -72,16 +72,22 @@
 ##  perform arithmetic operations on multivariate power series and univariate
 ##  polynomials over multivariate power series. The functionality of the first seven commands can also be accessed using
 ##  the standard arithmetic operators when the arguments are power series.
-##  The commands "Add", "Multiply", and "Inverse" can also be used to compute with Puisuex series.
+##  The commands "Add", "Multiply", and "Inverse" can also be used to compute with Puiseux series.
 ##- The command "IsUnit" determines if a power series is invertible.
 ##- The commands "ApproximatelyEqual" and "ApproximatelyZero" determine equality and equality with zero up to some precision.
 ##- The command "Substitute" substitutes values into a power series.
 ##- The commands "WeierstrassPreparation" and "HenselFactorize" factorize
 ##  univariate polynomials over multivariate power series. 
+##- The command "PuiseuxFactorize" factorizes a univariate polynomial over
+##  power series with Puiseux series coefficients. 
+##- The command "TschirnhausenTransformation" applies a Tschirnhausen 
+##  transfomration to a univariate polynomial over power series with Puiseux
+##  coefficients. 
 ##- The "TaylorShift" command performs a Taylor shift of a univariate polynomial over power series.
 ##- The command "GetAnalyticExpression" returns the analytic expression of a power series, a univariate polynomial over power series, or a Puiseux series, if known.
-##- The commands "ChangeOfVariables", "GetMonomial", "GetPowerSeries", "GetPowerSeriesOrder", "GetPuiseuxSeriesOrder", and "GetRays" retrieve information on a Puiseux series. 
-##- The commands "SetNonzeroPowerSeriesDegreeBound" and "SetSmallestPowerSeriesDegreeBound" set bounds that are used in computing the inverse of a Puiseux series.
+##- The commands "ChangeOfVariables", "GetMonomial", "GetOrder", "GetPowerSeries", "GetPowerSeriesOrder", "GetPuiseuxSeriesOrder", and "GetRays" retrieve information on a Puiseux series. 
+##- The command "SetPuiseuxBound" sets a bound that is used in computing the Puiseux factorization.
+##- The commands "SetNonzeroPowerSeriesDegreeBound" and "SetSmallestTermDegreeBound" set bounds that are used in computing the inverse of a Puiseux series.
 ##
 ##INCLUDE assignment_warning.mi
 ##
@@ -92,28 +98,28 @@
 ##REFERENCES
 ##-(lead=indent) Alexander Brandt, Mahsa Kazemi, Marc Moreno Maza.
 ##  \"Power Series Arithmetic with the BPAS Library.\"
-##  **Computer Algebra in Scientific Computing (CASC)**, **Lecture Notes in Computer Science - 12291**, (2020): 108-128.
+##  **Computer Algebra in Scientific Computing (CASC)**, **Lecture Notes in Computer Science**. Vol. **12291** (2020): 108-128.
 ##-(lead=indent) Mohammadali Asadi, Alexander Brandt, Mahsa Kazemi, Marc Moreno Maza, and Erik Postma.
-## \"Multivariate Power Series in Maple.\" In: Corless R.M., Gerhard J., Kotsireas I.S. (eds) **Maple in Mathematics Education and Research. MC 2020.**
-## **Communications in Computer and Information Science (CCIS)**, Vol: **1414** Springer (2021): 48-66.
+## \"Multivariate Power Series in Maple.\" Corless R.M., Gerhard J., Kotsireas I.S. (eds) **Maple in Mathematics Education and Research. MC 2020.**
+## **Communications in Computer and Information Science (CCIS)**, Vol. **1414** Springer (2021): 48-66.
 ##-(lead=indent) Parisa Alvandi, Massoud Ataei, Mahsa Kazemi, Marc Moreno Maza.
 ## \"On the extended Hensel construction and its application to the computation of real limit points 
-## **J. of Symbolic Computation**, Vol: **98** (2020): 120-162.
+## **J. of Symbolic Computation**, Vol. **98** (2020): 120-162.
 ##-(lead=indent) Marc Moreno Maza, Erik Postma.
 ##  \"Substituting Units into Multivariate Power Series.\"
-##  **In: Proc. of MC 2021. 2021.**
+##  **Proc. of MC 2021**. 2021.
 ##-(lead=indent) K. J. Nowak.
-##  \"Some elementary proofs of Puiseux’s theorems.\"
-##  **In:Univ. Iagel.** Acta Math **38** (2000), pp. 279–282.
+##  \"Some elementary proofs of Puiseux's theorems.\"
+##  **Univ. Iagel. Acta Math**. Vol. **38** (2000): 279-282.
 ##-(lead=indent) Alexander Brandt, Marc Moreno Maza.
 ##  \"On the Complexity and Parallel Implementation of Hensel’s Lemma and Weierstrass Preparation.\"
-##  **In: Proc. of CASC 2021.** Vol. **12865**. Lecture Notes in Computer Science. Springer, 2021, pp. 78–99.
+##  **Proc. of CASC 2021**. Vol. **12865**. Lecture Notes in Computer Science. Springer, 2021, pp. 78–99.
 ##-(lead=indent) M. Calder, J. P. González Trochez, M. Moreno Maza, and E. Postma.
 ##  \"Algorithms for multivariate Laurent series.\"
 ##  **Chapter 4 in the MSc Thesis of Juan Pablo González Trochez**, submitted to MC 2022. 2022.
 ##-(lead=indent) A. A. Monforte and M. Kauers.
-##  \"“Formal Laurent series in several variables.\"
-##  **In: Expositiones Mathematicae.** **31.4** (2013), pp. 350–367.
+##  \"Formal Laurent series in several variables.\"
+##  **Expositiones Mathematicae**. Vol. **31** No. **4** (2013): 350–367.
 ##
 ##SEEALSO
 ##- "PowerSeries"
@@ -166,12 +172,14 @@
 ##-  GetAnalyticExpression : Help:MultivariatePowerSeries[GetAnalyticExpression]
 ##-  ChangeOfVariables : Help::MultivariatePowerSeries[ChangeOfVariables]
 ##-  GetMonomial : Help:MultivariatePowerSeries[GetMonomial]
+##-  GetOrder : Help:MultivariatePowerSeries[GetOrder]
 ##-  GetPowerSeries : Help:MultivariatePowerSeries[GetPowerSeries]
 ##-  GetPowerSeriesOrder : Help:MultivariatePowerSeries[GetPowerSeriesOrder]
 ##-  GetPuiseuxSeriesOrder : Help:MultivariatePowerSeries[GetPuiseuxSeriesOrder]
 ##-  GetRays : Help:MultivariatePowerSeries[GetRays]
+##-  SetPuiseuxBound : Help:MultivariatePowerSeries[SetPuiseuxBound]
 ##-  SetNonzeroPowerSeriesDegreeBound : Help:MultivariatePowerSeries[SetNonzeroPowerSeriesDegreeBound]
-##-  SetSmallestPowerSeriesDegreeBound : Help:MultivariatePowerSeries[SetSmallestPowerSeriesDegreeBound]
+##-  SetSmallestTermDegreeBound : Help:MultivariatePowerSeries[SetNonzeroPowerSeriesDegreeBound]
 ##-  Degree : Help:MultivariatePowerSeries[Degree]
 ##-  Copy : Help:MultivariatePowerSeries[Copy]
 ##-  IsUnit : Help:MultivariatePowerSeries[IsUnit]
@@ -190,3 +198,5 @@
 ##-  EvaluateAtOrigin : Help:MultivariatePowerSeries[EvaluateAtOrigin]
 ##-  WeierstrassPreparation : Help:MultivariatePowerSeries[WeierstrassPreparation]
 ##-  HenselFactorize : Help:MultivariatePowerSeries[HenselFactorize]
+##-  PuiseuxFactorize : Help:MultivariatePowerSeries[PuiseuxFactorize]
+##-  TschirnhausenTransformation : Help:MultivariatePowerSeries[TschirnhausenTransformation]

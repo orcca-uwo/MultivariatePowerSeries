@@ -20,18 +20,18 @@
 ##  contains the equations ~x[i] = s[i]~ where 'i' runs from 1 to 'n', then it returns an answer
 ##  equivalent to what would be obtained from the following process:
 ##-- For each variable 'v[i,j]' occurring in 's[i]', replace it with a variable 'u[i,j]' that
-##   doesn't occur anywhere else (it should also not occur as 'u[i,j]' in previous such
+##   does not occur anywhere else (it should also not occur as 'u[i,j]' in previous such
 ##   replacements). Call the result 't[i]'.
 ##-- Perform the substitutions ~x[i] = t[i]~ in any order. Call the result 'q'.
 ##-- Replace each 'u[i, j]' in 'q' with the original 'v[i, j]'.
-##- An error is thrown if the same variable 'x' occurs more than once as a left hand side in
+##- An error is signaled if the same variable 'x' occurs more than once as a left hand side in
 ##  'ls'.
 ##- If 's' is not a unit, that is, if its constant coefficient is zero, then the result of the
 ##  substitution is easily defined by just substituting one power series into another; one need
 ##  consider only finitely many terms to find any homogeneous component of the result. However, if
 ##  's' is a unit, then the result of the substitution is a priori not well-defined. In these cases,
 ##  Maple uses the "analytic expression" specified for 'p' in a computation that gives a result that
-##  is correct in a formal sense. If the analytic expression for 'p' is not specified, Maple throws
+##  is correct in a formal sense. If the analytic expression for 'p' is not specified, Maple signals
 ##  an error. If a list or set of substitutions is specified and some of the right hand sides 's'
 ##  are unit power series, then this computation only works if 'p' and at least all but one of these
 ##  unit power series have their analytic expression specified.

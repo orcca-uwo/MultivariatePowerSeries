@@ -32,8 +32,8 @@
 ##  of 's'.
 ##- The command ~GetAnalyticExpression(s)~ returns the analytic
 ##  expression a Puiseux series 's', if it is known.
-##  This is determined in the natural way from the analytic expressions of its internal power
-##	series and the change of variables applied to this power series.
+##  This is determined by taking the analytic expressions of its internal power
+##	series and applying the change of variables to it.
 ##- If an analytic expression is known for a power series or a Puiseux series, it is part of the default display of that
 ##  power series. This is not the case for univariate polynomials over power series.
 ##
@@ -96,14 +96,14 @@
 ##> GetAnalyticExpression(s);
 ##< (x^3/y^4)*(1/(1+x^(-1/3)*y^2))
 ##- We can get the internal power series of _s_, get its analytic expression,
-##	apply the change of variables given by U=x^(-1/3)*y^2 and multiply this 
-##	by x^3/y^4.
+##	apply the change of variables given by _U=x^(-1/3)*y^2_ and multiply this 
+##	by _x^3/y^4_.
 ##> p := GetPowerSeries(s);
 ##<(verification="type") object
 ##> (x^3/y^4)*eval(GetAnalyticExpression(p), U=x^(-1/3)*y^2);
 ##<	(x^3/y^4)*(1/(1+x^(-1/3)*y^2))
 ##- Finally, we create a univariate polynomial over power series from a list of Puiseux series.
-##> h := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
+##> h := UnivariatePolynomialOverPuiseuxSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(y, [y=y^(1/2)]), PuiseuxSeries((x+y)/(1+x+y), [x=x*y^(1/2),y=x*y^(-1)])], z);
 ##<(verification="type") object
 ##- We get the analytic expression of _h_. 
 ##> GetAnalyticExpression(h);

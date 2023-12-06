@@ -1,6 +1,6 @@
 ##ENCODING ISO-8859-1
 ##PROCEDURE(help,nospec,label="MultivariatePowerSeries/TschirnhausenTransformation",versionnew="{ZONKEY}") MultivariatePowerSeries[TschirnhausenTransformation]
-##TITLE(halfline="We apply a linear transformation to a univariate polynomial over power series with Puiseux coefficients")
+##TITLE(halfline="apply a linear transformation to a univariate polynomial over power series with Puiseux coefficients")
 ##    MultivariatePowerSeries[TschirnhausenTransformation]
 ##ALIAS TschirnhausenTransformation, MultivariatePowerSeries:-TschirnhausenTransformation, MultivariatePowerSeries
 ##AUTHOR Matt Calder, Juan Gonzalez Trochez jgonza55@uwo.ca, Marc Moreno Maza moreno@csd.uwo.ca, Erik Postma
@@ -18,9 +18,9 @@
 ##- The command ~TschirnhausenTransformation(u, a)~ applies the linear 
 ##	transformation _x - (1/n)*a_ to 'u', where 'n' is the degree of 'a'
 ##	as a polynomial in the variable 'x'. This transformation is called 
-##	the Tschirnhausen transformation or the Tschirnhaus transformation
-##	If 'u' is monic, then the output of this call will
-##	produce a univariate polynomial over power series with Puiseux series 
+##	the Tschirnhausen transformation or the Tschirnhaus transformation.
+##	If 'u' is monic, then the output of this command produces
+##	a univariate polynomial over power series with Puiseux series 
 ##	coefficients such that the monomial of degree 'n-1' is equal to zero.
 ##- The command ~TschirnhausenTransformation(u, a, m)~ applies the linear 
 ##	transformation _x - (1/m)*a_ to 'u', with 'a' a univariate polynomial 
@@ -33,7 +33,7 @@
 ##- We create a univariate polynomial over power series from a list of Puiseux series.
 ##> a := PuiseuxSeries(x/(1+x), [x=x^(1/2)]);
 ##<(verification="type") object
-##> f := UnivariatePolynomialOverPowerSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(x, [x=x^(1/2)]), a, PuiseuxSeries(1)], z);
+##> f := UnivariatePolynomialOverPuiseuxSeries([PuiseuxSeries(1), PuiseuxSeries(0), PuiseuxSeries(x, [x=x^(1/3)]), PuiseuxSeries(x, [x=x^(1/2)]), a, PuiseuxSeries(1)], z);
 ##<(verification="type") object
 ##- We apply the transformation _z - (1/5)*a_ to f.
 ##> g := TschirnhausenTransformation(f, a);
@@ -57,7 +57,7 @@
 ##
 ##XREFMAP
 ##- UnivariatePolynomialOverPowerSeries : Help:MultivariatePowerSeries[UnivariatePolynomialOverPowerSeries]
-##- PuiseuxSeries : MultivariatePowerSeries[PuiseuxSeries]
+##- PuiseuxSeries : Help:MultivariatePowerSeries[PuiseuxSeries]
 ##- GetCoefficient : Help:MultivariatePowerSeries[GetCoefficient]
 ##- Truncate : Help:MultivariatePowerSeries[Truncate]
 ##- Subtract : Help:MultivariatePowerSeries[Subtract]
