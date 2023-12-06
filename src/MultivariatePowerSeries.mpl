@@ -518,6 +518,18 @@ $define UPOPSDS_TYPE \
 $include "MultivariatePowerSeries/PowerSeries/src/PowerSeries.mm"
 $include "MultivariatePowerSeries/UPoPS/src/UPoPS.mm"
 $include "MultivariatePowerSeries/PuiseuxSeries/src/PuiseuxSeries.mm"
+$include "MultivariatePowerSeries/LaurentSeries/src/LaurentSeries.mm"
+
+export
+    LaurentSeries := proc()
+        return Object(LaurentSeriesObject, _passed);
+    end proc;
+
+export
+    _pexports := proc($)
+        remove(member, [exports(MultivariatePowerSeries)],
+               {':-_pexports', ':-LaurentSeries'});
+    end proc;
 
 $undef PSDS_ENTRYTYPE 
 $undef PSDS_TYPE 
