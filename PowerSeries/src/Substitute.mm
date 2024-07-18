@@ -11,6 +11,7 @@ local all_eqns := (if type(eqns, ':-list') then
                    end if);
 local vars := _self:-vars;
     all_eqns := select(eqn -> lhs(eqn) in vars, all_eqns);
+    all_eqns := remove(evalb, all_eqns);
     if all_eqns = [] then
         return _self;
     elif numelems(convert(map(lhs, all_eqns), ':-set')) <> numelems(all_eqns) then

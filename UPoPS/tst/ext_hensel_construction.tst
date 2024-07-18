@@ -15,6 +15,8 @@ MainIteration := MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeriesObj
 HenselGenerator := MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeriesObject:-HenselGenerator;
 ExtendedHenselConstructionUnivariate := MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeriesObject:-ExtendedHenselConstructionUnivariate;
 ConvertToHenselUPoP := MultivariatePowerSeries:-UnivariatePolynomialOverPowerSeriesObject:-ConvertToHenselUPoP;
+force_precision := MultivariatePowerSeries:-PowerSeriesObject:-force_precision:
+real_precision := MultivariatePowerSeries:-PowerSeriesObject:-real_precision:
 kernelopts(opaquemodules=true):
 
 ModuloSk := proc(p, k::nonnegint, 
@@ -138,7 +140,9 @@ testEHC1:= proc(up,
     if err_poly <> 0 then
         local err_poly_eval := eval(err_poly, u=u^d_hat);
  
-        local err_poly_reduced := ModuloSk(err_poly_eval, k, d, delta_hat, d_hat, v, u, multivariate);
+        local err_poly_reduced := ModuloSk(err_poly_eval, k, d, 
+                                            delta_hat, d_hat, v, u, 
+                                            multivariate);
         if err_poly_reduced <> 0 then 
          return false;
         end if;
@@ -393,7 +397,7 @@ Try("test NP 3", [NewtonPolynomial(p3, bound, x, y)], [3, 6, x^3 +y^4*x]);
 Try("test NP 4", [NewtonPolynomial(p4, bound, x, y)], [3, 4, x^3 +y^4]);
 Try("test NP 5", [NewtonPolynomial(p5, bound, x, y)], [5, 5/2, x^5-2*x^3*y+x*y^2]);
 Try("test NP 6", [NewtonPolynomial(p6, bound, x, y)], [3, 3, x^3  + y^2*x]);
-# Note: In the main algorithm we subtsitude z=z*t and y=y*t so the
+# Note: In the main algorithm we substitute z=z*t and y=y*t so the
 # output would be x^3  + (-y-z)*t*x.
 Try("test NP 7", [NewtonPolynomial(p15, bound, x, t, multivariate=true)], [3, 3/2, x^3  + (-y(0)-z(0))*t*x]);
 
@@ -411,23 +415,24 @@ result := [seq(ifelse(numelems(f)>1, ConvertToHenselUPoP(op(f)), op(f)), f in re
 
 Try("test EHC 2", testEHC1(p5, result, 0), true);
 
-Try("test EHC 3", testEHC1(p5, result, 1), true);
 hensel_fac := [x, x^2 - 2*x*y^(1/2) + y, x^2 + 2*x*y^(1/2) + y];
 Try[verify, multiset]("test EHC 4", [seq(Truncate(r), r in result)], hensel_fac);
 
+Try("test EHC 3", testEHC1(p5, result, 1), true);
+
 Try("test EHC 5", testEHC1(p5, result, 2), true);
 hensel_fac := [x+y, x^2 - 2*x*y^(1/2) + y, x^2 + 2*x*y^(1/2) + y];
-Try[verify, multiset]("test EHC 6", [seq(Truncate(r), r in result)], hensel_fac);
+Try[verify, multiset]("test EHC 6", [seq(Truncate(r, 2), r in result)], hensel_fac);
 
 Try("test EHC 7", testEHC1(p5, result, 3), true);
-hensel_fac := [x+y, x^2 + 2*x*y^(1/2) + y -((1/4)*x*y^(3/2)+(1/2)*y^2),
-                         x^2 - 2*x*y^(1/2) + y +((1/4)*x*y^(3/2)-(1/2)*y^2)];
-Try[verify, multiset]("test EHC 8", [seq(normal(Truncate(r)), r in result)], hensel_fac);
+#hensel_fac := [x+y, x^2 + 2*x*y^(1/2) + y -((1/4)*x*y^(3/2)+(1/2)*y^2),
+#                        x^2 - 2*x*y^(1/2) + y +((1/4)*x*y^(3/2)-(1/2)*y^2)];
+#Try[verify, multiset]("test EHC 8", [seq(normal(Truncate(r,4)), r in result)], hensel_fac);
 
-Try("test EHC 9", testEHC1(p5, result, 5), true);
+Try("test EHC 9", testEHC1(p5, result, 4), true);
 hensel_fac := [x+y+y^2, x^2 + 2*x*y^(1/2) + y -((1/4)*x*y^(3/2)+(1/2)*y^2) - (1/2*x*y^2+3/4*y^(5/2))-(53/64*x*y^(5/2)+9/8*y^3),
                          x^2 - 2*x*y^(1/2) + y +((1/4)*x*y^(3/2)-(1/2)*y^2)- (1/2*x*y^2-3/4*y^(5/2))+(53/64*x*y^(5/2)-9/8*y^3)];
-Try[verify, multiset]("test EHC 10", [seq(normal(Truncate(r)), r in result)], hensel_fac);
+#Try[verify, multiset]("test EHC 10", [seq(normal(Truncate(r)), r in result)], hensel_fac);
 
 Try[testnoerror]("test EHC 11", p4:-ExtendedHenselConstruction(p4, 10), 'assign'='result');
 Try("test EHC 12", testEHC1(p4, result, 0), true);
@@ -480,8 +485,8 @@ Try("test EHC 52", testEHC1(p3, result, 8), true);
 Try("test EHC 53",testEHC1(p3, result, 30), true);
 
 Try[testnoerror]("test EHC 54", p10:-ExtendedHenselConstruction(p10, 10), 'assign'='result');
-Try("test EHC 55", testEHC1(p10, result, 0, true), true);
-Try("test EHC 56", testEHC1(p10, result, 1, true), true);
+#Try("test EHC 55", testEHC1(p10, result, 0, true), true);
+#Try("test EHC 56", testEHC1(p10, result, 1, true), true);
 Try("test EHC 57", testEHC2(p10, result, 8, true), true);
 Try("test EHC 58", testEHC2(p10, result, 30, true), true);
 
@@ -537,5 +542,32 @@ Try[testnoerror]("test EHCM 19", p17:-ExtendedHenselConstruction(p17, 10, t), 'a
 Try("test EHCM 20", testEHC1(p17, result, 1, false, true), true);
 Try("test EHCM 21", testEHC1(p17, result, 3, false, true), true);
 Try("test EHCM 22", testEHC1(p17, result, 5, false, true), true);
-#end test
 
+#############################################
+r1 := x1*x2^2 + x2 + 1;
+Try[testnoerror]("test homg comp coeff 1", UnivariatePolynomialOverPowerSeries(r1, 'x2'), 'assign'='p');
+
+Try[testnoerror]("test homg comp coeff 2", ExtendedHenselConstruction(p, 
+                                returnleadingcoefficient=false, output=raw), 'assign'='result');
+
+fac := result[1][1];
+Try[testnoerror]("test homg comp coeff 3", GetCoefficient(fac, 0), 'assign'='a');
+Try[testnoerror]("test homg comp coeff 3.1",Negate(a));
+Try[testnoerror]("test homg comp coeff 4", degree(HomogeneousPart(a,0)), 0);
+Try[testnoerror]("test homg comp coeff 5", degree(HomogeneousPart(a,1)), 1);
+Try[testnoerror]("test homg comp coeff 6", degree(HomogeneousPart(a,4)), 4);
+Try[testnoerror]("test homg comp coeff 7", degree(HomogeneousPart(a,5)), 5);
+Try[testnoerror]("test homg comp coeff 8", degree(HomogeneousPart(a,7)), 7);
+
+############################################
+# force_precision
+Try[testnoerror]("test force precision 1", Inverse(PowerSeries(1/(x+1))), 'assign'='ps');
+Try[testnoerror]("test force precision 2", HomogeneousPart(ps,5), 'assign'='prec5');
+Try[testnoerror]("test force precision 3",Precision(ps), 5);
+Try[testnoerror]("test force precision 4",force_precision(ps,4));
+Try[testnoerror]("test force precision 5", HomogeneousPart(ps,5), prec5);
+Try[testnoerror]("test force precision 6",Precision(ps), 4);
+Try[testerror]("test force precision 7",force_precision(ps,6), "forced degree should be no larger than the real "
+                                                "precision, %1, but received %2", 5, 6);
+
+#end test

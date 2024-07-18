@@ -1,3 +1,21 @@
+local force_precision::static := proc()
+    local old := kernelopts( ':-opaquemodules' = ':-false' );
+    try
+        return PowerSeriesObject:-force_precision(_passed);
+    finally:
+        kernelopts( ':-opaquemodules' = old );
+    end try;
+end proc;
+
+local real_precision::static := proc()
+    local old := kernelopts( ':-opaquemodules' = ':-false' );
+    try
+        return PowerSeriesObject:-real_precision(_passed);
+    finally:
+        kernelopts( ':-opaquemodules' = old );
+    end try;
+end proc;
+
 # To compute the first non-zero term of a PSO up to 
 # bound.
 local firstNonzeroTerm::static := proc(s::PowerSeriesObject, 
@@ -77,7 +95,7 @@ local NewtonLine::static := proc(self :: UnivariatePolynomialOverPowerSeriesObje
         # lines from the points in exp_ls to d_as_point.
     	slopes:= [seq(ifelse(e<>d_as_point,
     					self:-slope(d_as_point, e), NULL), e in exp_ls)];
-
+        
         # We compute the newton slope.
         min_slope:= max(slopes);
 
@@ -95,6 +113,12 @@ local NewtonLine::static := proc(self :: UnivariatePolynomialOverPowerSeriesObje
     		min_slope := -infinity;
     	end if;
 
+        # In case we reach the minimum possible value.
+        if min_slope = 0 then
+            delta:= min_slope*(-d) +0;
+            return d, delta;
+        end if;
+
     	local new_slope := -infinity;
     	for local i from 1 to d-1 do 
     		local my_bound := min(Hensel_bound, floor((i - d) * min_slope));
@@ -102,7 +126,7 @@ local NewtonLine::static := proc(self :: UnivariatePolynomialOverPowerSeriesObje
             # We compute the first non-zero term in upoly[i] 
             # up to bound and compute its degree. 
             sm_deg := self:-firstNonzeroTerm(upoly[i], my_bound);
-    		
+
             # If firstNonzeroTerm did not fail, then
             # this means we have a point below the candidate
             # to newton line. Hence, we update new_slope.
@@ -562,7 +586,7 @@ local MainIteration ::static := proc(state::record, $)
     # We get all the non-zero terms of init_upop mod S_{k+1}.
     local id;
     local init_upop_poly := add(function:-Truncate(init_upop:-upoly[id],
-                                                     currentJ+ (d-id)*delta_hat)*x^id, id=0..d);
+                                                     currentJ+ (d-id)*delta_hat)*v^id, id=0..d);
 
     if multivariate then 
         local var;
@@ -607,27 +631,38 @@ local MainIteration ::static := proc(state::record, $)
     # Update all the factors.
     # Note that we also update the coefficients that
     # must be zero.
+    local deg_to_set;
     for local i from 1 to upolys_size do 
         local m_i := DEGREE(upolys[i]);
-        local coefficients := PolynomialTools:-CoefficientList(poly_increase[i], v);
-        local size := numelems(coefficients);
-        
-        for local j from 0 to m_i-1 do
-            
-            local coefficient := 0;
-            if numelems(coefficients)>=j+1 then
-                coefficient := coefficients[j+1];
-            end if;
+        #local coefficients := PolynomialTools:-CoefficientList(poly_increase[i], v);
+        # We divide poly_increase[i] wrt the coefficients of upolys[i].
+        # Indeed, coefficients contains the increase of each coefficient
+        # of the factor upolys[i].
+        local l;
+        local coefficients := [seq(coeff(poly_increase[i],v,l) , l=0..m_i-1)];
 
-            # We check if the coefficient to be updated is nonzero.
-            if function:-GetPrecision(upolys[i]:-upoly[j]) >= m_i+currentJ-j then 
+        for local j from 0 to m_i-1 do
+            local coefficient := coefficients[j+1];
+            deg_to_set := ifelse(coefficient=0, m_i+currentJ-1-j, degree(coefficient,u));
+
+            # We check if the coefficient to be updated is nonzero,
+            # i.e., we already computed part of that coefficient.
+            if real_precision(upolys[i]:-upoly[j]) >= deg_to_set then 
+                force_precision(upolys[i]:-upoly[j], deg_to_set);
+
                 coefficient += upolys[i]:-upoly[j]:-HomogeneousPart_local(upolys[i]:-upoly[j],
-                                                                        m_i+currentJ-j);
+                                                                        deg_to_set);
             end if;
             # We update the coefficient.
             PowerSeriesObject:-SetHomogeneousPart(upolys[i]:-upoly[j], 
-                                                    m_i+currentJ-j, 
+                                                    deg_to_set, 
                                                     coefficient);
+            # We force the precision of upolys[i]:-upoly[j].
+            # This must be done! Otherwise, HomogeneousPart won't
+            # call the generator of the pso.
+            force_precision(upolys[i]:-upoly[j], real_precision(upolys[i]:-upoly[j]));
+            
+            ASSERT(real_precision(upolys[i]:-upoly[j])= Precision(upolys[i]:-upoly[j]));
         end do;
     end do;
 
@@ -655,7 +690,7 @@ local HenselGenerator ::static := proc( self :: PowerSeriesObject,
     # components are homogeneous of degree m_i+currentJ
     # the degrees of u are gonna be m_i + currentJ - coeff_numb, with 
     # coeff_numb=0,...,d-1.
-    while state:-currentJ <= req_deg - (m_i - coeff_numb) do
+    while state:-currentJ-1 <= req_deg - (m_i - coeff_numb) do
       asso_up:-MainIteration(state);
     end do;
      
@@ -749,6 +784,7 @@ local HenselUpop::static := proc(self::UnivariatePolynomialOverPowerSeriesObject
                            ':-m_i'=d,
                            ':-coeff_numb'=i-1,
                            ':-state'=state]);
+        force_precision(b[i-1], ifelse(coef=0, 0, degree(coef)));
     end do;
 
 
@@ -1131,7 +1167,7 @@ export ExtendedHenselConstruction::static := proc(self_in::UnivariatePolynomialO
                                         t::name:= NULL,
                                         {returnleadingcoefficient :: {truefalse, identical(automatic)}
                                        := ':-automatic'}, 
-                                       {output :: {thistype,list}(identical(factorization, changeofvariables)) := factorization},
+                                       {output :: {thistype,list}(identical(factorization, changeofvariables, raw)) := factorization},
                                         $)
 
     local v := self_in:-MainVariable(self_in);
@@ -1163,10 +1199,32 @@ export ExtendedHenselConstruction::static := proc(self_in::UnivariatePolynomialO
     # Univariate call.
     local my_factors := self:-ExtendedHenselConstructionUnivariate(self, Hensel_bound, _options['returnleadingcoefficient']);
 
-    # Recursive call for the multiplicity case.
     local f;
+    # Recursive call for the multiplicity case.
     local new_factors := [seq(ifelse(DEGREE(f[1])>1, 
                             self:-ExtendedHenselConstructionMultiplicity(op(f), Hensel_bound), f), f in my_factors)];
+
+    # We update the the precision of our factor to mach the real precision.
+    for f in new_factors do 
+        # We check that f[1] is not the leading coefficient.
+        if numelems(f)>1 then
+            for local i from 0 to DEGREE(f[1]) do 
+                local pso := f[1]:-upoly[i];
+                if real_precision(pso)>pso:-GetPrecision(pso) then
+                    pso:-UpdatePrecision(pso,real_precision(pso));
+                end if;
+                ASSERT(real_precision(pso)=pso:-GetPrecision(pso), 
+                                    pso:-Truncate(pso), real_precision(pso), pso:-GetPrecision(pso));
+            end do;
+        end if;
+    end do;
+
+    # The raw options returns the factorization without converting the coefficients 
+    # to Puiseux series and without multiplying the inverse of the leading coefficient
+    # of self_in.
+    if not multivariate and output=':-raw' then 
+        return [seq([f[1], f[4]], f in new_factors)];
+    end if;
 
     # We convert the output to UPoPs with Puiseux series coefficients.
     if multivariate and output=':-changeofvariables' then 

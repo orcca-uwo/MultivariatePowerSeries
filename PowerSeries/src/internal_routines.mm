@@ -15,8 +15,8 @@ local
                 self:-hpoly(deg+1) := 0;
             end if;
             for local i from self:-deg + 1 to deg do
-                self:-hpoly[i] := self:-gen(self, i);
                 self:-deg := i; 
+                self:-hpoly[i] := self:-gen(self, i);
             end do;
         end if;
         return self;
@@ -193,7 +193,7 @@ local
 
 # To convert a PuSO to a PSO    
 # ConvertToPSO_gen
-export ConvertToPSO_gen ::static := proc(_self :: PowerSeriesObject, 
+local ConvertToPSO_gen ::static := proc(_self :: PowerSeriesObject, 
                                         d :: nonnegint, $) 
     local x, result, terms, terms_as_products, terms_as_power_products,
           total_degrees, new_entry, lower_bnd, degrees_as_list;
@@ -261,4 +261,34 @@ export ConvertToPSO_gen ::static := proc(_self :: PowerSeriesObject,
     end do;
 
     return output;
+end proc;
+
+# Generator for the function univariate_product_inverse_monomial.
+local prod_inv_mon_gen ::static := proc(_self :: PowerSeriesObject, 
+                                         d :: nonnegint, $) 
+ 
+    local A := _self:-ancestors:-A;
+    local q := _self:-ancestors:-q;
+    local deg := degree(q);
+
+    return HOMOGENEOUS_PART(A, d+deg)/q; 
+end proc;
+
+local force_precision ::static := proc(self :: PowerSeriesObject,
+                    d :: nonnegint,
+                    $)
+    local real_precision := numelems(self:-hpoly)-1;
+    if d > real_precision then 
+        error "forced degree should be no larger than the real "
+                "precision, %1, but received %2", real_precision, d;
+    end;
+    local old_precision := self:-deg;
+    self:-deg := d;
+
+    return old_precision;
+end proc;
+
+local real_precision ::static := proc(self :: PowerSeriesObject,
+                    $)
+    return numelems(self:-hpoly)-1;
 end proc;

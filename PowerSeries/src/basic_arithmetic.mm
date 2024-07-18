@@ -355,3 +355,54 @@ export
             error "invalid input: this form of exponentiation is not implemented";
         end if;
     end proc;
+
+
+# For a univariate power series _self, we try to compute _self/mono, where
+# mono is a monomial in the same variable as _self.
+# This command is used in the AGT_COMPUTE_BRANCHES_OF_REGULAR_CHAINS_NEW 
+# algorithm of the RegularChains package.
+local univariate_product_inverse_monomial::static := proc(_self::PowerSeriesObject, 
+                                                                mono::polynom, 
+                                                                bnd::nonnegint:=10, $)
+    if numelems(_self:-vars)<>1 then
+        error "invalid input: %1 must be a power series in one variable", _self;
+    end if;
+
+    # Nothing to do.
+    if mono=1 then 
+        return _self;
+    end if;
+
+    # Nothing to do.
+    if mono=0 then 
+        error "invalid input: %1 must be different than zero", mono;
+    end if;
+
+    local deg := degree(mono);
+    # mono is a constant.
+    if deg=0 then
+        return _self:-NaryMultiply(_self, 1/mono);
+    end if;
+
+    # We know the degree of mono is greater or equal than 1.
+    # So deg-1>=0.
+    local poly := _self:-Truncate(_self, deg-1);
+    if _self:-vars<>indets(mono) or poly<>0 then
+        error "invalid input: %1 must be divisible by %2", _self, mono;
+    end if;
+
+    # We now know that mono must divide _self. So we try up to bnd.
+    poly := _self:-Truncate(_self, bnd);
+    if bnd<deg or poly=0 then
+        error "invalid input: %1 is not big enough", bnd;
+    end if;
+
+    local p;
+    local deg_new := bnd-deg;
+    local new_hpoly := Array(0..deg_new, [seq(HOMOGENEOUS_PART(_self, p)/mono, p in deg..bnd)]);
+
+    return Object(PowerSeriesObject, new_hpoly, deg_new, prod_inv_mon_gen, _self:-vars,
+                      ["A" = _self, "q"=mono],
+                      ifelse(membertype(undefined, [_self:-algexpr]), undefined,
+                             normal(_self:-algexpr/mono)));
+end proc;

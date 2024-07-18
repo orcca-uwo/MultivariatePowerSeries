@@ -1,3 +1,12 @@
+local ConvertToPSO_gen::static := proc()
+    local old := kernelopts( ':-opaquemodules' = ':-false' );
+    try
+        return PowerSeriesObject:-ConvertToPSO_gen(_passed);
+    finally:
+        kernelopts( ':-opaquemodules' = old );
+    end try;
+end proc;
+
 # Make compatible two PuSO.
 #
 # _self have an associate cone given by _sefl:-rays 
@@ -299,7 +308,7 @@ export ConvertToPSO ::static := proc(_self :: PuiseuxSeriesObject, $)
     else
     	# Finally, we try to create a PSO using a procedure. 
 	    local vars := convert(_self:-ord, ':-set');
-	    local ps := Object(PowerSeriesObject, Array(0 .. 0), 0, PowerSeriesObject:-ConvertToPSO_gen,
+	    local ps := Object(PowerSeriesObject, Array(0 .. 0), 0, ConvertToPSO_gen,
 	    			 vars, ["A" = _self, "cache_table" = Array(0..-1), "is_error"=false],
 	    			 ':-initializeconstantterm');
     	
