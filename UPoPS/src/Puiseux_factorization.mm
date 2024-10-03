@@ -163,7 +163,9 @@ end proc;
 export PuiseuxTheorem::static := proc(_up::UnivariatePolynomialOverPowerSeriesObject, 
                                       bnd::nonnegint := FAIL, 
                                       {returnleadingcoefficient::{truefalse, identical(automatic)}
-                                        := ':-automatic'}, $)
+                                        := ':-automatic'}, 
+                                      {useevala::truefalse := false},
+                                      $)
     local k, s, my_Puiseux_bound, i, ld_coeff, Puiseux_fac;
     local facs := [0,1];
     local var := _up:-vname;
@@ -217,10 +219,18 @@ export PuiseuxTheorem::static := proc(_up::UnivariatePolynomialOverPowerSeriesOb
     # monomial of degree n-1. 
     up := up:-TschirnhausenTransformation(up, c);
 
+    ASSERT(up:-upoly[n-1]:-ApproximatelyZero(up:-upoly[n-1], my_Puiseux_bound));
+
     # We compute the order of the coefficients as Puiseux series.
-    local ords := map(PuiseuxSeriesObject:-GetOrder, up:-upoly, my_Puiseux_bound);
-    # We divide the orders by k.
-    local ords_over_k := [seq(ords[k]/(n-k), k=0..n-1)];
+    # We know that up:-upoly[n-1] is 0 by construction. So, we do not need to
+    # send it to the GetOrder function.
+    # Note: that if analytic expression of up:-upoly[n-1] is undefined,
+    # GetOrder would always throw an error.
+    # We also know that up is monic, so the order of up:-upoly[n] is 0.
+    local ords := map(PuiseuxSeriesObject:-GetOrder, up:-upoly[0..n-2], my_Puiseux_bound);
+    # We divide the orders by k. 
+    # Note: We do not need to include orders of up:-upoly[n-1] nor up:-upoly[n].
+    local ords_over_k := [seq(ords[k]/(n-k), k=0..n-2)];
     # We get the minimum.
     local r := min(ords_over_k);
 
@@ -245,7 +255,14 @@ export PuiseuxTheorem::static := proc(_up::UnivariatePolynomialOverPowerSeriesOb
     local upops := Object(UnivariatePolynomialOverPowerSeriesObject, upoly, var);
 
     # We apply the Hensel lemma to upops.
-    local  Hensel_fac := upops:-HenselFactorize(upops);
+    local  Hensel_fac := upops:-HenselFactorize(upops, _options['useevala']);
+    local l;
+    if add(DEGREE(l), l in Hensel_fac)<>DEGREE(upops) then
+        error "the PuiseuxTheorem command failed while applying"
+                " the HenselFactorize algorithm."
+                " Try rerunning the command with the"
+                " option useevala=true.";
+    end if;
 
     # We convert back to polynomial over Puiseux series.
     # We apply the change of variables w = var_coeff^(1/q), 

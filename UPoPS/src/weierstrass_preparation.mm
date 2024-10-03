@@ -59,14 +59,23 @@ local
 # check if the input UPoPS is a valid input in weierstrassPreparation
 # return the degree of p in weierstrassPreparation
 local 
-    pDegree ::static := proc(up :: UnivariatePolynomialOverPowerSeriesObject, $)
+    pDegree ::static := proc(up :: UnivariatePolynomialOverPowerSeriesObject, 
+                                {useevala::truefalse := false},
+                                $)
         if UnivariatePolynomialOverPowerSeriesObject:-ApproximatelyZero(up, 0) then
             error "invalid input: expected univariate polynomial over power series with at least "
             "one coefficient that is a unit, but received one that has no unit coefficients";
         end if;
 
         for local i from 0 to DEGREE(up) do
-            if PowerSeriesObject:-IsUnit(up:-upoly[i]) then
+            local chk;
+            if useevala then 
+                chk := PowerSeriesObject:-IsUnit(up:-upoly[i], evaluation=':-evala');
+            else 
+                chk := PowerSeriesObject:-IsUnit(up:-upoly[i]);
+            end if;
+
+            if chk then
                 return i; # break;
             end if;
         end do;
@@ -87,7 +96,7 @@ local
 
 # WeierstrassPreparation
 # given up an arbitrary UPoPS
-# reutrn a unique pair (p, alpha) s.t. 
+# return a unique pair (p, alpha) s.t. 
 # p is a monic polynomial of degree d (p = y^d + \sum_{i=0}^{d-1} b_i y^i),
 # alpha is an invertible power series (alpha = \sum_{i=0}^{m} c_i y^i),
 # and up = alpha * p holds
@@ -95,13 +104,14 @@ local
 export 
     WeierstrassPreparation ::static := proc(up :: UnivariatePolynomialOverPowerSeriesObject, 
                                             prec :: nonnegint := undefined, 
+                                            {useevala::truefalse := false},
                                             $)
         if up:-IsPuSOUPoP(up)=true then
             error "invalid input for the WeierstrassPreparation function %1 must "
                     "have power series coefficients.", up;
         end if;
 
-        local d := pDegree(up);
+        local d := pDegree(up, _options['useevala']);
         if d = 0 then
             return UnivariatePolynomialOverPowerSeriesObject:-One(), DeepCopy(up);
         end if;

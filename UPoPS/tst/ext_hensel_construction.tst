@@ -1,4 +1,4 @@
-#test 150
+#test 190
 with(TestTools):
 
 Try[testnoerror]("test 0", with(MultivariatePowerSeries));

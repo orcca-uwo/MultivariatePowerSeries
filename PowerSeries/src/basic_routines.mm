@@ -169,11 +169,24 @@ export
 # to check if self is unit 
 export 
     IsUnit ::static := proc(self :: PowerSeriesObject,
-                            $)
-        local dummy;
+                                {evaluation::identical(floats,evala,none) := 'usenone'},
+                                { tolerance :: And( numeric, nonnegative ) := Float( 1, 2 - Digits ) },
+                                { guarddigits :: nonnegint := 3 }, $)
+        local dummy, alpha;
         local my_hom_part := HOMOGENEOUS_PART(self, 0);
+        local expand_dummy := AUTO_EXPAND(dummy,my_hom_part);
+
+        if evaluation=':-floats' then  
+            alpha := evalf[Digits+guarddigits](expand_dummy);
+            alpha := fnormal( alpha, Digits, tolerance );
+        elif evaluation=':-evala' then 
+            alpha := evala(simplify(expand_dummy));
+        else
+            alpha := expand_dummy
+        end if;
         
-        return evalb(AUTO_EXPAND(dummy,my_hom_part) <> 0);
+        return evalb(alpha <> 0);
+
     end proc;
 
 # ApproximatelyZero

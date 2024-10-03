@@ -73,6 +73,7 @@ export
     HenselFactorize :: static := proc(_up :: UnivariatePolynomialOverPowerSeriesObject,
                                       {returnleadingcoefficient :: {truefalse, identical(automatic)}
                                        := ':-automatic'},
+                                      {useevala::truefalse := false},
                                       $)
         if _up:-IsPuSOUPoP(_up)=true then
             error "invalid input for the HenselFactorize function %1 must "
@@ -105,12 +106,21 @@ export
         for local i from 1 to r do
             local g := TaylorShift(f, c[i]); # g := f(Y + c_i) 
             local p, alpha;
-            p, alpha := WeierstrassPreparation(g);
+            p, alpha := WeierstrassPreparation(g, _options['useevala']);
             F[i] := TaylorShift(p, -c[i]); # p(Y - c_i)
             if i+1 < r then 
                 # shifting back to alpha(Y - c_i) to generate F[i+1], ..., F[r] in the next iterations
                 f := TaylorShift(alpha, -c[i]);
             end if;
         end do;
-        return [op(extra_factors), seq(F)];
+
+        local output := [op(extra_factors), seq(F)];
+        local l;
+        if add(DEGREE(l), l in output)<>DEGREE(_up) then
+            error "the HenselFactorize algorithm failed."
+                    " Try rerunning the command with the"
+                    " option useevala=true.";
+        end if;
+
+        return output;
     end proc;

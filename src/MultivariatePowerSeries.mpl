@@ -10,7 +10,8 @@ $define COEFFICIENT_TYPE \
     local   
         PowerSeriesObject, # PSObject
         UnivariatePolynomialOverPowerSeriesObject, #UPoPSObject
-        PuiseuxSeriesObject; #Puiseux series object
+        PuiseuxSeriesObject, #Puiseux series object
+        OdeManipulator; #Sub-package OdeManipulator 
 
 $define PSDS_ENTRYTYPE \
     :-identical(:-maxterms, :-precision) = {:-nonnegint, :-identical(:-infinity )}
@@ -519,17 +520,14 @@ $include "MultivariatePowerSeries/PowerSeries/src/PowerSeries.mm"
 $include "MultivariatePowerSeries/UPoPS/src/UPoPS.mm"
 $include "MultivariatePowerSeries/PuiseuxSeries/src/PuiseuxSeries.mm"
 $include "MultivariatePowerSeries/LaurentSeries/src/LaurentSeries.mm"
-
+ 
 export
     LaurentSeries := proc()
         return Object(LaurentSeriesObject, _passed);
-    end proc;
-
-export
-    _pexports := proc($)
-        remove(member, [exports(MultivariatePowerSeries)],
-               {':-_pexports', ':-LaurentSeries'});
-    end proc;
+        
+# OdeManipulator sub-package. For now, all the commands in this 
+# module are hidden, i.e., they are not exported.
+$include "MultivariatePowerSeries/OdeManipulator/src/OdeManipulator.mpl"
 
 $undef PSDS_ENTRYTYPE 
 $undef PSDS_TYPE 

@@ -419,6 +419,7 @@ $include "MultivariatePowerSeries/PowerSeries/src/FactorOutMonomial.mm"
 $include "MultivariatePowerSeries/PowerSeries/src/FromAlgebraicExpression.mm"
 $include "MultivariatePowerSeries/PowerSeries/src/Substitute.mm"
 $include "MultivariatePowerSeries/PowerSeries/src/TaylorShift.mm"
+$include "MultivariatePowerSeries/PowerSeries/src/power_series_solution_ode.mm"
 
 $undef UP_TO_DEGREE_ARRAY
 $undef HOMOGENEOUS_PART
