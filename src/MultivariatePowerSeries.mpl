@@ -537,6 +537,8 @@ $include "MultivariatePowerSeries/PowerSeries/src/PowerSeries.mm"
 $include "MultivariatePowerSeries/UPoPS/src/UPoPS.mm"
 $include "MultivariatePowerSeries/PuiseuxSeries/src/PuiseuxSeries.mm"
 
+$include "MultivariatePowerSeries/LaurentSeries/src/LaurentSeries.mm"
+
 # OdeManipulator sub-package. For now, all the commands in this 
 # module are hidden, i.e., they are not exported.
 $include "MultivariatePowerSeries/OdeManipulator/src/OdeManipulator.mpl"
