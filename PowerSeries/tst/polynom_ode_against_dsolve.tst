@@ -46,5 +46,31 @@ sol_pol := convert( sol4, 'polynom'):
 sol_pol := rhs(sol_pol):
 Try[verify,normal]("test 8", Truncate(ps4, ord-1), sol_pol);
 
+#Test on ode5
+my_ode := {diff(x(t),t,t)+t*diff(x(t),t,t)+x(t)=6*t+3}:
+
+Try[testnoerror]("test 9",from_polynom_coefficient_ode(t,x,my_ode),'assign'='ps5');
+sol5 := dsolve(my_ode, x(t), 'type=series', 'order'= ord);
+sol_pol := convert(sol5, 'polynom');
+sol_pol := rhs(sol_pol);
+Try[verify,normal]("test 10", Truncate(ps5,ord-1),sol_pol);
+
+#Test on ode6
+my_ode := {diff(x(t),t,t)+t*diff(x(t),t,t)+x(t)=6*t+3}:
+
+Try[testnoerror]("test 11",from_polynom_coefficient_ode(t,x,my_ode),'assign'='ps6');
+sol6 := dsolve(my_ode, x(t), 'type=series', 'order'= ord);
+sol_pol := convert(sol6, 'polynom');
+sol_pol := rhs(sol_pol);
+Try[verify,normal]("test 12", Truncate(ps6,ord-1),sol_pol);
+
+#Test on ode7
+my_ode := {diff(x(t),t,t)+3*t*diff(x(t),t,t)-4*x(t)=t-2}:
+Try[testnoerror]("test 13",from_polynom_coefficient_ode(t,x,my_ode),'assign'='ps7');
+ord := 15:
+sol7 := dsolve(my_ode, x(t), 'type=series', 'order'= ord):
+sol_pol := convert(sol7, 'polynom'):
+sol_pol := rhs(sol_pol):
+Try[verify,normal]("test 14", Truncate(ps7,ord-1),sol_pol);
 
 #end test

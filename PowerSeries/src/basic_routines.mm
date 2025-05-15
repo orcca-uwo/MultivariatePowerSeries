@@ -87,6 +87,11 @@ export
 # to get the analytic expression of the input object (self:-algexpr)
 export 
     GetAnalyticExpression ::static := proc(self :: PowerSeriesObject, $) 
+        local v;
+        if orseq(self:-IsFrozen(v), v in self:-vars) then 
+            return thaw(self:-algexpr);
+        end  if; 
+        
         return self:-algexpr;
     end proc; 
 
@@ -98,7 +103,14 @@ export
                                     d :: nonnegint,
                                     $)
         local dummy;
-        return AUTO_EXPAND(dummy, HOMOGENEOUS_PART(self, d));
+        local hom_part := AUTO_EXPAND(dummy, HOMOGENEOUS_PART(self, d));
+
+        local v;
+        if orseq(self:-IsFrozen(v), v in self:-vars) then 
+            return thaw(hom_part);
+        end  if; 
+
+        return hom_part;
     end proc;
 
 # shouldn't be documented! 
@@ -308,7 +320,14 @@ export
             return add(self:-hpoly); 
         end if;
         self:-ensure_degree(self, deg);
-        return add(self:-hpoly[0 .. deg]);
+        local self_truncated := add(self:-hpoly[0 .. deg]);
+
+        local v;
+        if orseq(self:-IsFrozen(v), v in self:-vars) then 
+            return thaw(self_truncated);
+        end  if; 
+
+        return self_truncated;
     end proc;
 
 # GeometricSeries
@@ -366,6 +385,11 @@ export
 
 export
     Variables ::static := proc(self :: PowerSeriesObject, $)
+        local v;
+        if orseq(self:-IsFrozen(v), v in self:-vars) then 
+            return thaw(self:-vars);
+        end  if;
+
         return self:-vars;
     end proc;
 

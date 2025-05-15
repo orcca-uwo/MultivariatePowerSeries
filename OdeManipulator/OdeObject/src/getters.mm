@@ -7,7 +7,6 @@ export ConvertConstantSymbolsToD::static := proc(_self :: OdeObject, exp, $)
     end if; 
     
     local exp_new := subs(seq( _self:-init_cond_eq ), exp);
-    
     return exp_new; 
 end proc;
 
@@ -46,7 +45,20 @@ export GetExpansionPoint :: static := proc(_self :: OdeObject,$)
     return _self:-exp_pnt;
 end proc;
 
+# To get rhs of ODE.
+export GetRHS :: static := proc(_self :: OdeObject,$)
+    return _self:-ode_rhs;
+end proc;
 
+# To get ode_type of ODE.
+export GetOdeType :: static := proc(_self :: OdeObject,$)
+    return _self:-ode_type;
+end proc;
+
+# To get ode.
+export GetOdeEquation :: static := proc(_self :: OdeObject,$)
+    return _self:-ode;
+end proc;
 
 
 

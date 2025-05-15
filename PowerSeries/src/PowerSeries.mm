@@ -175,9 +175,17 @@ local
 
       return StringTools:-Join(convert(result, ':-list'), " ");
   end proc;
+
+# To know if a variable has been frozen with the
+# freeze command. 
+local IsFrozen::static := proc( x, $ )
+    local t := op( 4, eval( thaw ) );
+    
+    return evalb( x :: ':-name' and t :: ':-table' and hasindex( t, x ) );
+end proc;
     
 # Display
-# to disply the input object, 
+# to display the input object, 
 # user_dstyle : will overwrite the default and self:-dstyle style 
 # output : (doesn't need to be documented) used for internal purposes
 export 
@@ -210,6 +218,7 @@ export
         local d;
         for d from 0 to min_prec while nterms < terms do
             local h := subs(substitutions, self:-hpoly[d]);
+
             if h = 0 then next; end if;
             local hl := convert(h, list, ':-`+`');
             hl := map(:-`*`, hl, cofactor);
@@ -274,6 +283,7 @@ export
                 end if;
             else
                 alg *= cofactor;
+
                 if output_string then
                     local algstr := sprintf("%a", alg);
                     if length(algstr) > 100 then
@@ -399,10 +409,13 @@ local
 # ModulePrint: print self :: PowerSeriesObject 
 local
     ModulePrint :: static := proc(self :: PowerSeriesObject, $)
+        local v;
+        local cv := [seq(ifelse(self:-IsFrozen(v), v = thaw(v), NULL), v in self:-vars)];
+
         if IsWorksheetInterface() then
-            return Display(self);
+            return Display(self, 'substitutions' = cv);
         else
-            return convert(Display(self, [], "fullstring"), ':-name');
+            return convert(Display(self, [], "fullstring", 'substitutions' = cv), ':-name');
         end if;
     end proc;
 
@@ -420,6 +433,7 @@ $include "MultivariatePowerSeries/PowerSeries/src/FromAlgebraicExpression.mm"
 $include "MultivariatePowerSeries/PowerSeries/src/Substitute.mm"
 $include "MultivariatePowerSeries/PowerSeries/src/TaylorShift.mm"
 $include "MultivariatePowerSeries/PowerSeries/src/power_series_solution_ode.mm"
+$include "MultivariatePowerSeries/PowerSeries/src/Differentiate.mm"
 
 $undef UP_TO_DEGREE_ARRAY
 $undef HOMOGENEOUS_PART

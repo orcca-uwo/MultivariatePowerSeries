@@ -50,4 +50,7 @@ Try[testnoerror]("test 24",from_linear_coefficient_ode(t, x, {diff(x(t),t,t,t)-3
 #Test ode 7
 Try[testnoerror]("test 25",from_linear_coefficient_ode(t, x, {diff(x(t),t,t,t,t)-4*diff(x(t),t,t,t)+8*diff(x(t),t,t)-8*diff(x(t),t)+4*x(t)=0,x(0)=0,D(x)(0)=1,(D@@2)(x)(0)=3}),'assign'='ps7');
 
+#Test ode 8
+Try[testnoerror]("test 26", from_linear_coefficient_ode(t, x, {diff(x(t),t,t)-2*x(t)-5 = 2*t,x(0)=1,D(x)(0)=2}),'assign'= 'ps8');
+
 #end test

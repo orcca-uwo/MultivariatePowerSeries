@@ -114,12 +114,22 @@ $define UPOPSDS_TYPE \
     # in fact, a wrapper for PSO:-One, PSO:-Zero, PSO:-Constant, PSO:-FromPolynomial, PSO:-FromProcedure, and UPoPS:-ConvertToPowerSeries
     export
         PowerSeries := proc(p :: {UnivariatePolynomialOverPowerSeriesObject, PowerSeriesObject,
-                                  procedure, appliable_module, polynom, COEFFICIENT_TYPE, ratpoly, algebraic}, 
+                                  procedure, appliable_module, polynom, COEFFICIENT_TYPE, ratpoly, algebraic,
+                                  set(equation)}, 
+                            ind_var::name := NULL, 
+                            dep_var::name := NULL,
                             {variables::set(name) := undefined},
                             {analytic::algebraic := undefined},
                             {check::truefalse := true},
                             {expand::truefalse := true},
+                            {expansionpoint :: {integer, name} := 0},
                             $)
+            if (ind_var<>NULL or dep_var<>NULL) and not type(p, set(equation)) then
+                error "invalid input: independant and dependant variables"
+                        " can only provided when computing power series"
+                        " solutions of ODEs";
+            end if;
+            
             if type(p, {procedure, appliable_module}) and 
             not type(p, {UnivariatePolynomialOverPowerSeriesObject, PowerSeriesObject}) then
                 return PowerSeriesObject:-FromProcedure(p, analytic, variables, _options['check', 'expand']);
@@ -143,6 +153,13 @@ $define UPOPSDS_TYPE \
                 local num := PowerSeriesObject:-FromPolynomial(numer(p));
                 local den := PowerSeriesObject:-FromPolynomial(denom(p));
                 return num / den;
+            elif type(p, set(equation)) then 
+                if ind_var<>NULL and dep_var<>NULL then
+                    return PowerSeriesObject:-ode_sol_wrapper(ind_var, dep_var, p, exp_pnt=expansionpoint);
+                else
+                    error "invalid input: independant and dependant variables"
+                            " must be provided";
+                end if;
             else
                 local method_option := ifelse(assigned(_EnvPSMethod), ':-method' = _EnvPSMethod, NULL);
                 return PowerSeriesObject:-FromAlgebraicExpression(p, method_option);
@@ -519,12 +536,7 @@ $define UPOPSDS_TYPE \
 $include "MultivariatePowerSeries/PowerSeries/src/PowerSeries.mm"
 $include "MultivariatePowerSeries/UPoPS/src/UPoPS.mm"
 $include "MultivariatePowerSeries/PuiseuxSeries/src/PuiseuxSeries.mm"
-$include "MultivariatePowerSeries/LaurentSeries/src/LaurentSeries.mm"
- 
-export
-    LaurentSeries := proc()
-        return Object(LaurentSeriesObject, _passed);
-        
+
 # OdeManipulator sub-package. For now, all the commands in this 
 # module are hidden, i.e., they are not exported.
 $include "MultivariatePowerSeries/OdeManipulator/src/OdeManipulator.mpl"

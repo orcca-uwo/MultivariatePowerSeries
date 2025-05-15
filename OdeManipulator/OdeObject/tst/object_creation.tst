@@ -21,7 +21,7 @@ local MyIsEqual := proc(A::Array(Array), B::Array(Array), $)
     return andseq(ArrayTools:-IsEqual(A[i], B[i]), i=0..n-1);
 end proc:
 
-#Test 1: Determining if it prints to correct ODE	
+#Test 1: Determining if it prints to correct ODE    
 Try[testnoerror]("test 1", ODEO(t, x,{diff(x(t),t)=x(t), x(0)=1}), 'assign'='eOde');
 Try[testnoerror]("test 2", ODEO(t, x,[diff(x(t),t)=x(t), x(0)=1]));
 Try[testnoerror]("test 3",eOde,{x(0) = 1, D(x)(t) = x(t)});
@@ -30,6 +30,7 @@ Try("test 4", ArrayTools:-IsEqual(eOde:-GetInitialConditions(eOde), my_coeff), t
 my_coeff :=  Array(0..1,[-1, 1]):
 Try("test 5", ArrayTools:-IsEqual(eOde:-GetCoeffs(eOde), my_coeff), true);
 Try("test 6", eOde:-GetOrder(eOde), 1);
+Try("test type 1", eOde:-GetOdeType(eOde), "lin_cons_coeff");
 
 
 #Test 2: Determining if it prints the correct ODE
@@ -40,6 +41,7 @@ Try("test 9", ArrayTools:-IsEqual(SinOde:-GetInitialConditions(SinOde), my_coeff
 my_coeff := Array(0..2,[1,0,1]):
 Try("test 10",ArrayTools:-IsEqual(SinOde:-GetCoeffs(SinOde), my_coeff),true);
 Try("test 11",SinOde:-GetOrder(SinOde),2);
+Try("test type 2", SinOde:-GetOdeType(SinOde), "lin_cons_coeff");
 
 #Test 3: Determining if it prints the correct ODE
 Try[testnoerror]("test 12", ODEO(t,x,{diff(x(t),t,t)+x(t)=0, x(2*pi)=1,D(x)(0)=0}), 'assign'='CosOde');
@@ -49,6 +51,7 @@ Try("test 14",ArrayTools:-IsEqual(CosOde:-GetInitialConditions(CosOde), my_coeff
 my_coeff :=  Array(0..2,[1,0,1]):
 Try("test 15",ArrayTools:-IsEqual(CosOde:-GetCoeffs(CosOde), my_coeff), true);
 Try("test 16",CosOde:-GetOrder(CosOde),2);
+Try("test type 3", CosOde:-GetOdeType(CosOde), "lin_cons_coeff");
 
 #Test 4: Determining if it prints the correct ODE
 Try[testnoerror]("test 17", ODEO(t,x,{diff(x(t),t,t,t)-diff(x(t),t,t)-20*diff(x(t),t)=0, x(0)=0, D(x)(0)=1, (D@@2)(x)(0)=1}), 'assign'='Ode4');
@@ -58,6 +61,7 @@ Try("test 19", ArrayTools:-IsEqual(Ode4:-GetInitialConditions(Ode4), my_coeff), 
 my_coeff := Array(0..3,[0, -20, -1, 1]):
 Try("test 20",ArrayTools:-IsEqual(Ode4:-GetCoeffs(Ode4), my_coeff), true);
 Try("test 21",Ode4:-GetOrder(Ode4),3);
+Try("test type 4", Ode4:-GetOdeType(Ode4), "lin_cons_coeff");
 
 #Test 5: Determining if it prints the correct ODE
 Try[testnoerror]("test 22", ODEO(t, x,{diff(x(t),t)-2*t*x(t)=0, x(0)=1}), 'assign'='ex2Ode');
@@ -68,6 +72,7 @@ Try("test 24", ArrayTools:-IsEqual(ex2Ode:-GetInitialConditions(ex2Ode), my_coef
 my_coeff :=  Array(0.. 1, [Array(0.. 1, [0, -2]), Array(0.. 1, [1, 0])]):
 Try("test 25", MyIsEqual(ex2Ode:-GetCoeffs(ex2Ode), my_coeff), true);
 Try("test 26", ex2Ode:-GetOrder(ex2Ode), 1);
+Try("test type 5", ex2Ode:-GetOdeType(ex2Ode), "lin_pol_coeff");
 
 Try[testnoerror]("test 27", ODEO(t, x,{diff(x(t),t,t)-t*diff(x(t),t)+4*x(t)=0, x(0)=1,D(x)(0)=0}), 'assign'='polyOde');
 Try[testnoerror]("test 28", ODEO(t, x,[diff(x(t),t,t)-t*diff(x(t),t)+4*x(t)=0, x(0)=1,D(x)(0)=0]), 'assign'='polyOde');
@@ -78,6 +83,7 @@ my_coeff :=  Array(0..2,[Array(0.. 1, [4, 0]), Array(0.. 1, [0, -1]), Array(0.. 
 Try("test 30", MyIsEqual(polyOde:-GetCoeffs(polyOde), my_coeff), true);
 
 Try("test 31", polyOde:-GetOrder(polyOde), 2);
+Try("test type 5", polyOde:-GetOdeType(polyOde), "lin_pol_coeff");
 
 # Test errors.
 Try[testerror]("test 32", ODEO(x,x,{diff(x(t),t,t,t)-diff(x(t),t,t)-20*diff(x(t),t)=0, D(x)(0)=1, x(0)=0}), 'assign'='my_edo');
@@ -135,4 +141,11 @@ Try[testerror]("test 53", ODEO(t,x,{non_linear_de}));
 de_not_supported_yet := diff(x(t),t)+sin(x(t))=0;
 Try[testerror]("test 54", ODEO(t,x,{de_not_supported_yet}));
 
+#Test Constant Term
+Try[testnoerror]("test 55", ODEO(t,x,{diff(x(t),t,t)-2*x(t)-5 = 2*t,x(0)=1,D(x)(0)=2}),'assign'='my_ode');
+Try("test 56", my_ode:-GetRHS(my_ode),5+2*t);   
+
+#Test constant term with polynomial coeffs
+Try[testnoerror]("test 57", ODEO(t, x, {diff(x(t),t,t,t)+t*diff(x(t),t,t)+x(t)=6*t+3}),'assign'='foo');
+Try("test 58", foo:-GetRHS(foo),6*t+3);
 #end test

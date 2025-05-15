@@ -74,25 +74,39 @@ sol_pol := convert( sol7, 'polynom'):
 sol_pol := rhs(sol_pol):
 Try[verify,normal]("test 14", Truncate(ps7, ord-1), sol_pol);
 
-# Test ode without enough initial conditions.
-my_ode := {diff(x(t),t)- x(t)= 0};
-Try[testnoerror]("test 15", from_linear_coefficient_ode(t, x, my_ode), 'assign'='ps');
+#test for ode 8
+my_ode := {diff(x(t),t,t)-2*x(t)-5 = 2*t,x(0)=1,D(x)(0)=2}:
+Try[testnoerror]("test 15", from_linear_coefficient_ode(t, x, my_ode), 'assign'='ps8');
 
-# We compute the solution and write it in a nice format.
-sol := dsolve(my_ode, x(t), 'type=series', 'order' = ord );
-sol_pol := convert( sol, 'polynom'); 
-sol_pol := rhs(sol_pol);
-Try[verify,normal]("test 17", Truncate(ps, ord-1), sol_pol);
+sol8 := dsolve(my_ode, x(t), 'type=series', 'order' = ord );
+sol_pol := convert( sol8, 'polynom'): 
+sol_pol := rhs(sol_pol):
+Try[verify,normal]("test 16", Truncate(ps8, ord-1), sol_pol);
+
+
+
 
 # "Model" test.
 my_ode := {diff(x(t),t,t,t)-diff(x(t),t,t)-20*diff(x(t),t)=0};
-Try[testnoerror]("test 18", from_linear_coefficient_ode(t, x, my_ode), 'assign'='ps');
+Try[testnoerror]("test 17", from_linear_coefficient_ode(t, x, my_ode), 'assign'='ps');
 
 # We compute the solution and write it in a nice format.
 sol := dsolve(my_ode, x(t), 'type=series', 'order' = ord );
 sol_pol := convert( sol, 'polynom'); 
 sol_pol := rhs(sol_pol);
 
-Try[verify,normal]("test 19", Truncate(ps, ord-1), sol_pol);
+Try[verify,normal]("test 18", Truncate(ps, ord-1), sol_pol);
+
+#test ode 9
+my_ode := {diff(x(t),t,t)+5*diff(x(t),t)-6*x(t)=22+18*t-18*t^2,x(0)=1,D(x)(0)=0}:
+Try[testnoerror]("test 19", from_linear_coefficient_ode(t, x, my_ode), 'assign'='ps9');
+
+sol9 := dsolve(my_ode, x(t), 'type=series', 'order' = ord );
+sol_pol := convert( sol9, 'polynom'); 
+sol_pol := rhs(sol_pol);
+Try[verify,normal]("test 20", Truncate(ps9, ord-1), sol_pol);
+
+
+
 
 #end test
